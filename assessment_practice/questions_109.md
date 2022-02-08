@@ -33,11 +33,9 @@ puts a
 puts b
 ```
 
-
-
 ### 2
 
-**Current time:** 4 : 39
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -54,11 +52,9 @@ puts a
 puts b
 ```
 
-
-
 ### 3
 
-**Current time:** 5 : 04
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -76,11 +72,9 @@ puts a
 puts b
 ```
 
-
-
 ### 4
 
-**Current time:** 5 : 21
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -97,11 +91,9 @@ end
 example('hello')
 ```
 
-
-
 ### 5
 
-**Current time:** 3: 57
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -116,12 +108,9 @@ word = "Hello"
 greetings(word)
 ```
 
-
-
-
 ### 6
 
-**Current time:** 11:09
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -140,12 +129,9 @@ end
 puts "Your total is #{sum}"
 ```
 
-
-
-
 ### 7
 
-**Current time:** 4: 04
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -159,12 +145,9 @@ end
 p a
 ```
 
-
-
-
 ### 8
 
-**Current time:** 5:40
+**Current time:**
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -181,13 +164,11 @@ puts animal
 puts var
 ```
 
-
-
 ## Variable Shadowing
 
 ### 9
 
-**Current time:** 6:53
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -204,11 +185,9 @@ puts a
 puts b
 ```
 
-
-
 ### 10
 
-**Current time:** 3:24
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -222,12 +201,9 @@ end
 puts n
 ```
 
-
-
-
 ### 11
 
-**Current time:** 4:22
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -242,14 +218,11 @@ end
 puts animal
 ```
 
-
-
-
 ## Object Passing / Variables as Pointers
 
 ### 12
 
-**Current time:** 3:08
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -261,11 +234,9 @@ b = a
 a = "not here"
 ```
 
-
-
 ### 13
 
-**Current time:** ??
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -277,11 +248,9 @@ b = a
 a << ", Bob"
 ```
 
-
-
 ### 14
 
-**Current time:** 4:36
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -293,11 +262,9 @@ b = a
 c = a.uniq
 ```
 
-
-
 ### 15
 
-**Current time:** 8:10
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -312,12 +279,9 @@ a = ['a', 'b', 'c']
 test(a)
 ```
 
-
-
-
 ### 16
 
-**Current time:** 3:45
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -330,11 +294,9 @@ a = b
 b += 1.1
 ```
 
-
-
 ### 17
 
-**Current time:** 7:38
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -350,11 +312,9 @@ test(test_str)
 puts test_str
 ```
 
-
-
 ### 18
 
-**Current time:** 6:24
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -370,11 +330,9 @@ puts a
 puts b
 ```
 
-
-
 ### 19
 
-**Current time:** 5:13
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -389,11 +347,9 @@ increment(y)
 puts y
 ```
 
-
-
 ### 20
 
-**Current time:** 5:12
+**Current time:**
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -407,12 +363,9 @@ change_name(name)
 puts name 
 ```
 
-
-
-
 ### 21
 
-**Current time:** 3:58
+**Current time:**
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -426,12 +379,9 @@ cap(name)
 puts name
 ```
 
-
-
-
 ### 22
 
-**Current time:** 6:57
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -447,12 +397,9 @@ a[1] = 5
 arr
 ```
 
-
-
-
 ### 23
 
-**Current time:** 8:41
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -467,14 +414,11 @@ puts arr1
 puts arr2
 ```
 
-
-
-
 ## Object Mutability / Mutating Methods
 
 ### 24
 
-**Current time:** 6:46
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -489,12 +433,9 @@ s = 'hello'
 t = fix(s)
 ```
 
-
-
-
 ### 25
 
-**Current time:** 6:25
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -508,12 +449,9 @@ s = 'hello'
 t = fix(s)
 ```
 
-
-
-
 ### 26
 
-**Current time:** 8:06
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -528,12 +466,9 @@ s = 'hello'
 t = fix(s)
 ```
 
-
-
-
 ### 27
 
-**Current time:** 5:32
+**Current time:**
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -547,12 +482,9 @@ s = 'abc'
 t = fix(s)
 ```
 
-
-
-
 ### 28
 
-**Current time:** 3:48
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -567,12 +499,9 @@ a_method(a)
 p a
 ```
 
-
-
-
 ### 29
 
-**Current time:** 4:13
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -582,11 +511,9 @@ num = 3
 num = 2 * num
 ```
 
-
-
 ### 30
 
-**Current time:** 5:28
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -596,12 +523,9 @@ a[1] = '-'
 p a
 ```
 
-
-
-
 ### 31
 
-**Current time:** 8:20
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -615,11 +539,9 @@ add_name(names, 'jim')
 puts names
 ```
 
-
-
 ### 32
 
-**Current time:** 6:39
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -633,14 +555,11 @@ add_name(names, 'jim')
 puts names
 ```
 
-
-
-
 ## Each, Map, and Select
 
 ### 33
 
-**Current time:** 6:40
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -652,13 +571,9 @@ array.select do |num|
 end
 ```
 
-
-
-
-
 ### 34
 
-**Current time:** 3:57
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -668,12 +583,9 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 arr.select { |n| n.odd? }
 ```
 
-
-
-
 ### 35
 
-**Current time:** 6:29
+**Current time:**
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -686,12 +598,9 @@ end
 p new_array
 ```
 
-
-
-
 ### 36
 
-**Current time:** 6:05
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -705,11 +614,9 @@ end
 p new_array
 ```
 
-
-
 ### 37
 
-**Current time:** 7:14
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -723,12 +630,9 @@ end
 p new_array
 ```
 
-
-
-
 ### 38
 
-**Current time:** 3:35
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -738,12 +642,9 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 arr.each { |n| puts n }
 ```
 
-
-
-
 ### 39
 
-**Current time:** 4:20
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -756,11 +657,9 @@ incremented = arr.map do |n|
 p incremented
 ```
 
-
-
 ### 40
 
-**Current time:** 5:30
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -773,12 +672,9 @@ end
 p new_array
 ```
 
-
-
-
 ### 41
 
-**Current time:** 5:44
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -792,11 +688,9 @@ end
 p new_array
 ```
 
-
-
 ### 42
 
-**Current time:** 3:31
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -806,11 +700,9 @@ a = "hello"
 [1, 2, 3].map { |num| a }
 ```
 
-
-
 ### 43
 
-**Current time:** 3:21
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -820,14 +712,11 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
-
 ## Other Collection Methods
 
 ### 44
 
-**Current time:** 4:27
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -837,11 +726,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
 ### 45
 
-**Current time:** 5:35
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -851,12 +738,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
-
 ### 46
 
-**Current time:** 3:48
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -866,11 +750,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
 ### 47
 
-**Current time:** 6:22
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -880,11 +762,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
 ### 48
 
-**Current time:** 5:46
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -894,12 +774,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
-
 ### 49
 
-**Current time:** 11:23
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -909,11 +786,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
 ### 50
 
-**Current time:** 8:37
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -923,11 +798,9 @@ What does the following code return? What does it output? Why? What concept does
 end
 ```
 
-
-
 ### 51
 
-**Current time:** 8:00?
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -940,13 +813,11 @@ p odd
 p even
 ```
 
-
-
 ## Truthiness
 
 ### 53
 
-**Current time:** 4:00
+**Current time:**
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -960,11 +831,9 @@ else
 end
 ```
 
-
-
 ### 54
 
-**Current time:** 5:11
+**Current time:** 
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
