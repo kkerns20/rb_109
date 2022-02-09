@@ -33,9 +33,15 @@ puts a
 puts b
 ```
 
+The code above returns `nil` twice and outputs `"Goodbye"` and then `"Hello"`. This is example of how variables behave as pointers and are no deeply linked to each other, even when on is assigned to the other. It is also a demonstration of how reassignment creates a new object in memory that will break the binding between the variable and the object it previously referenced.
+
+`a` is initialized and assigned the string object `"Hello"`. Then `b` is assigned to reference the same object as `a`, namely `"Hello"`. `a` is then reassigned to the string object `"Goodbye"`. This breaks the common reference between a and b. 
+
+The puts method is called and will always return nil. Invoking the puts method and passing in the local variable `a` as an argument will output "Goodbye" and return nil. Then, Invoking the puts method and passing in the local variable `b` as its argument will output "Hello", as that is what is still referenced, and will return `nil`
+
 ### 2
 
-**Current time:** 
+**Current time:** 6:50 + revisions
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -51,6 +57,14 @@ end
 puts a
 puts b
 ```
+
+on line 1, the local variable `a` is initialized and assigned the integer 4, remembering that integers are immutable.
+
+the `loop` method is invoked on line 3 and passed a `do..end` block as its argument. This creates an inner loop. Because `a` was initialized in the outer loop, it will be accessible within the loop block, so it is reassigned to the integer 5 on line 4. `b` is initialized on line 5 and assigned to the integer 3. A `break` statement is then used to exit the loop, which does not make use of the `loop` capabilities.
+
+The puts method is invoked, which will output the argument given to it and always return `nil`. Calling `puts` with the argument `a` will output the reassigned value of 5 and return `nil`. `puts` is then called again with `b`, and since `b` was initialized within the loop block, it is not in scope, resulting in a NameError`
+
+This is an example of local variable scoping rules in relation to the inner and outer scope created when a block is passed to a method call as an argument.
 
 ### 3
 
@@ -233,6 +247,14 @@ a = "hi there"
 b = a
 a = "not here"
 ```
+
+`a` is initialized and assigned to the string object `"hi there"`
+
+b is initialized and assigned to reference the same object "hi there", and at this point, both a and b point to the same object in memory.
+
+a is then reassigned to the string object `"not here"`, which will break the link between a and the object it previously referenced (`"hi there"`). Now both `a` and `b` point to separate objects in memory, the string `"not here"` and `"hi there"` respectively.
+
+This is a demonstration of variable reassignment and variables as pointers.
 
 ### 13
 
