@@ -201,11 +201,11 @@ Review material and notes to prepare for the RB109 Assessment.
 ## To-Do
 
 - [] Flashcards for "key concepts" behind every point in Table of Contents
-- [x] Create collection space for explanation of "useful methods", generate my own examples for each.
-- [x] Create local variable scope document
-- [x] Create mutating vs non-mutating methods document
-- [x] Create pass-by-reference vs pass-by-value document (within mutating vs non-mutating methods)
-- [x] Create document for working with collections
+- [x] Update collection space for explanation of "useful methods", generate my own examples for each.
+- [x] Update local variable scope document
+- [x] Update mutating vs non-mutating methods document
+- [x] Update pass-by-reference vs pass-by-value document (within mutating vs non-mutating methods)
+- [x] Update document for working with collections
   - [x] Element reference
   - [x] Conversion
   - [x] Element assignment
@@ -213,14 +213,14 @@ Review material and notes to prepare for the RB109 Assessment.
   - [x] Transformation and Selection
   - [x] Sorting
   - [x] Nested Data Structures
-- [x] Create document for popular collection methods
-- [x] Create document for variables as pointers
-- [x] Create document for puts vs return
-- [x] Create document for false vs nil and "truthiness"
-- [x] Create document for method definition and method invocation
-- [x] Create document for implicit return value of method invocation and blocks
+- [x] Update document for popular collection methods
+- [x] Update document for variables as pointers
+- [x] Update document for puts vs return
+- [x] Update document for false vs nil and "truthiness"
+- [x] Update document for method definition and method invocation
+- [x] Update document for implicit return value of method invocation and blocks
 - [x] Link documents together by creating links in interrelated sections
-- [x] Create a Table of Contents, here, so all aspects of the study guide can be easily accessed.
+- [x] Update a Table of Contents, here, so all aspects of the study guide can be easily accessed.
 - [x] Collect number of code snippets and write out my own explanation of what is happening within each (single document)
 - [] Create some "practice tests" that I can use for timed practice
 - [] Take timed practice test
