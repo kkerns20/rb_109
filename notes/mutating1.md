@@ -37,6 +37,14 @@ puts "'#{b}' is the object located at #{b.object_id}"
 # => 'STRING' is the object located at 300
 ```
 
+### Mutating Methods
+
+If a method modifies one of it's arguments during execution, it is said to be _mutating with respect to its arguments_. This is less common than a method which is _mutating with respect to its caller_, which occurs when a method permanently modifies the calling object.
+
+Many mutating methods use `!` at the end of their names to signify this side-effect. There are some methods, however, that do not have this indicator, such as `Array#push` and `String#concat`. If you write any mutating methods in your own code, it's a good idea to include the `!` in their name.
+
+- [ ] TODO generate list of mutating methods that do not contain `!` and link here
+
 ### Non-Mutating Methods
 
 A non-mutating method is one that does not modify the calling object or any of it's arguments. Often in documentation these methods are said to return `new_obj` instead of `self`. Note that when dealing with **immutable object** (those that cannot be changed, such as integers), all methods can be considered non-mutating.
@@ -102,14 +110,6 @@ a.object_id           # => 440
 a = a.capitalize!     # => 'Hello' (returns `self` the same object modified)
 a.object_id           # => 440
 ```
-
-### Mutating Methods
-
-If a method modifies one of it's arguments during execution, it is said to be _mutating with respect to its arguments_. This is less common than a method which is _mutating with respect to its caller_, which occurs when a method permanently modifies the calling object.
-
-Many mutating methods use `!` at the end of their names to signify this side-effect. There are some methods, however, that do not have this indicator, such as `Array#push` and `String#concat`. If you write any mutating methods in your own code, it's a good idea to include the `!` in their name.
-
-- [ ] TODO generate list of mutating methods that do not contain `!` and link here
 
 #### Indexed Assignment
 
