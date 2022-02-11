@@ -289,6 +289,14 @@ b = a
 c = a.uniq
 ```
 
+This code demonstates variables as pointers.
+
+On line 1, `a` is initialized to the array `[1, 2, 3, 3]`. On line 2, be is intialized and references the same array object as `a`. 
+
+On line 3, `c` is initialized to the return of the method call of `uniq` on the local variable `a`. Calling `uniq` is non-destructive, and will only set the unique elements of the called collection.
+
+There is not output of the code, but the return after initializing `c` will be `[1, 2, 3]`
+
 ### 15
 
 **Current time:** 
