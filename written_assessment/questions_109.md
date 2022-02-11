@@ -86,6 +86,11 @@ puts a
 puts b
 ```
 
+The ouput of line 9 will the integer 3 due to its reassignment within the loop block, while `puts` always returns `nil`
+The output of line 10 will be the integer 2 since it was initialized on line 2, while `puts` always returns `nil`
+
+This is an example of variables as pointers and variable scope. `a` was initialized in the outer scope and will be accessible throughout the program, so when it is reassigned within the block passed to the method call for `loop`, `a` will now reference 3, breaking its link with the object it initially referenced
+
 ### 4
 
 **Current time:** 
