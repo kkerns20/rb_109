@@ -2,19 +2,19 @@
 
 All problems found in [RB109 Written Assessment: Practice Problems](https://docs.google.com/document/d/16XteFXEm3lFbcavrXDZs45rNEc1iBxSYC8e4pLhT0Rw/edit#)
 
-[Local Variable Scope](#local-variable-scope)
+- [Local Variable Scope](#local-variable-scope)
     - #1-8
-[Variable Shadowing](#variable-shadowing)
+- [Variable Shadowing](#variable-shadowing)
     - #9-11
-[Object Passing / Variables as Pointers](#object-passing-/-variables-as-pointers)
+- [Object Passing / Variables as Pointers](#object-passing-/-variables-as-pointers)
     - #12 - 23
-[Object Mutability / Mutating Methods](#object-mutability-/-mutating-methods)
+- [Object Mutability / Mutating Methods](#object-mutability-/-mutating-methods)
     - #23-32
-[Each, Map, and Select](#each-map-and-select)
+- [Each, Map, and Select](#each-map-and-select)
     - #33-43
-[Other Collection Methods](#other-collection-methods)
+- [Other Collection Methods](#other-collection-methods)
     - #44-52
-[Truthiness](#truthiness)
+- [Truthiness](#truthiness)
     - #53-54
 
 ## Local Variable Scope
