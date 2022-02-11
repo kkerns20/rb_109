@@ -269,6 +269,11 @@ a = "hi there"
 b = a
 a << ", Bob"
 ```
+This problem will not output anything and will return the string "hi there, Bob"
+This demonstrates variable reassignment, variables as pointers, and the mutability of objects.
+`a` is initialized and assigned the string object with value "hi there" on line 1. `b` is initalized on 
+line 2 and assigned to reference the same string object as `a`
+we then call the `<<` method to append the string `", Bob"` to `a`. Since `a` and `b` reference the same object as it was mutated
 
 ### 14
 

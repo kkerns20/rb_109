@@ -5,8 +5,8 @@
 [RB109 Written Assesment Practice Problems](https://docs.google.com/document/d/16XteFXEm3lFbcavrXDZs45rNEc1iBxSYC8e4pLhT0Rw/edit#)
 
 - [] Local Variable Scope
-  - [] Ex 1
-  - [] Ex 2
+  - [x] Ex 1
+  - [x] Ex 2
   - [] Ex 3
   - [] Ex 4
   - [] Ex 5
@@ -18,7 +18,7 @@
   - [] Ex 2
   - [] Ex 3
 - [] Object Passing / Variables as Pointers
-  - [] Ex 1
+  - [x] Ex 1
   - [] Ex 2
   - [] Ex 3
   - [] Ex 4
