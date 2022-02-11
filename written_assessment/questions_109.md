@@ -93,7 +93,7 @@ This is an example of variables as pointers and variable scope. `a` was initiali
 
 ### 4
 
-**Current time:** 
+**Current time:** 8:30 --> in class
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -109,6 +109,15 @@ end
 
 example('hello')
 ```
+the example method is invoked and passed and argument of the string `'hello'`. The output of the method will be 
+```ruby
+hello
+hello
+hello
+```
+The method will return 'nil'
+
+This demonstrates method definition and invocation. Namely, the method invocation of `example` is passed the string object `'hello'` which is then assigned to the method parameter `str`. Now that `str` references the string object, when `puts` is called and passed `str`, it will output the object `'hello'`. This continues 3 times until the break statements conditional is met.
 
 ### 5
 
