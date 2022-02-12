@@ -351,10 +351,13 @@ a = b
 
 b += 1.1
 ```
-
+on line 1, we initialize the local variable `a` to the float object 5.2.
+on line 2, we initialize the local variable `b` to the float object 7.3. These are immutable objects.
+on line 4, `a` is reassigned to reference the object that `b` points to. At this point, the link between `a` and 5.2 is broken.
+on line 6, the `b` local variable is reassigned to the return value of calling the `Integer#+` method on the `b` variable and passing the float 1.1 as an argument. This is Ruby's syntactical sugar for incrementing the value of the `b` variable. Since This is reassignment, the link between `a` and the object b initially pointed to, 7.3, is still in place. `b` would now reference 8.4
 ### 17
 
-**Current time:** 
+**Current time:** 9:04
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -369,10 +372,13 @@ test(test_str)
 
 puts test_str
 ```
-
+on line 6, we intialize the local variable `test_str` to the String object 'Written assessment'
+on line 7, we invoke the `test` method (defined above) and pass in the object that `test_str` references. At this point, the parameter of the `test` method and `test_str` reference the same String object. Within the method definition, `str` is reassigned using `String#+` concatenation to point to the object 'Written Assessment'.  This is also Ruby's syntactical sugar for concatenation. This will break the link between `test_str` and `str` pointing to the same object.
+We then invoke the destructive `downcase!` method on `str` which will mutate the object to `'written assessment!'`. Since this is the last line ran within the method, it will be the return of the `test` method, so when we invoke the puts method and pass the argument of local_variable `test_str`, it will output the object initialized on line 6 'Written Assessment' and return `nil`
+This problem demonstrates Ruby's pass-by-reference-value, object mutability, and variable reassignment, namely that reassignment will break the link between variables and will not reflect the mutation when passed to a method 
 ### 18
 
-**Current time:** 
+**Current time:** 6:27
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -387,6 +393,11 @@ b = plus(a, 2)
 puts a
 puts b
 ```
+on line 5, we initialize the variable `a` to the integer 3. on line 2, we initialized the local variable `b` to the output of the method invocation of `plus` and passed two arguments, `a` and 2
+When passed to the method, the parameter `x` will now reference the same object as `a` and the parameter `y` will reference the integer 2. We then reassign `x`, breaking the link between `a` and `x` referencing the same object in memory, to the sum of the two variables `x` and `y`. `x + y` would be `3 + 2`, so the reassigned `x` will now point to 5. Because there is no more code to evaluate in the method, the method will return 5, and it is assigned to `b`.
+We call the `puts` method and pass the argument `a` which still points to 3 and will output 3 and return nil
+We call the `puts` method and pass the argument `b` which points to the output of `plus`, 5, and will output 5 and return nil
+This demonstrates Ruby's pass by reference value and variable reassignment when a local variable is invoked with a method
 
 ### 19
 
