@@ -487,7 +487,7 @@ puts arr2
 
 ### 24
 
-**Current time:** 
+**Current time:** 6:48
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -501,7 +501,12 @@ end
 s = 'hello'
 t = fix(s)
 ```
+on line 7, we initialize the variable `s` to the String object `'hello'`. On line 8, we initialized the variable `t` to the output of the method invocation of `fix` and pass in the argument of the object referenced by `s`.
+Within the method definition, the parameter `value` will be assigned to the object referenced by `s`, so both `value` and `s` will reference the same object in memory.
 
+On line 2, we invoke the destructive `upcase!` method on `value` which will mutate the object to 'HELLO', where `s` and `value` still point to this mutated object. Next, we invode the `concat` method and pass in `'!'` which will append the `!` to `'HELLO!'`. We then call `value` and since this is the last line evaluated within the method, it will be the return value of `fix`
+
+This problem demonstrates object passing and mutating methods, namely that local variables that are passed to methods will share a refernce with the method parameter. When that parameter is mutated, the local varible intialized outside of method will point to the mutated object as well
 ### 25
 
 **Current time:** 
