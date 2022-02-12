@@ -327,6 +327,15 @@ end
 a = ['a', 'b', 'c']
 test(a)
 ```
+This code demonstrates Ruby's concept of variable as pointers and mutating vs. non-mutating methods. Specifically that variables in Ruby "point to" or "reference" Objects in memory, and methods can either mutate the Object they were called on directly, or return a reference to a new Object..
+
+`test` will return `["I like the letter: a", "I like the letter: b", "I like the letter: c"]`
+and return
+
+on line 1, we define the method `test` with one parameter
+on line 5, we initialized the local variable `a` and assign it to the array of strings `['a', 'b', 'c']`
+on line 6, we invoke the `test` method, passing it the argument `a`. Upon invocation of the method, the method parameter `b` references the same object that the local variable `a` references.
+Within the method, the `map` method invocation, along with the `{..}`}` structure passed into the method as an argument, defines a block.. The `map` method iterates over the Array it was called on and passes each element to the block as the `letter` parameter. The map method captures the return value of the block with each iteration, and since the method is the last line run, the return of the method will be `["I like the letter: a", "I like the letter: b", "I like the letter: c"]`
 
 ### 16
 

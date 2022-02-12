@@ -1,15 +1,10 @@
 # QUESTION 1
-a = 4
-b = 2
-
-loop do
-  c = 3
-  a = c
-  break
+def test(b)
+  b.map {|letter| "I like the letter: #{letter}"}
 end
 
-puts a
-puts b
+a = ['a', 'b', 'c']
+p test(a)
 
 
 # QUESTION 2
