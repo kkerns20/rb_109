@@ -644,7 +644,16 @@ array.select do |num|
    puts num if num.odd?
 end
 ```
-
+ on line 1 we initialize the lcoal variable  `array` to `[1, 2, 3, 4, 5]`
+ We then invoke the `select` method on `array` and pass a block as an argument denoted by `do..end` with the parameter of `num`
+ When invoked, it gets passed a block. Each element in the calling collection is the passed to the block parameter `num` on each iteration. Select will the return a new collection of all the elements that have returned a truthy value when passed to the block.
+ within the block, we invoke the method `puts` on the local variable `num` based on the condition of invoking the method `odd?` on `num`. If we find an odd value, it will be output by `puts` and return `nil`. The output will be 
+ ```ruby
+ 1
+ 3
+ 5
+ ```
+ This demonstrates how collection methods react to block statements
 ### 34
 
 **Current time:** 
