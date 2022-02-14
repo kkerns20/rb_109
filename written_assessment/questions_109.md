@@ -136,10 +136,10 @@ word = "Hello"
 
 greetings(word)
 ```
-We initialize `word` on line 5 and assign it the strgin Object `'Hello'`. ON line 7 we invoke the `greetings` method and pass the argument of word. Upon invocation, the parameter of `str` will now reference the same object in memeory as `word`. 
+We initialize `word` on line 5 and assign it the strgin Object `'Hello'`. On line 7 we invoke the `greetings` method and pass the object referenced by `word`. Upon invocation, the parameter of `str` will now reference the same object in memeory as `word`. 
 
-Within the method, we pass `str` as an argument to the puts method, which will output `'Hello'` and return nil.
-We then pass the string `'Goodbye'` as an argument to the `puts` method, which will output `'Goodbye'`.
+Within the method, we pass `str` as an argument to the puts method, which will output `'Hello'`.
+We then pass the string `'Goodbye'` as an argument to the `puts` method, which will output `'Goodbye'`, so since this is the last line evaluated within the method, the return will be `nil`, which is always the return of `puts`.
 
 This is an example of how variables intialized in the outer scope are available withing a method's scope when passed as an argument.
 ### 6
