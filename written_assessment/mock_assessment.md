@@ -1,6 +1,8 @@
-* RB101-109 Mock Assessment
-** Question 1
-#+begin_src ruby :results output :exports both
+# RB101-109 Mock Assessment
+
+## Question 1
+
+```ruby
 a = 10
 
 while true do
@@ -9,10 +11,11 @@ while true do
 end
 
 puts a
-#+end_src
+```
 
-** Question 2
-#+begin_src ruby :results output :session
+## Question 2
+
+``` ruby
 def some_method
   a = 1
   5.times do
@@ -25,10 +28,11 @@ def some_method
 end
 
 some_method
-#+end_src
+```
 
-** Question 3
-#+BEGIN_SRC ruby :results output :exports both
+## Question 3
+
+```ruby
 a = "Xyzzy"
 
 def my_value(b)
@@ -37,10 +41,11 @@ end
 
 my_value(a)
 puts a
-#+END_SRC
+```
 
-** Question 4
-#+begin_src ruby :results output :exports both
+## Question 4
+
+```ruby
 def amethod(param)
   param += " universe"
   param << " world"
@@ -50,10 +55,12 @@ str = "hello"
 amethod(str)
 
 p(str)
-#+end_src
+```
 
-** Question 5
-#+begin_src ruby :results output :exports both
+
+# Question 5
+
+```ruby
 def test(str)
   str += '?'
   str.downcase!
@@ -63,10 +70,11 @@ test_str = "Written Assessment"
 test(test_str)
 
 puts test_str
-#+end_src
+```
 
-** Question 6
-#+begin_src ruby :results output :exports both
+## Question 6
+
+```ruby
 def test
   puts "written assessment"
 end
@@ -78,10 +86,11 @@ if var
 else
   puts "interview"
 end
-#+end_src
+```
 
-** Question 7
-#+begin_src ruby :results output :exports both
+## Question 7
+
+```ruby
 animal = `dog`
 
 loop do |animal|
@@ -90,10 +99,12 @@ loop do |animal|
 end
 
 puts animal
-#+end_src
+```
 
-** Question 8
-#+begin_src ruby :results output :exports both
+
+## Question 8
+
+```ruby
 animal = "dog"
 
 loop do |animal|
@@ -104,10 +115,12 @@ end
 
 puts animal
 puts var
-#+end_src
+```
 
-** Question 9
-#+begin_src ruby :results output :session
+
+## Question 9
+
+```ruby
 MY_TEAM = "Los Angeles Clippers"
 
 loop do
@@ -125,10 +138,12 @@ def best_team
 end
 
 puts MY_TEAM
-#+end_src
+```
 
-** Question 10
-#+begin_src ruby :results output :exports both
+
+## Question 10
+
+```ruby
 array = [1,2,3,4,5,6,7,8,9,10]
 
 odds = array.select do |n|
@@ -149,10 +164,12 @@ incremented = array.map do |n|
               end 
 
 p incremented
-#+end_src
+```
 
-** Question 11
-#+begin_src ruby :results output :exports both
+
+## Question 11
+
+```ruby
 a = 7
 
 def my_value(a)
@@ -161,10 +178,12 @@ end
 
 my_value(a)
 puts a
-#+end_src
 
-** Question 12
-#+BEGIN_SRC ruby :results output :exports both
+```
+
+## Question 12
+
+```ruby
 a = 7
 
 def my_value(b)
@@ -173,10 +192,12 @@ end
 
 my_value(a + 5)
 puts a
-#+END_SRC
+```
 
-** Question 13
-#+BEGIN_SRC ruby :results output :exports both
+
+## Question 13
+
+```ruby
 a = "Xyzzy"
 
 def my_value(b)
@@ -185,11 +206,26 @@ end
 
 my_value(a)
 puts a
-#+END_SRC
+```
 
-** Question 14
-#+BEGIN_SRC ruby :results output :exports both
+
+## Question 14
+
+```ruby
 a = 7
+array = [1, 2, 3]
+
+array.each do |element|
+  a = element
+end
+
+puts a
+```
+
+
+## Question 15
+
+```ruby
 array = \[1, 2, 3]
 
 array.each do |element|
@@ -197,21 +233,13 @@ array.each do |element|
 end
 
 puts a
-#+END_SRC
+```
 
-** Question 15
-#+BEGIN_SRC ruby
-array = \[1, 2, 3]
 
-array.each do |element|
-  a = element
-end
+## Question 16
 
-puts a
-#+END_SRC
 
-** Question 16
-#+BEGIN_SRC ruby :results output :exports both
+```ruby
 a = 7
 array = \[1, 2, 3]
 
@@ -220,10 +248,12 @@ array.each do |a|
 end
 
 puts a
-#+END_SRC
+```
 
-** Question 17
-#+BEGIN_SRC ruby :results output :exports both
+
+## Question 17
+
+```ruby
 a = 7
 array = [1, 2, 3]
 
@@ -235,29 +265,34 @@ end
 
 my_value(array)
 puts a
-#+END_SRC
+```
 
-** Question 18
-#+begin_src ruby :results output :exports both
+## Question 18
+
+```ruby
 array1 = %w(Moe Larry Curly Shemp Harpo Chico Groucho Zeppo)
 array2 = []
 array1.each { |value| array2 << value }
 array1.each { |value| value.upcase! if value.start_with?('C', 'S') }
 puts array2
-#+end_src
+```
 
-** Question 19
-#+begin_src ruby :results output :exports both
+
+## Question 19
+
+```ruby
 def test(b)
   b.map {|letter| "I like the letter: #{letter}"}
 end
 
 a = ['a', 'b', 'c']
 test(a)
-#+end_src
+```
 
-** Question 20
-#+begin_src ruby :results output :exports both
+
+## Question 20
+
+```ruby
 [[8, 13, 27], ['apple', 'banana', 'cantaloupe']].map do |arr|
   arr.select do |item|
     if item.to_s.to_i == item    # if it's an integer
@@ -267,13 +302,17 @@ test(a)
     end
   end
 end
-#+end_src
+```
 
-** Question 21
-#+begin_src ruby :results output :exports both
+
+
+## Question 21
+
+```ruby
 [['a', 'b'], ['c', 'd'], ['e', 'f']].map do |sub_arr|
   sub_arr.map do |letter|
     letter.upcase
   end
 end
-#+end_src
+```
+

@@ -471,7 +471,11 @@ arr
 a[1] = 5
 arr
 ```
+On line 1, we initialize the local variable `a` to the Array `[1, 3]`. On line 2, we intialize the local variable `b` to the Array `[2]`. On line 3, we initialize the local variable `arr` and assign it the nested Array which will call local variables `a` and `b`, which will be `[[1, 3], [2]]`.
+We then call `arr` which will return `[[1, 3], [2]]`.
 
+On line 6, we reference the object at index 1 of Array `a` and reassign it to 5. This is reassigment of the element at index 1 without mutating the Array `a` itself.
+We then call `arr` which will return `[[1, 5], [2]]`
 ### 23
 
 **Current time:** 
@@ -662,7 +666,7 @@ end
  This demonstrates how collection methods react to block statements
 ### 34
 
-**Current time:** 
+**Current time:** 5:40
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -671,10 +675,15 @@ arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 arr.select { |n| n.odd? }
 ```
+We initialized the local variable `arr` to the Array object `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` on line 1
 
+On line 3, we invoke the `select` method on the object that is reference by `arr` and pass it a `{..}` block as an argument. `Select` will iterate through each element in the object and return a new array based on the truthiness of the block. The block's parameter `n` will be assigned each element, in turn, from the caller. We then call the `odd?` method on the variable `n`. This will determine if each element passed to n is an odd number. 
+Since `odd?` is the last evaluation of block, the array that select will return will be `[1, 3, 5, 7, 9]` 
+
+This example demonstrates Ruby's ability to iterate through collections and the use of truthiness in selection.
 ### 35
 
-**Current time:**
+**Current time:** 6:14
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -686,7 +695,11 @@ new_array = arr.select do |n|
 end
 p new_array
 ```
+First, we initialize the local variable `arr` and assign it to the array object `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`. We then initialize the local variable `new_array` and assign it to the return value of invoking the `select` method on `arr`. `select` is passed a `do..end` block as an argument with a parameter of `n`. 
 
+When we invoke `select`, it iterates over the array `arr` and passes each element to the block. The current iteration's element is assigned to the block parameter `n`.
+
+Within the block, we call the `+` method on the local variable `n` and pass it the argument of `1`. This will increment the array by 1. Since this is the last line of the block, the return of select will be `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`. Select returns a new array based on the truthiness of the block, and the each iteration of the block will always return true, due to Ruby considering all objects excepet nil and false to be truthy. Therefore, when we call the `p` method and pass it the object referenced by `new_array` the output will be `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
 ### 36
 
 **Current time:** 
@@ -705,7 +718,7 @@ p new_array
 
 ### 37
 
-**Current time:** 
+**Current time:** 7:32 - with a big mistake
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -718,7 +731,13 @@ end
 
 p new_array
 ```
+First, we initialize the local variable `words` and assign it the array object `['jump', 'trip', 'laugh', 'run', 'talk']. We then initialize the local variable `new_array` and assign it to the value returned by invoking the `map` method on the object referenced by `words`, passing `map` a `do..end` block as an argument with the parameter of `word`.
 
+Invoking the method `map` on an array object will assign each element from the called array to be reference by the parameter `word`. `Map` returns a new array based on the return value of the block.
+
+Within the block, we invoke the `start_with?` method on the local varible `word` and pass in the argument of the string object 't'. `Start_with` will return a boolean if the object that `word` currently is assigned to if the object at index 0 is a `'t'`. 
+
+Since this is the last evaluation of block, it will also be the return value. `new_array` will now reference `[false, true, false, false, true]`. This can be seen when we call the 'p' method and pass it object referenced by `new_array`
 ### 38
 
 **Current time:** 
