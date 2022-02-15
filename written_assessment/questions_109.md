@@ -767,7 +767,7 @@ p incremented
 
 ### 40
 
-**Current time:** 
+**Current time:** 7:53
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -779,7 +779,13 @@ new_array = arr.map do |n|
 end
 p new_array
 ```
+At first, we initialize the local variable `arr` and assign it the the Array `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`. We then initialize the local variable `new_array` and assign it to the value returned by calling the method `map` on `arr`. When we invoke the method `map`, we also pass a `do..end` block as an argument with the parameter `n`.
+Map will iterate through each element within `arr` and pass it to the parameter `n`. `map` will return a new array based on the return value of each iteration, stayin the same size as the calling array. Within the block, we check to see if the variable n (our current element's iteration) is greater than 1
+ The return will be a boolean, and since this call is the last evaluation of map, `map` will return `[false, true, true, true, true, true, true, true, true, true]. This array is assigned to `new_array`.
 
+we then pass `new_array` as an argument while we invoke the `p` method, which will output and return `[false, true, true, true, true, true, true, true, true, true]` 
+
+This demonstrates the functionality of the method `map` as it iterates through a collection, making us hyperaware of return values
 ### 41
 
 **Current time:** 
