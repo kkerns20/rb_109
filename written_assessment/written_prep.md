@@ -519,7 +519,7 @@ words.sort
 
 ```ruby
 arr_a = %w(ant bat cat)
-arr_b  arr_a.dup
+arr_b = arr_a.dup
 
 arr_b[1].upcase!
 p arr_a
