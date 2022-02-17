@@ -1,0 +1,91 @@
+10. Interview Practice Problems
+    - Watch Others Code Series Problems
+      - [Live Session Part 4: Reverse string](./practice_problems/reverse_str.rb) 
+      - [Live Session Part 4: FizzBuzz](./practice_problems/fizzbuzz.rb)
+      - [Live Session Part 4: Search Inventory](./practice_problems/search_inventory.rb)
+      - [Live Session Part 5: Remove Vowels](./practice_problems/remove_vowels.rb) 
+      - [Live Session Part 5: Find Primes](./practice_problems/find_primes.rb)
+      - [Live Session Part 5: Balancer](./practice_problems/balancer.rb) 
+      - [Part 1: Repeated Substrings](./practice_problems/repeated_substrings.rb)
+      - [Part 1: Common Chars](./practice_problems/common_chars.rb) 
+      - [Part 2: Next Biggest Number](./practice_problems/next_biggest_num.rb) - 20:26
+      - [Part 3: Max Sequence](./practice_problems/max_sequence.rb) 
+      - [Part 3: Common Prefix](./practice_problems/common_prefix.rb) 
+      - [Part 4: Substring Test](./practice_problems/woc_substring_test.rb)
+      - [Part 4: Scramble](./practice_problems/scramble.rb) - 9:56
+      - [Part 5: Longest Palindrome](./practice_problems/longest_palindrome.rb) - 11:10
+      - [Part 6: Find Even Index](/practice_problems/find_even_index.rb) - 13:33
+      - [Sum same consecutive integers](./practice_problems/sum_consecutive_ints.rb) - 11:41
+    - Codewars Problem Solutions
+      - [Count letters in string](https://www.codewars.com/kata/5808ff71c7cfa1c6aa00006d/solutions/ruby) -
+      - [Find all pairs](https://www.codewars.com/kata/reviews/5cfa5e532ad4650001e63fe8/groups/60aeacf889308900019475e6) -
+      - [Return substring instance count](https://www.codewars.com/kata/reviews/516f30297c907a79f200067b/groups/60aeafeb8930890001947662) - 
+      - [Alphabet symmetry](https://www.codewars.com/kata/reviews/5a0a9754d16cba93d900115b/groups/60aeb458534d1f0001f1149d) -
+      - [Longest vowel chain](https://www.codewars.com/kata/reviews/5a1275d736c5d19eed002742/groups/60aeb640a3a2cf0001e0e99f) - 
+      - [Non-even substrings](https://www.codewars.com/kata/reviews/5a0a8ba68e5bf11cfd003b74/groups/60aeb82ea3a2cf0001e0e9d6) - 
+      - [Substring fun](https://www.codewars.com/kata/reviews/56ce2da25b477c620000002e/groups/5e03c145884174000112580b) -
+      - [Repeated Substring](https://www.codewars.com/kata/reviews/54f0fce7210f75c03e000084/groups/60aebf9e1a594600010741af) - 
+      - [ ] 9. Typoglycemia Generator
+      - [ ] 10. Most frequently used words in a text
+      - [ ] 11. Extract the domain name from a URL
+      - [Detect Pangram](https://www.codewars.com/kata/reviews/5bf0a06ff8c527ebda000a4e/groups/60aed668534d1f0001f1182b) - 
+      - [Kebabize](https://www.codewars.com/kata/reviews/57fff6c11bb504ea980000b7/groups/60aedaa8a3a2cf0001e0ee01) - 
+      - [Dubstep Song Decoder](https://www.codewars.com/kata/reviews/55936d16a2f51f45be000017/groups/60aedd79534d1f0001f118a1) -
+      - [Take a Ten Minute Walk](https://www.codewars.com/kata/reviews/55162ffa77dd9e7bc1000156/groups/60aedf90aec59d000148041a) - 
+      - [Spin Words](https://www.codewars.com/kata/reviews/5270aad4b1aa038d2c000189/groups/60aee1a20b93b600017ea884) - 
+      - [Number in Expanded Form](https://www.codewars.com/kata/reviews/58464e0b2435fa35d3000032/groups/60aee4ba534d1f0001f11952) - 
+      - [Persistent Bugger](https://www.codewars.com/kata/reviews/55c6bf11fc0d91691700002b/groups/60aee6deb2e7e90001fa39e3) - 
+      - [Title Case](https://www.codewars.com/kata/reviews/5202f9e6a402dd033c00002a/groups/60aef048367b2e0001fcabef) - 
+      - [Count and group character occurrences](https://www.codewars.com/kata/reviews/543e839381b5fd5833000367/groups/60aef5fc367b2e0001fcac56) - 
+      - [Find the Mine](https://www.codewars.com/kata/reviews/528d9fc1be46d19081000640/groups/60b151c65337d70001b122b4) - 
+      - [Scramblies](https://www.codewars.com/kata/reviews/55f0b9dc6be0544bd30002d5/groups/60b154d14f44260001527e93) - 
+      - [Longest Alphabetical Substring](./practice_problems/cw_longest_alpha_substring.rb)
+      - [The Hashtag Generator](https://www.codewars.com/kata/reviews/5412c2f9648162f83100007a/groups/60b15ec34f44260001527fb4) - 
+      - [Pete, the baker](https://www.codewars.com/kata/reviews/5d7868df14c1b900011334b7/groups/60b16983d4810c0001f40468) - 
+      - [Mean Square Error](https://www.codewars.com/kata/reviews/5e31d087db8fbd00017d6bec/groups/60b16c04d4810c0001f4049e) - 
+      - [Exponent Method](https://www.codewars.com/kata/reviews/5251f642dc71af49250002db/groups/60b16dced4810c0001f404d4) - 
+      - [Where my anagrams?](https://www.codewars.com/kata/reviews/523b40a5ad90113c2b00000f/groups/60b16f94963b480001b0d537)
+      - [Split String](https://www.codewars.com/kata/reviews/516f30267c907a79f2000466/groups/60b17190d4810c0001f40545) - 
+      - [ ] 30. Anagram Difference
+      - [Anagram Detection](https://www.codewars.com/kata/reviews/54ff7a98bae8cd4b6e0003ca/groups/60b672135e3f1d0001d841a9) - 
+      - [Highest Scoring Word](./practice_problems/highest_scoring_word.rb) - 12:19
+      - [Replace with Alphabet Position](./practice_problems/replace)_alpha_position.rb) - 
+      - [Sherlock on pockets](./practice_problems/sherlock_pockets.rb) - 
+      - [Mexican Wave](./practice_problems/mexican_wave.rb) - 
+      - [Delete Digit](./practice_problems/delete_digit.rb) - 
+      - [Multiples Sum](./practice_problems/multiples_sum.rb) - 
+      - [Largest Product](./practice_problems/largest_product.rb) - 
+      - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - 
+      - [Backspaces in a String](./practice_problems/backspaces_string.rb)
+      - [Transform to Prime](./practice_problems/transform_prime.rb) - 
+      - [Count Duplicates](./practice_problems/count_duplicates.rb) -
+      - [Alphabetized](./practice_problems/alphabetized.rb) - 
+      - [Digital Root](./practice_problems/digital_root.rb) - 
+      - [Array Diff](./practice_problems/array_diff.rb) - 
+      - [Find Children](./practice_problems/find_children.rb) -
+      - [Playing with Digits](./practice_problems/playing_digits.rb) 
+      - [Equal Sides of an Array](./practice_problems/equal_sides_array.rb) - 
+      - [Reverse or Rotate?](./practice_problems/rev_rot.rb) - 
+      - [Decipher This!](./practice_problems/decipher.rb) -
+      - [Bouncing Balls](./practice_problems/bouncing_balls.rb) -
+      - [Squared Arrays](./practice_problems/squared_arrays.rb) -
+      - [Grouping and Counting](./practice_problems/group_count.rb) - 
+      - [Find the Nexus](./practice_problems/find_nexus.rb) - 
+      - [Triple Trouble](./practice_problems/triple_double.rb) -
+      - [Which Are In?](./practice_problems/which_are_in.rb) - 
+    - SPOT & Study Group Problems
+      - [Count the number of duplicates](./practice_problems/spot_count_dups.rb)
+      - [Odd Integer Substrings](./practice_problems/spot_odd_int_strings.rb)
+      - [Substrings Hash](./practice_problems/substrings_hash.rb)
+      - [Forward/Backward Strings](./practice_problems/forward_backward_strings.rb)
+      - [Min Subarray Sum](./practice_problems/min_subarr_sum.rb)
+      - [Balanced Parenthesis](./practice_problems/balanced_parenthesis.rb)
+      - [Find the Peaks](./practice_problems/find_peaks.rb)
+      - [Ideal Distances Travel](./practice_problems/best_travel.rb) - 
+      - [Max Sums](./practice_problems/max_sums.rb) - 
+      - [Rotate 13](./practice_problems/rot13.rb) - 
+      - [Jumbled Strings](./practice_problems/jumbled_str.rb)
+      - [Unique in Order](./practice_problems/unique_order.rb)
+      - [Simple Pig Latin](./practice_problems/pig_latin.rb)
+      - [Range Extraction](./practice_problems/range_extraction.rb)
+      - [Decode Tongues](./practice_problems/decode_tongues.rb) - 
