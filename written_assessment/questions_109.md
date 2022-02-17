@@ -162,10 +162,15 @@ end
 
 puts "Your total is #{sum}"
 ```
+First we initialize the local variable `arr` and assign it the array of integers `[1, 2, 3, 4]`. We then initialize the local variable `counter` and `sum`, assigning them both to the integer `0`.
+
+We invoke the `loop` method and pass a `do..end` block as an argument. within the block, we reassign `sum` to the element referenced from `arr` dependent on the value passed of `counter`. We then increment `counter` by using some syntactical sugar in the form of reassignment of `counter` plus 1. Then we have a break statement to break out of the loop based on a conditional `if`. If the object `counter` references is equal to the size of the object referenced by `arr`, break will exit the loop. This will loop four times through, adding each element of `arr` to the object referenced by `sum`.
+
+We then call the `puts` method and pass in an argument of a string with string interpolation. The method will output `""Your total is 10", since string interpolation accesses the object that `sum` references, which will be the integer 10 and return `nil`
 
 ### 7
 
-**Current time:** 
+**Current time:** 3:24
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -178,6 +183,13 @@ end
 
 p a
 ```
+First we initialize the local variable `a` and assign it to the string object `'Bob'`. We then invoke the `times` method on the integer `5` while passing an argument in the form of a `do..end` block. The block has one parameter, `x`. 
+
+Within the block, we reassign `a` to the string object `'Bill'`. This will break the link between `a` and the object its initially referenced. This will happen 5 times.
+
+We then invoke `p` and pass an argument of the object referenced by `a`. Since it has been reassigned within the `loop` block, which can access variable in the outer scope, the output will be `'Bill'` and will return `nil`.
+
+This demonstrates how an variable initialized in the outer scope can be accessed by the inner scope of a block.
 
 ### 8
 
@@ -438,10 +450,21 @@ increment(y)
 
 puts y
 ```
+We initialize the local variable `y` and assign it to the string object `'a'`. We then invoke the `increment` method (defined above) and pass an argument of the object referenced by `y`. 
+
+When we pass the argument of `y`, the `increment` method's parameter `x` will now point to the same object in memory as `y`.
+
+Within the method, use use the destructive method '<<' and pass the argument of the string 'b'. '<<' is a method that mutates the caller and returns the calling object after mutations. This will append 'b' to the object referenced by the local variable by 'x'. This mutation happens in place without creating a new object, so 'x' and 'y' will point to 'ab'.
+
+Because this is the last evaluation of the method, it will be `increment` return value.
+
+We will see this when we finally invoke the `puts' method and pass an argument of `y`. This will output 'ab' and return `nil`.
+
+This example highlights how Ruby behaves like a pass by reference value, specifically that when multiple variable point to the same object in memory and that object is mutated, they both will still reference the same _mutated_ object.
 
 ### 20
 
-**Current time:**
+**Current time:** 5:48
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -454,7 +477,15 @@ name = 'jim'
 change_name(name)
 puts name 
 ```
+We initialize the local variable `name` and assign it to the string object `'jim'`. We then invoke the method `change_name` (defined above) and the object referenced by `name` is passed as its argument.
 
+When we pass the argument to `change_name`, its parameter `name` will now be assigned to the object referenced by the outer scoped local variable `name`. Both the parameter of the method and the local variable 'name' point to the same object.
+
+Within the method's scope, the local variable `name` will be reassigned to 'bob', breaking the link between the outer scope `name` and the method scope `name`. Since this is the last line evaluated by the method, the method will return 'bob'.
+
+We then invoke the `puts` method and pass the object referenced by the local variable `name` as an argument. This will output `'jim'` and return `nil`.
+
+This demonstrates Ruby's ability to pass variables as arguments and how reassignment will break the link between variable referencing objects in memory.
 ### 21
 
 **Current time:**

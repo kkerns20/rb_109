@@ -10,8 +10,8 @@
   - [x] Ex 3
   - [x] Ex 4
   - [x] Ex 5
-  - [ ] Ex 6
-  - [ ] Ex 7
+  - [x] Ex 6
+  - [x] Ex 7
   - [ ] Ex 8
 - [ ] [Variable Shadowing](./questions_109.md#variable-shadowing)
   - [x] Ex 1
@@ -33,7 +33,7 @@
 - [] [Object Mutability / Mutating Methods](./questions_109.md#object-mutability--mutating-methods)
   - [x] Ex 1
   - [x] Ex 2
-  - [ ] Ex 3
+  - [x] Ex 3
   - [ ] Ex 4
   - [ ] Ex 5
   - [ ] Ex 6
