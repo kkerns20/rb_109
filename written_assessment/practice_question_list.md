@@ -4,7 +4,7 @@
 
 [RB109 Written Assesment Practice Problems](https://docs.google.com/document/d/16XteFXEm3lFbcavrXDZs45rNEc1iBxSYC8e4pLhT0Rw/edit#)
 
-- [] Local Variable Scope
+- [] [Local Variable Scope](./questions_109.md#local-variable-scope)
   - [x] Ex 1
   - [x] Ex 2
   - [x] Ex 3
@@ -14,8 +14,8 @@
   - [] Ex 7
   - [] Ex 8
 - [] Variable Shadowing
-  - [] Ex 1
-  - [] Ex 2
+  - [x] Ex 1
+  - [x] Ex 2
   - [] Ex 3
 - [] Object Passing / Variables as Pointers
   - [x] Ex 1

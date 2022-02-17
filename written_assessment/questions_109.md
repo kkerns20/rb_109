@@ -202,7 +202,7 @@ puts var
 
 ### 9
 
-**Current time:** 
+**Current time:** 7:42
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -218,10 +218,21 @@ end
 puts a
 puts b
 ```
+First, we initialize the local variable `a` and assign it to the integer `4`, then we initialize the local variable `b` and assign it to the integer `2`.
 
+We then invoke the `times` method on the integer object `2` and pass it a `do..end` block as an argument with parameter `a`, which will be assigned the iteration number on each iteration of the block starting at `0`. This is variable shadowing as within the block, when we reference `a`, scoped to the block level, it will not access the outer scoped `a`.
+
+Within the block we reassign `a` to 5 and then pass the block local variable `a` to puts. The times method then runs the same process again, which will output:
+```ruby
+5
+5
+```
+and return nil. Since puts is the last evaluation of the block, `nil` will be the return of the `times` method.
+
+We then invoke the method `puts` and pass an argument of the object referenced by the outer scoped `a`, which will print `4`. Finally we invoke the method `puts` and pass an argument of hte object referenced by `b`, which will print `2` and return `nil`.
 ### 10
 
-**Current time:** 
+**Current time:** 6:22
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -234,7 +245,13 @@ end
 
 puts n
 ```
+First we initialize the local variable `n` and assign it to the integer `10`.
 
+We then invoke the `times` method on the integer ` and pass it a `do..end` block as an argument. The block has one parameter `n` that will be assigned the iteration number on each iteration of the block, starting at `0`.
+
+Within the block, we reassign the block scoped variable `n` to `11`. Because the block level variable `n` and the outer scope `n` have the same name, variable shadowing will prevent the block from accessing and reassigning the outer scoped variable.
+
+We then invoke the `puts` method and pass the argument of the object referenced by the outer scope local variable `n`. This will output `10` and return `nil`
 ### 11
 
 **Current time:** 
