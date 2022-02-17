@@ -519,7 +519,7 @@ On line 2, we invoke the destructive `upcase!` method on `value` which will muta
 This problem demonstrates object passing and mutating methods, namely that local variables that are passed to methods will share a refernce with the method parameter. When that parameter is mutated, the local varible intialized outside of method will point to the mutated object as well
 ### 25
 
-**Current time:** 
+**Current time:** 7:24
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -532,6 +532,15 @@ end
 s = 'hello'
 t = fix(s)
 ```
+First, we initialize the local variable `s` and assign it to the string object `'hello'`. We then initialize the local variable `t` and assign it to the value returned by invoking the method `fix` (defined above) and passing an argument of the object referenced by `s`.
+
+When we invoke `fix`, the parameter `value` of the method will now be assigned to the object referenced by the variable `s`. The will now point to the same object in memory.
+
+Within the method definition, we reassign the local variable `value` to the return of calling the method `upcase` on `value`. In this case, `upcase` will not mutate the caller and returns a new string object `'HELLO'`. This will break the link between `value` and original object referenced by `s`. 
+
+Then, we call `concat` and pass in the argument of `'!'` on the local variable `value`, which will append the `'!'` to the object `value` references. This method does nutate the caller and will return the same string object but modified. Since this is the last evaluation within the method, the return will be `'HELLO!'`, recalling that it was assigned to `t`.
+
+This demonstrates Ruby's object mutability and how Ruby behaves like a pass by reference value. Also, it portrays how reassignment of variables will break the link, as evidenced by `s` still referencing `hello` when run.
 
 ### 26
 
@@ -638,6 +647,23 @@ names = ['bob', 'kim']
 add_name(names, 'jim')
 puts names
 ```
+We intialize the local variable `names` and assign it to the array of strings `['bob', 'kim']`. We then invoke the `add_name` method and pass in two arguments, `names` and the string object `'jim'`.
+
+When we invoke `add_name`, the parameters `arr` and `name` will now reference the same objects as `names` and `jim`, respectively.
+
+Within the method, we reassign the local variable `arr` to to the output of invoking the destructive method `<<` and passing the local variable `name` to `arr`. This will append the string referenced by `name` to `arr`. Since this is the last evaluation of the method, its return value will be `["bob", "kim", "jim"]`.
+
+Normally, we would consider reassignment to break the link between a variable and the object it previously referenced. However, in this case, we are reassigning the same object back to the variable, so the link between the two is maintained.
+
+We then invoke the `puts` method and pass it the object that `names` references. This will output
+```ruby
+bob
+kim
+him
+```
+and return `nil`.
+
+This is a demonstration on how Ruby is a pass by reference value language and how mutation on an object will affect the caller.
 
 ## Each, Map, and Select
 

@@ -7,9 +7,9 @@
 - [] Local Variable Scope
   - [x] Ex 1
   - [x] Ex 2
-  - [] Ex 3
-  - [] Ex 4
-  - [] Ex 5
+  - [x] Ex 3
+  - [x] Ex 4
+  - [x] Ex 5
   - [] Ex 6
   - [] Ex 7
   - [] Ex 8
@@ -27,12 +27,12 @@
   - [] Ex 7
   - [] Ex 8
   - [] Ex 9
-  - [] Ex 10
+  - [x] Ex 10
   - [] Ex 11
   - [] Ex 12
 - [] Object Mutability / Mutating Methods
-  - [] Ex 1
-  - [] Ex 2
+  - [x] Ex 1
+  - [x] Ex 2
   - [] Ex 3
   - [] Ex 4
   - [] Ex 5
@@ -40,15 +40,15 @@
   - [] Ex 7
   - [] Ex 8
   - [] Ex 9
-  - [] Ex 10
+  - [x] Ex 10
 - [] Each, Map, Select
-  - [] Ex 1
-  - [] Ex 2
-  - [] Ex 3
-  - [] Ex 4
+  - [x] Ex 1
+  - [x] Ex 2
+  - [x] Ex 3
+  - [x] Ex 4
   - [] Ex 5
   - [] Ex 6
-  - [] Ex 7
+  - [x] Ex 7
   - [] Ex 8
   - [] Ex 9
   - [] Ex 10
