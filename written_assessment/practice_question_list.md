@@ -13,11 +13,11 @@
   - [ ] Ex 6
   - [ ] Ex 7
   - [ ] Ex 8
-- [ ] Variable Shadowing
+- [ ] [Variable Shadowing](./questions_109.md#variable-shadowing)
   - [x] Ex 1
   - [x] Ex 2
   - [ ] Ex 3
-- [ ] Object Passing / Variables as Pointers
+- [ ] [Object Passing / Variables as Pointers](./questions_109.md#object-passing--variables-as-pointers)
   - [x] Ex 1
   - [x] Ex 2
   - [x] Ex 3
@@ -30,7 +30,7 @@
   - [x] Ex 10
   - [ ] Ex 11
   - [ ] Ex 12
-- [] Object Mutability / Mutating Methods
+- [] [Object Mutability / Mutating Methods](./questions_109.md#object-mutability--mutating-methods)
   - [x] Ex 1
   - [x] Ex 2
   - [ ] Ex 3
@@ -41,7 +41,7 @@
   - [ ] Ex 8
   - [ ] Ex 9
   - [x] Ex 10
-- [] Each, Map, Select
+- [] [Each, Map, Select](./questions_109.md#each-map-and-select)
   - [x] Ex 1
   - [x] Ex 2
   - [x] Ex 3
@@ -53,8 +53,8 @@
   - [ ] Ex 9
   - [ ] Ex 10
   - [ ] Ex 11
-- [ ] Other Collection Methods
-  - [ ] Ex 1
+- [ ] [Other Collection Methods](./questions_109.md#other-collection-methods)
+  - [x] Ex 1
   - [ ] Ex 2
   - [ ] Ex 3
   - [ ] Ex 4
@@ -62,7 +62,7 @@
   - [ ] Ex 6
   - [ ] Ex 7
   - [ ] Ex 8
-- [ ] Truthiness
+- [ ] [Truthiness](./questions_109.md#truthiness)
   - [ ] Ex 1
   - [ ] Ex 2
   

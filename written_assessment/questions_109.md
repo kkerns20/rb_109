@@ -873,7 +873,7 @@ end
 
 ### 44
 
-**Current time:** 
+**Current time:** 5
 
 What does the following code return? What does it output? Why? What concept does it demonstrate?
 
@@ -882,7 +882,9 @@ What does the following code return? What does it output? Why? What concept does
   num > 2
 end
 ```
+We invoke the method `any?` on the array of integers `[1, 2, 3]` and pass a `do..end` block as an argument. The block has one parameter `num` that will be assigned to each element of the array in turn. `any?` will return a boolean based on the truthiness of the block, specifically if any of the elements passed to the block satisfy the block.
 
+Within the block we assess whether the local variable `num` is greater than 2. Each element of the calling array will be passed to the block, and `any?` will return true since the last element of the array, `3`, is greater than '2'. Since this is the last evaluation of the block, `true` will be the value returned for the `any?` method.
 ### 45
 
 **Current time:** 
