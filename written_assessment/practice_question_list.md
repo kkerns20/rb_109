@@ -38,7 +38,7 @@
   - [ ] Ex 5
   - [ ] Ex 6
   - [ ] Ex 7
-  - [ ] Ex 8
+  - [x] Ex 8
   - [ ] Ex 9
   - [x] Ex 10
 - [] [Each, Map, Select](./questions_109.md#each-map-and-select)
@@ -50,18 +50,18 @@
   - [ ] Ex 6
   - [x] Ex 7
   - [ ] Ex 8
-  - [ ] Ex 9
-  - [ ] Ex 10
-  - [ ] Ex 11
+  - [x] Ex 9
+  - [x] Ex 10
+  - [x] Ex 11
 - [ ] [Other Collection Methods](./questions_109.md#other-collection-methods)
   - [x] Ex 1
-  - [ ] Ex 2
-  - [ ] Ex 3
-  - [ ] Ex 4
-  - [ ] Ex 5
-  - [ ] Ex 6
-  - [ ] Ex 7
-  - [ ] Ex 8
+  - [x] Ex 2
+  - [x] Ex 3
+  - [x] Ex 4
+  - [x] Ex 5
+  - [x] Ex 6
+  - [x] Ex 7
+  - [x] Ex 8
 - [ ] [Truthiness](./questions_109.md#truthiness)
   - [ ] Ex 1
   - [ ] Ex 2

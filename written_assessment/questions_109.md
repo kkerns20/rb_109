@@ -663,7 +663,12 @@ a = %w(a b c)
 a[1] = '-'
 p a
 ```
+First we initialize the local variable `a` and assign it to the array of strings `['a', 'b', 'c']`.
+We then invoke the setter method on the element object at index `1` of the object referenced by `a` and pass it an argument of a string `'-'`. This will mutate the array through a destructive call. 
 
+We then invoke the `p` method and pass it the object referenced by `a` as an arugment, which will output and return `['a', '-'. 'c']`
+
+This demonstrates how Ruby will allow us to mutate an element in memory when it appears like reassignment.
 ### 31
 
 **Current time:** 
