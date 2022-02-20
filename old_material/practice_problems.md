@@ -2,6 +2,29 @@
 
 All problems found in [RB109 Written Assessment: Practice Problems](https://docs.google.com/document/d/16XteFXEm3lFbcavrXDZs45rNEc1iBxSYC8e4pLhT0Rw/edit#)
 
+## Flow Control
+
+- a *control statement* controls a program's flow of execution.
+- call these **control expressions** due to the fact that they evaluate to a value.
+    - They are givne a *test expression* (conditional branches <-- _conditionals_>) which evaluate to `true` or `false`
+        - Test expressions are comprised of objects, method calls, comparison operators, and logical operators.
+        - If a test expression evaluates to `true`, that conditional branch is executed.
+- If a conditional branch is executed, the last evaluated expression of that branch is the reutnr value of the control expression. 
+    - If it's not executed, then the control expression will return `nil`
+
+## Types of Conditionals
+
+Expressions
+- `if`, `if-else`, `if-elsif-else`
+- `unless`
+- Ternary
+- `case-when`
+
+Loops
+-`while`
+-`until`
+
+
 ## Local Variable Scope
 
 ### 1
