@@ -1,21 +1,12 @@
 10. Interview Practice Problems
     - Watch Others Code Series Problems
-      - [Live Session Part 4: Reverse string](./practice_problems/reverse_str.rb) 
+      - [Live Session Part 4: Reverse string](./practice_problems/reverse_string.rb) 
       - [Live Session Part 4: FizzBuzz](./practice_problems/fizzbuzz.rb)
-      - [Live Session Part 4: Search Inventory](./practice_problems/search_inventory.rb)
-      - [Live Session Part 5: Remove Vowels](./practice_problems/remove_vowels.rb) 
+      - [Live Session Part 4: Search Inventory](./practice_problems/search_inven.rb)
+      - [Live Session Part 5: Remove Vowels](./practice_problems/rem_vowels.rb) 
       - [Live Session Part 5: Find Primes](./practice_problems/find_primes.rb)
       - [Live Session Part 5: Balancer](./practice_problems/balancer.rb) 
-      - [Part 1: Repeated Substrings](./practice_problems/repeated_substrings.rb)
-      - [Part 1: Common Chars](./practice_problems/common_chars.rb) 
-      - [Part 2: Next Biggest Number](./practice_problems/next_biggest_num.rb) - 20:26
-      - [Part 3: Max Sequence](./practice_problems/max_sequence.rb) 
-      - [Part 3: Common Prefix](./practice_problems/common_prefix.rb) 
-      - [Part 4: Substring Test](./practice_problems/woc_substring_test.rb)
-      - [Part 4: Scramble](./practice_problems/scramble.rb) - 9:56
-      - [Part 5: Longest Palindrome](./practice_problems/longest_palindrome.rb) - 11:10
-      - [Part 6: Find Even Index](/practice_problems/find_even_index.rb) - 13:33
-      - [Sum same consecutive integers](./practice_problems/sum_consecutive_ints.rb) - 11:41
+
     - Codewars Problem Solutions
       - [Count letters in string](https://www.codewars.com/kata/5808ff71c7cfa1c6aa00006d/solutions/ruby) -
       - [Find all pairs](https://www.codewars.com/kata/reviews/5cfa5e532ad4650001e63fe8/groups/60aeacf889308900019475e6) -
@@ -25,9 +16,9 @@
       - [Non-even substrings](https://www.codewars.com/kata/reviews/5a0a8ba68e5bf11cfd003b74/groups/60aeb82ea3a2cf0001e0e9d6) - 
       - [Substring fun](https://www.codewars.com/kata/reviews/56ce2da25b477c620000002e/groups/5e03c145884174000112580b) -
       - [Repeated Substring](https://www.codewars.com/kata/reviews/54f0fce7210f75c03e000084/groups/60aebf9e1a594600010741af) - 
-      - [ ] 9. Typoglycemia Generator
-      - [ ] 10. Most frequently used words in a text
-      - [ ] 11. Extract the domain name from a URL
+      - [Typoglycemia Generator](https://www.codewars.com/kata/55953e906851cf2441000032/train/ruby)
+      - [Most frequently used words in a text](https://www.codewars.com/kata/51e056fe544cf36c410000fb/train/ruby)
+      - [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b/train/ruby)
       - [Detect Pangram](https://www.codewars.com/kata/reviews/5bf0a06ff8c527ebda000a4e/groups/60aed668534d1f0001f1182b) - 
       - [Kebabize](https://www.codewars.com/kata/reviews/57fff6c11bb504ea980000b7/groups/60aedaa8a3a2cf0001e0ee01) - 
       - [Dubstep Song Decoder](https://www.codewars.com/kata/reviews/55936d16a2f51f45be000017/groups/60aedd79534d1f0001f118a1) -
@@ -46,46 +37,41 @@
       - [Exponent Method](https://www.codewars.com/kata/reviews/5251f642dc71af49250002db/groups/60b16dced4810c0001f404d4) - 
       - [Where my anagrams?](https://www.codewars.com/kata/reviews/523b40a5ad90113c2b00000f/groups/60b16f94963b480001b0d537)
       - [Split String](https://www.codewars.com/kata/reviews/516f30267c907a79f2000466/groups/60b17190d4810c0001f40545) - 
-      - [ ] 30. Anagram Difference
+      - [Anagram Difference](https://www.codewars.com/kata/5b1b27c8f60e99a467000041)
       - [Anagram Detection](https://www.codewars.com/kata/reviews/54ff7a98bae8cd4b6e0003ca/groups/60b672135e3f1d0001d841a9) - 
-      - [Highest Scoring Word](./practice_problems/highest_scoring_word.rb) - 12:19
-      - [Replace with Alphabet Position](./practice_problems/replace)_alpha_position.rb) - 
+      - [Highest Scoring Word](./practice_problems/highest_scoring.rb) - 
+      - [Replace with Alphabet Position](./practice_problems/replace_alphabet.rb) - 
       - [Sherlock on pockets](./practice_problems/sherlock_pockets.rb) - 
       - [Mexican Wave](./practice_problems/mexican_wave.rb) - 
       - [Delete Digit](./practice_problems/delete_digit.rb) - 
-      - [Multiples Sum](./practice_problems/multiples_sum.rb) - 
+      - [Multiples of 3 or 5](./practice_problems/multiples_3_5.rb) - 
       - [Largest Product](./practice_problems/largest_product.rb) - 
       - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - 
-      - [Backspaces in a String](./practice_problems/backspaces_string.rb)
+      - [Backspaces in a String](./practice_problems/backspaces_str.rb)
       - [Transform to Prime](./practice_problems/transform_prime.rb) - 
-      - [Count Duplicates](./practice_problems/count_duplicates.rb) -
+      - [Count Duplicates](./practice_problems/counting_dup.rb) -
       - [Alphabetized](./practice_problems/alphabetized.rb) - 
       - [Digital Root](./practice_problems/digital_root.rb) - 
       - [Array Diff](./practice_problems/array_diff.rb) - 
-      - [Find Children](./practice_problems/find_children.rb) -
+      - [Where is my parent?](./practice_problems/wheres_parent.rb) -
       - [Playing with Digits](./practice_problems/playing_digits.rb) 
-      - [Equal Sides of an Array](./practice_problems/equal_sides_array.rb) - 
-      - [Reverse or Rotate?](./practice_problems/rev_rot.rb) - 
-      - [Decipher This!](./practice_problems/decipher.rb) -
+      - [Equal Sides of an Array](./practice_problems/equal_sides.rb) - 
+      - [Reverse or Rotate?](./practice_problems/reverse_rotate.rb) - 
+      - [Decipher This!](./practice_problems/decipher_this.rb) -
       - [Bouncing Balls](./practice_problems/bouncing_balls.rb) -
-      - [Squared Arrays](./practice_problems/squared_arrays.rb) -
-      - [Grouping and Counting](./practice_problems/group_count.rb) - 
-      - [Find the Nexus](./practice_problems/find_nexus.rb) - 
-      - [Triple Trouble](./practice_problems/triple_double.rb) -
-      - [Which Are In?](./practice_problems/which_are_in.rb) - 
+      - [Weird String Case](./practice_problems/weird_str_case.rb) - 
+      - [Are they the same?](./practice_problems/same_or_no.rb) - 
+      - [Grouping and Counting](./practice_problems/grouping_counting.rb) - 
+      - [Find the Nexus](./practice_problems/nexus_codewars.rb) - 
+      - [Count letters in string](./practice_problems/count_let_str.rb) - 
+      - [Triple Trouble](./practice_problems/triple_trouble.rb) -
+      - [Which Are In?](./practice_problems/which_r_n.rb) - 
+      - [Format string of names...](./practice_problems/format_str.rb) - 
+      - [Find missing letter](./practice_problems/finding_miss_let.rb) - 
+      - [Who likes it?](./practice_problems/who_like_it.rb) - 
+      - [Find the Parity Outlier](./practice_problems/find_parity.rb) - 
+      - [Is integer array?](./practice_problems/int_arr.rb) - 
+      - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - 
+      - [Integer reduction](./practice_problems/int_reduct.rb) - 
+      - [Squared Arrays](./practice_problems/sq) -
     - SPOT & Study Group Problems
-      - [Count the number of duplicates](./practice_problems/spot_count_dups.rb)
-      - [Odd Integer Substrings](./practice_problems/spot_odd_int_strings.rb)
-      - [Substrings Hash](./practice_problems/substrings_hash.rb)
-      - [Forward/Backward Strings](./practice_problems/forward_backward_strings.rb)
-      - [Min Subarray Sum](./practice_problems/min_subarr_sum.rb)
-      - [Balanced Parenthesis](./practice_problems/balanced_parenthesis.rb)
-      - [Find the Peaks](./practice_problems/find_peaks.rb)
-      - [Ideal Distances Travel](./practice_problems/best_travel.rb) - 
-      - [Max Sums](./practice_problems/max_sums.rb) - 
-      - [Rotate 13](./practice_problems/rot13.rb) - 
-      - [Jumbled Strings](./practice_problems/jumbled_str.rb)
-      - [Unique in Order](./practice_problems/unique_order.rb)
-      - [Simple Pig Latin](./practice_problems/pig_latin.rb)
-      - [Range Extraction](./practice_problems/range_extraction.rb)
-      - [Decode Tongues](./practice_problems/decode_tongues.rb) - 
