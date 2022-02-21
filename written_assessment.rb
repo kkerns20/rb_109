@@ -1,7 +1,12 @@
-arr = [['a', 'b'], ['c', 'd'], ['e', 'f']].map do |sub_arr|
-        sub_arr.map do |letter|
-          letter.upcase
-        end
-      end
+a = false
+b = nil
 
-p arr
+if a
+  puts "a is true"
+elsif b
+  puts "b is true"
+else
+  puts "Neither a nor b is true"
+end
+
+a == b # => false
