@@ -9,8 +9,8 @@ Review material and notes to prepare for the RB109 Assessment.
 - [x] Take timed practice test
 - [x] Pass written exam.
 - [ ] Thoroughly go through PEDAC process
-    - [ ] Read and use [Srjdan's pedac](./pedac/light_pedac.rb)
-    - [ ] Familiarize self and tinker with [template](./pedac/pedac_temp.rb)
+    - [ ] Read and recreate [Srjdan's pedac](./pedac/light_pedac.rb) - 220222
+    - [ ] Familiarize self and tinker with [template](./pedac/pedac_temp.rb) - 220222
     - [ ] Watch and code with [General Approach for Problem Solving](https://launchschool.com/gists/c013accd)
         - [ ] Check out and see if [other videos could be helpful](https://launchschool.com/videos)
     - [ ] Reread through [Solving Coding Problems with PEDAC](https://medium.com/launch-school/solving-coding-problems-with-pedac-29141331f93f)
