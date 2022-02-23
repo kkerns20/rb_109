@@ -1,39 +1,33 @@
 =begin
+
+
 P: Understand the Problem
 --------------------------------------------------------------------------------
 Problem Statement
 
 
 Inputs: 
-Outputs: 
+- Data types always the same?
+- Edge cases (emptiness, zero, negative, case-sensitivity, boundary conditions)
+- Validate input?
+
+Outputs:
+- Print or return? Return new object or mutate existing?
+- Does element order matter?
+- How to handle duplicates?
 
 Explicit Requirements
 - 
 
-Implicit Requirements
+Implicit Requirements - Review problem and examples
 - 
 
 Clarifying Questions
-- Return new object or mutate existing one?
-- Input data types always the same?
-- Does output order matter?
 - Any domain-specific terms?
 
 
 E: Examples, Test Cases, Edge Cases
 --------------------------------------------------------------------------------
-Consider:
-- 0, nil, "", [], {}, special chars, symbols
-- Negative numbers
-- Decimals instead of integers
-- Boundary conditions
-- Repetition / duplication
-- Case sensitivity
-- 0, 1, and multiple items in a collection
-- Data types
-- Exceptions
-- Missing arguments
-
 Case: 
 Inputs: 
 Outputs:
@@ -48,13 +42,10 @@ Output:
 
 A: Algorithm
 --------------------------------------------------------------------------------
-High-level: 
-
-
 Pseudo-code:
 
 
-Helper Methods:
+Helper method:
 
 
 C: Code
