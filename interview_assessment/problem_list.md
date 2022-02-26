@@ -13,7 +13,7 @@
       - [Return substring instance count](https://www.codewars.com/kata/reviews/516f30297c907a79f200067b/groups/60aeafeb8930890001947662) - 20ish
       - [Alphabet symmetry](https://www.codewars.com/kata/reviews/5a0a9754d16cba93d900115b/groups/60aeb458534d1f0001f1149d) - got help
       - [Longest vowel chain](https://www.codewars.com/kata/reviews/5a1275d736c5d19eed002742/groups/60aeb640a3a2cf0001e0e99f) - got help
-      - [Non-even substrings](https://www.codewars.com/kata/reviews/5a0a8ba68e5bf11cfd003b74/groups/60aeb82ea3a2cf0001e0e9d6) - 
+      - [Non-even substrings](https://www.codewars.com/kata/reviews/5a0a8ba68e5bf11cfd003b74/groups/60aeb82ea3a2cf0001e0e9d6) - 10-ish
       - [Substring fun](https://www.codewars.com/kata/reviews/56ce2da25b477c620000002e/groups/5e03c145884174000112580b) -
       - [Repeated Substring](https://www.codewars.com/kata/reviews/54f0fce7210f75c03e000084/groups/60aebf9e1a594600010741af) - 
       - [Typoglycemia Generator](https://www.codewars.com/kata/55953e906851cf2441000032/train/ruby)
