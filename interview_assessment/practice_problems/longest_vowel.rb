@@ -56,6 +56,16 @@ end
 
 =end
 
+def solve(str)
+  new_str = str.gsub(/[^'aeiou']/, ' ')
+  longest = new_str.split(' ').max { |a, b| a.size <=> b.size }  
+  longest.size
+end
+
+# def solve(s)
+#   s.scan(/[aeiou]+/).map(&:size).max
+# end
+
 p solve("codewarriors") == 2 
 p solve("suoidea") == 3
 p solve("iuuvgheaae") == 4 
