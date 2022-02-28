@@ -27,8 +27,8 @@
       - [Persistent Bugger](https://www.codewars.com/kata/reviews/55c6bf11fc0d91691700002b/groups/60aee6deb2e7e90001fa39e3) - 7
       - [Title Case](https://www.codewars.com/kata/reviews/5202f9e6a402dd033c00002a/groups/60aef048367b2e0001fcabef) - 15
       - [Count and group character occurrences](https://www.codewars.com/kata/reviews/543e839381b5fd5833000367/groups/60aef5fc367b2e0001fcac56) - 16:37
-      - [Find the Mine](https://www.codewars.com/kata/reviews/528d9fc1be46d19081000640/groups/60b151c65337d70001b122b4) - 
-      - [Scramblies](https://www.codewars.com/kata/reviews/55f0b9dc6be0544bd30002d5/groups/60b154d14f44260001527e93) - 
+      - [Find the Mine](https://www.codewars.com/kata/reviews/528d9fc1be46d19081000640/groups/60b151c65337d70001b122b4) - 7ish
+      - [Scramblies](https://www.codewars.com/kata/reviews/55f0b9dc6be0544bd30002d5/groups/60b154d14f44260001527e93) - 12ish
       - [Longest Alphabetical Substring](./practice_problems/cw_longest_alpha_substring.rb)
       - [The Hashtag Generator](https://www.codewars.com/kata/reviews/5412c2f9648162f83100007a/groups/60b15ec34f44260001527fb4) - 
       - [Pete, the baker](https://www.codewars.com/kata/reviews/5d7868df14c1b900011334b7/groups/60b16983d4810c0001f40468) - 
