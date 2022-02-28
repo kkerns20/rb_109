@@ -29,6 +29,14 @@ Data Structure, Algorithm
     - otherwise, false
 =end
 
+def panagram?(string)
+   string.downcase.scan(/[a-z]/).uniq.size == 26
+end
+
+def pangram?(string)
+  ([*?a..?z] - string.downcase.chars).empty?
+end
+
 def pangram?(string)
   ('a'..'z').to_a.all? do |letter|
     string.downcase.include?(letter)
