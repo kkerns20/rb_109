@@ -47,6 +47,10 @@ def scramble(str1, str2)
   true
 end
 
+def scramble(s1,s2)
+  s2.chars.uniq.all?{|x| s2.count(x)<=s1.count(x)}
+end
+
 p scramble('rkqodlw', 'world') == true
 p scramble('cedewaraaossoqqyt', 'codewars') == true
 p scramble('katas', 'steak') == false
