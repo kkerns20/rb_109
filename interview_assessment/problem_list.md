@@ -21,7 +21,6 @@
       - [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b/train/ruby) - 10 min
       - [Detect Pangram](https://www.codewars.com/kata/reviews/5bf0a06ff8c527ebda000a4e/groups/60aed668534d1f0001f1182b) - 9:12
       - [Kebabize](https://www.codewars.com/kata/reviews/57fff6c11bb504ea980000b7/groups/60aedaa8a3a2cf0001e0ee01) - got help
-      - [Dubstep Song Decoder](https://www.codewars.com/kata/reviews/55936d16a2f51f45be000017/groups/60aedd79534d1f0001f118a1) -
       - [Take a Ten Minute Walk](https://www.codewars.com/kata/reviews/55162ffa77dd9e7bc1000156/groups/60aedf90aec59d000148041a) - 
       - [Spin Words](https://www.codewars.com/kata/reviews/5270aad4b1aa038d2c000189/groups/60aee1a20b93b600017ea884) - 
       - [Number in Expanded Form](https://www.codewars.com/kata/reviews/58464e0b2435fa35d3000032/groups/60aee4ba534d1f0001f11952) - 
