@@ -73,6 +73,20 @@ def expanded_form(num)
      .join (' + ')
 end
 
+def expanded_form(int)
+  result_arr = int.digits.map.with_index do |digit, idx|
+    if idx == 0
+      digit.to_s
+    elsif digit == 0
+      next
+    else
+      digit.to_s + '0' * idx
+    end
+  end
+  result_arr.reject { |e| e.nil? || e == '0' }.reverse.join(' + ')
+end
+
+
 p expanded_form(12) == '10 + 2'
 p expanded_form(42) == '40 + 2'
 p expanded_form(70304) == '70000 + 300 + 4'
