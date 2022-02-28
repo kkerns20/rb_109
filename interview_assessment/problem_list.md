@@ -16,9 +16,9 @@
       - [Non-even substrings](https://www.codewars.com/kata/reviews/5a0a8ba68e5bf11cfd003b74/groups/60aeb82ea3a2cf0001e0e9d6) - 10-ish
       - [Substring fun](https://www.codewars.com/kata/reviews/56ce2da25b477c620000002e/groups/5e03c145884174000112580b) - 6:10
       - [Repeated Substring](https://www.codewars.com/kata/reviews/54f0fce7210f75c03e000084/groups/60aebf9e1a594600010741af) - 
-      - [Typoglycemia Generator](https://www.codewars.com/kata/55953e906851cf2441000032/train/ruby)
-      - [Most frequently used words in a text](https://www.codewars.com/kata/51e056fe544cf36c410000fb/train/ruby)
-      - [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b/train/ruby)
+      - [Typoglycemia Generator](https://www.codewars.com/kata/55953e906851cf2441000032/train/ruby) - 20ish
+      - [Most frequently used words in a text](https://www.codewars.com/kata/51e056fe544cf36c410000fb/train/ruby) - got help
+      - [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b/train/ruby) - 10 min
       - [Detect Pangram](https://www.codewars.com/kata/reviews/5bf0a06ff8c527ebda000a4e/groups/60aed668534d1f0001f1182b) - 
       - [Kebabize](https://www.codewars.com/kata/reviews/57fff6c11bb504ea980000b7/groups/60aedaa8a3a2cf0001e0ee01) - 
       - [Dubstep Song Decoder](https://www.codewars.com/kata/reviews/55936d16a2f51f45be000017/groups/60aedd79534d1f0001f118a1) -
