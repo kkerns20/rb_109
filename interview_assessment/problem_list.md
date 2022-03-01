@@ -31,7 +31,7 @@
       - [Scramblies](https://www.codewars.com/kata/reviews/55f0b9dc6be0544bd30002d5/groups/60b154d14f44260001527e93) - 12ish
       - [Longest Alphabetical Substring](./practice_problems/cw_longest_alpha_substring.rb) - 404 error
       - [The Hashtag Generator](https://www.codewars.com/kata/reviews/5412c2f9648162f83100007a/groups/60b15ec34f44260001527fb4) - 10ish 
-      - [Pete, the baker](https://www.codewars.com/kata/reviews/5d7868df14c1b900011334b7/groups/60b16983d4810c0001f40468) - 
+      - [Pete, the baker](https://www.codewars.com/kata/reviews/5d7868df14c1b900011334b7/groups/60b16983d4810c0001f40468) - 8:33
       - [Mean Square Error](https://www.codewars.com/kata/reviews/5e31d087db8fbd00017d6bec/groups/60b16c04d4810c0001f4049e) - 
       - [Exponent Method](https://www.codewars.com/kata/reviews/5251f642dc71af49250002db/groups/60b16dced4810c0001f404d4) - 
       - [Where my anagrams?](https://www.codewars.com/kata/reviews/523b40a5ad90113c2b00000f/groups/60b16f94963b480001b0d537)
