@@ -38,7 +38,7 @@
       - [Split String](https://www.codewars.com/kata/reviews/516f30267c907a79f2000466/groups/60b17190d4810c0001f40545) - 10
       - [Anagram Difference](https://www.codewars.com/kata/5b1b27c8f60e99a467000041) - redo
       - [Anagram Detection](https://www.codewars.com/kata/reviews/54ff7a98bae8cd4b6e0003ca/groups/60b672135e3f1d0001d841a9) - 1 min
-      - [Highest Scoring Word](./practice_problems/highest_scoring.rb) - 
+      - [Highest Scoring Word](./practice_problems/highest_scoring.rb) - 27
       - [Replace with Alphabet Position](./practice_problems/replace_alphabet.rb) - 
       - [Sherlock on pockets](./practice_problems/sherlock_pockets.rb) - 
       - [Mexican Wave](./practice_problems/mexican_wave.rb) - 
