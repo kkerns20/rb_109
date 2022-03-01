@@ -1,32 +1,25 @@
-def scramble_one_word(word)
-  if word.size <= 3 
-    word
-  else 
-    word = word.chars
-    first = word.delete_at(0)
-    last = word.delete_at(-1)
-    word = word.sort.join
-    word = first + word + last
-  end
+def scramble_words(words)
+  words.split(' ').map { |word| scramble(word) }.join(' ')
 end
 
-def scramble_words(str)
-  str.split(' ').map do |word|
+def scramble(word)
+  chars = word.chars
+  letters = chars.select { |char| letter?(char) }
+  scrambled_letters = scramble_letters(letters.join).chars
+  chars.map do |char|
+    letter?(char) ? scrambled_letters.shift : char
+  end
+    .join
+end
 
-    if word.match?(/[-.,']/)
-      punc_index = word.index(/[,.'-]/)
-      punc = word.chars.delete_at(punc_index)
-      word = word.delete(punc)
-    end
-    
-    word = scramble_one_word(word)
-    
-    if punc_index 
-      word.insert(punc_index, punc)
-    else
-      word
-    end
-  end.join(' ')
+def scramble_letters(word)
+  return word if word.length <= 2
+  
+  word[0] + word[1...-1].chars.sort.join + word[-1]
+end
+
+def letter?(char)
+  char.match? /[a-z]/
 end
 
 p scramble_words('professionals') == 'paefilnoorsss'
