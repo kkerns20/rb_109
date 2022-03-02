@@ -60,6 +60,15 @@ def greatest_product(n)
   n.chars.each_cons(5).map { |a| a.map(&:to_i).reduce(:*) }.max
 end
 
+def greatest_product(str)
+  product = 0
+  (0..str.size - 5).each do |idx|
+    current_product = str[idx, 5].chars.map(&:to_i).reduce(:*)
+    product = current_product if current_product > product
+  end
+  product
+end
+
 p greatest_product("123834539327238239583") == 3240
 p greatest_product("395831238345393272382") == 3240
 p greatest_product("92494737828244222221111111532909999") == 5292
