@@ -43,7 +43,7 @@
       - [Sherlock on pockets](./practice_problems/sherlock_pockets.rb) - redo
       - [Mexican Wave](./practice_problems/mexican_wave.rb) - redo
       - [Delete Digit](./practice_problems/delete_digit.rb) - 10ish
-      - [Multiples of 3 or 5](./practice_problems/multiples_3_5.rb) - 
+      - [Multiples of 3 or 5](./practice_problems/multiples_3_5.rb) - 11:57
       - [Largest Product](./practice_problems/largest_product.rb) - 
       - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - 
       - [Backspaces in a String](./practice_problems/backspaces_str.rb)
