@@ -40,9 +40,9 @@
       - [Anagram Detection](https://www.codewars.com/kata/reviews/54ff7a98bae8cd4b6e0003ca/groups/60b672135e3f1d0001d841a9) - 1 min
       - [Highest Scoring Word](./practice_problems/highest_scoring.rb) - 27
       - [Replace with Alphabet Position](./practice_problems/replace_alphabet.rb) - 20
-      - [Sherlock on pockets](./practice_problems/sherlock_pockets.rb) - 
-      - [Mexican Wave](./practice_problems/mexican_wave.rb) - 
-      - [Delete Digit](./practice_problems/delete_digit.rb) - 
+      - [Sherlock on pockets](./practice_problems/sherlock_pockets.rb) - redo
+      - [Mexican Wave](./practice_problems/mexican_wave.rb) - redo
+      - [Delete Digit](./practice_problems/delete_digit.rb) - 10ish
       - [Multiples of 3 or 5](./practice_problems/multiples_3_5.rb) - 
       - [Largest Product](./practice_problems/largest_product.rb) - 
       - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - 
