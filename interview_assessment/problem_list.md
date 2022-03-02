@@ -47,7 +47,7 @@
       - [Largest Product](./practice_problems/largest_product.rb) - redo
       - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - redo
       - [Backspaces in a String](./practice_problems/backspaces_str.rb) - 10ish
-      - [Transform to Prime](./practice_problems/transform_prime.rb) - 
+      - [Transform to Prime](./practice_problems/transform_prime.rb) - redo
       - [Count Duplicates](./practice_problems/counting_dup.rb) -
       - [Alphabetized](./practice_problems/alphabetized.rb) - 
       - [Digital Root](./practice_problems/digital_root.rb) - 
