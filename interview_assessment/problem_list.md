@@ -50,7 +50,7 @@
       - [Transform to Prime](./practice_problems/transform_prime.rb) - redo
       - [Count Duplicates](./practice_problems/counting_dup.rb) - 10:10
       - [Alphabetized](./practice_problems/alphabetized.rb) - 19
-      - [Digital Root](./practice_problems/digital_root.rb) - 
+      - [Digital Root](./practice_problems/digital_root.rb) - 4:13
       - [Array Diff](./practice_problems/array_diff.rb) - 
       - [Where is my parent?](./practice_problems/wheres_parent.rb) -
       - [Playing with Digits](./practice_problems/playing_digits.rb) 
