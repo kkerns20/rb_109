@@ -51,8 +51,8 @@
       - [Count Duplicates](./practice_problems/counting_dup.rb) - 10:10
       - [Alphabetized](./practice_problems/alphabetized.rb) - 19
       - [Digital Root](./practice_problems/digital_root.rb) - 4:13
-      - [Array Diff](./practice_problems/array_diff.rb) - 
-      - [Where is my parent?](./practice_problems/wheres_parent.rb) -
+      - [Array Diff](./practice_problems/array_diff.rb) - 5:34
+      - [Where is my parent?](./practice_problems/wheres_parents.rb) -
       - [Playing with Digits](./practice_problems/playing_digits.rb) 
       - [Equal Sides of an Array](./practice_problems/equal_sides.rb) - 
       - [Reverse or Rotate?](./practice_problems/reverse_rotate.rb) - 
