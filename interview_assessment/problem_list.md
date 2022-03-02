@@ -48,7 +48,7 @@
       - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - redo
       - [Backspaces in a String](./practice_problems/backspaces_str.rb) - 10ish
       - [Transform to Prime](./practice_problems/transform_prime.rb) - redo
-      - [Count Duplicates](./practice_problems/counting_dup.rb) -
+      - [Count Duplicates](./practice_problems/counting_dup.rb) - 10:10
       - [Alphabetized](./practice_problems/alphabetized.rb) - 
       - [Digital Root](./practice_problems/digital_root.rb) - 
       - [Array Diff](./practice_problems/array_diff.rb) - 
