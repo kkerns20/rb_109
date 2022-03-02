@@ -45,7 +45,7 @@
       - [Delete Digit](./practice_problems/delete_digit.rb) - 10ish
       - [Multiples of 3 or 5](./practice_problems/multiples_3_5.rb) - 11:57
       - [Largest Product](./practice_problems/largest_product.rb) - redo
-      - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - 
+      - [Duplicate Encoder](./practice_problems/duplicate_encoder.rb) - redo
       - [Backspaces in a String](./practice_problems/backspaces_str.rb)
       - [Transform to Prime](./practice_problems/transform_prime.rb) - 
       - [Count Duplicates](./practice_problems/counting_dup.rb) -
