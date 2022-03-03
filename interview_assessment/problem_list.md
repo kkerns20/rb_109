@@ -1,4 +1,4 @@
-10. Interview Practice Problems
+# Interview Practice Problems
     - Watch Others Code Series Problems
       - [Live Session Part 4: Reverse string](./practice_problems/reverse_string.rb) 
       - [Live Session Part 4: FizzBuzz](./practice_problems/fizzbuzz.rb)
