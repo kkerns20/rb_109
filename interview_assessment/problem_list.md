@@ -73,4 +73,5 @@
       - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - 
       - [Integer reduction](./practice_problems/int_reduct.rb) - 
       - [Squared Arrays](./practice_problems/sq) -
+      - [Permutations](./practice_problems/permutations.rb) - 5
     - SPOT & Study Group Problems
