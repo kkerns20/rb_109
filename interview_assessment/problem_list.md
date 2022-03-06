@@ -56,7 +56,7 @@
       - [Playing with Digits](./practice_problems/playing_digits.rb) -  10
       - [Equal Sides of an Array](./practice_problems/equal_sides.rb) - 10
       - [Reverse or Rotate?](./practice_problems/reverse_rotate.rb) - 15
-      - [Decipher This!](./practice_problems/decipher_this.rb) -
+      - [Decipher This!](./practice_problems/decipher_this.rb) - 9 
       - [Bouncing Balls](./practice_problems/bouncing_balls.rb) -
       - [Weird String Case](./practice_problems/weird_str_case.rb) - 
       - [Are they the same?](./practice_problems/same_or_no.rb) - 
