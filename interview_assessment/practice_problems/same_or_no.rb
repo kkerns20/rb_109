@@ -30,6 +30,7 @@ Data Structure, Algorithm
 =end
 
 def comp(arr1, arr2)
+  return false if arr1.nil? || arr2.nil?
   arr1 = arr1.sort
   arr2 = arr2.sort
   arr1.each_with_index do |x, i| 
@@ -40,6 +41,11 @@ def comp(arr1, arr2)
     end
   end 
   true
+end
+
+def comp(array1, array2)
+  return false if array1.nil? || array2.nil?
+  array1.map {|num| num ** 2}.sort == array2.sort 
 end
 
 a = [121, 144, 19, 161, 19, 144, 19, 11]  
