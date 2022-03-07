@@ -58,8 +58,8 @@
       - [Reverse or Rotate?](./practice_problems/reverse_rotate.rb) - 15
       - [Decipher This!](./practice_problems/decipher_this.rb) - 9 
       - [Bouncing Balls](./practice_problems/bouncing_balls.rb) - 6
-      - [Weird String Case](./practice_problems/weird_str_case.rb) - 
-      - [Are they the same?](./practice_problems/same_or_no.rb) - 
+      - [Weird String Case](./practice_problems/weird_str_case.rb) - redo
+      - [Are they the same?](./practice_problems/same_or_no.rb) - 8
       - [Grouping and Counting](./practice_problems/grouping_counting.rb) - 
       - [Find the Nexus](./practice_problems/nexus_codewars.rb) - 
       - [Count letters in string](./practice_problems/count_let_str.rb) - 
@@ -74,4 +74,3 @@
       - [Integer reduction](./practice_problems/int_reduct.rb) - 
       - [Squared Arrays](./practice_problems/sq) -
       - [Permutations](./practice_problems/permutations.rb) - 5
-    - SPOT & Study Group Problems
