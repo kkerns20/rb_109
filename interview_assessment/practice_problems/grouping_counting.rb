@@ -1,13 +1,61 @@
-def get_char_count(string)
-  clean_string = string.downcase.delete('^a-z0-9')
-  chars = clean_string.chars.uniq.sort
+=begin
+Problem
+------------------------------------------
 
-  chars.group_by { |char| clean_string.count(char) }.sort.reverse.to_h
+
+Inputs: 1 array
+Outputs: 1 hash or nil
+
+Rules/Requirements
+- empty or nil input returns nil instead of empty hash
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+[1, 1, 2, 2, 2, 3, 3]
+{ 1 => 2, 2 => 3, 3 => 2 }
+
+Data Structure, Algorithm
+------------------------------------------
+==> Iterate through the array, assign the element as a key and increment its value if that key is not already there, or create that key-value pair
+
+- create an empty hash
+- loop (iterate with each) through the array
+  - if there exiists a key based on the current element
+    - increment that key's value by 1
+  - else
+    - assign that element as a key and value of 1
+  - end conditional
+- end loop
+- return hash
+=end
+
+# def group_and_count(arr)
+#   hash = Hash.new
+#   arr.each do |ele|
+#     if hash.key?(ele)
+#       hash[ele] += 1
+#     else
+#       hash[ele] = 1
+#     end
+#   end
+#   hash
+# end
+
+
+def group_and_count(arr)
+  return nil if arr.nil? || arr.empty? 
+  arr.map.with_object({}) do |ele, hsh|
+    hsh.key?(ele) ? hsh[ele] += 1 : hsh[ele] = 1
+  end
 end
 
-p get_char_count("Mississippi") == {4=>["i", "s"], 2=>["p"], 1=>["m"]}
-p get_char_count("Hello. Hello? HELLO!!") == {6=>["l"], 3=>["e", "h", "o"]}
-p get_char_count("aaa...bb...c!") == {3=>["a"], 2=>["b"], 1=>["c"]}
-p get_char_count("aaabbbccc") == {3=>["a", "b", "c"]}
-p get_char_count("abc123") == {1=>["1", "2", "3", "a", "b", "c"]}
-p get_char_count("P%c5Ve6OtTFsh-Y4lnBlpiM5%+beCTdjNiO,nxG.X!jjzp*Jt.7tB^Nt8^VScr.BQ1") == {6=>["t"], 4=>["b", "j", "n"], 3=>["c", "p"], 2=>["5", "e", "i", "l", "o", "s", "v", "x"], 1=>["1", "4", "6", "7", "8", "d", "f", "g", "h", "m", "q", "r", "y", "z"]}
+def group_and_count(input)
+  input.to_a.empty? ? nil : input.each_with_object(Hash.new(0)) { |w, c| c[w] += 1 }
+end
+
+input = [1,1,2,2,2,3]
+p group_and_count(input) == {1=>2, 2=>3, 3=>1}
