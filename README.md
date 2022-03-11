@@ -16,4 +16,4 @@ Review material and notes to prepare for the RB109 Assessment.
     - [ ] Reread through [Solving Coding Problems with PEDAC](https://medium.com/launch-school/solving-coding-problems-with-pedac-29141331f93f)
 - [ ] Finish all problems in [LS's Small Problems](https://launchschool.com/exercises)
 - [ ] Work through [Practice Problems](./interview_assessment/problem_list.md) from Google Doc
-- [ ] Pass interview exam
+- [ ] Pass interview exam on the second try
