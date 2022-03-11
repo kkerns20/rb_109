@@ -1061,7 +1061,6 @@ Data Structure, Algorithm
 =end
 
 
-```
 p nth_char(['yoda', 'best', 'has']) == 'yes'
 p nth_char([]) == ''
 p nth_char(['X-ray']) == 'X'
@@ -1074,7 +1073,7 @@ p nth_char(['Chad', 'Morocco', 'India', 'Algeria', 'Botswana', 'Bahamas', 'Ecuad
 ## Repeated Substring ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 For a given nonempty string s find a minimum substring t and the maximum number k, such that the entire string s is equal to t repeated k times. The input string consists of lowercase latin letters. Your function should return a tuple (in Python) (t, k) or an array (in Ruby and JavaScript) [t, k]
 
@@ -1092,96 +1091,30 @@ p f("abcde") == ["abcde", 1]
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-For a given nonempty string s find a minimum substring t and the maximum number k, such that the entire string s is equal to t repeated k times. The input string consists of lowercase latin letters. Your function should return an array (in Ruby and JavaScript) [t, k]
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 Array, substring and times it repeats to create given string
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Find smallest substring that when repeated forms the input string
-  -Return repeated substring and the number of times needed to match input string in a 2 element array
-  -Input strings will be lowercase letters
-Implicit:
-  -Input string will not be empty or contain non-alphabetical letters
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-Example #1:
+Rules/Requirements
+- 
 
-for string s = "ababab" the answer is ["ab", 3]
+Clarifying Questions
+- 
 
-Example #2:
+Examples, Test Cases
+------------------------------------------
 
-for string s = "abcde" the answer is because for this string "abcde" the minimum substring t, such that s is t repeated k times, is itself.
 
-----------------------------ALGO-----------------------------------------
-==> Find all substrings of given string, then find all substrings that when repeated a certain number of times are equal to the input string, then find the shorted of the matching substrings and return it and the number of times when repeated form the input string. 
+Data Structure, Algorithm
+------------------------------------------
 
--- f(string) --> array(1 string and 1 integer)
-  -initialize 'subs' to the return value of find_subs(string)
-  -initialize 'matches' to the return value of find_matching_subs(subs, string)
-  -sort through 'matches' to find the highest integer in index 1 of all sub-arrays and return that sub-array
-  
--- find_subs(string) --> array
-  -initialize 'subs' to an empty array
-  -split string into array of characters (char_arr)
-  -loop from 1 to the length of char_arr using the number as a 'length'
-    -iterate through the char_arr to find sensectutive sub_strings of the length of 'length'
-      -push sub_strings to the 'subs' array
-  -return 'subs'
 
--- find_matching_subs(array, string) --> array
-  -initialize 'matches' to an empty array
-  -iterate through 'array' with 'el' as current element
-    -intialize 'count' to 0
-    -initialize 'current' to enpty string
-    -loop
-      -concat 'el' to 'current'
-      -increment 'count' by 1
-      
-    -break if current's length is greater than or equal to string length
-    -if 'current' is equal in length to 'string'
-      -push 'el' and 'count' as a 2 element sub-array to 'matches'
-  -return 'matches'
-  
 =end
 
-def find_subs(string)
-  subs = []
-  1.upto(string.size) do |length|
-    string.chars.each_cons(length) { |arr| subs << arr.join }
-  end
-  subs
-end
 
-def find_matching_subs(arr, str)
-  matches = []
-  arr.select do |sub_str|
-    count = 0
-    current = ''
-    loop do 
-      current.concat(sub_str)
-      count += 1
-      break if current.size >= str.size
-    end
-    matches << [sub_str, count] if current == str
-  end
-  matches.uniq
-end
-
-def f(string)
-  subs = find_subs(string)
-  matches = find_matching_subs(subs, string)
-  matches.sort_by { |arr| arr[1] }.last
-end
-
-# p find_subs("ababab")
-
-# arr =["a", "b", "a", "b", "a", "b", "ab", "ba", "ab", "ba", "ab", "aba", "bab", "aba", "bab", "abab", "baba", "abab", "ababa", "babab", "ababab"]
-# p find_matching_subs(arr, "ababab")
 
 p f("ababab") == ["ab", 3]
 p f("abcde") == ["abcde", 1]
@@ -1233,104 +1166,29 @@ p scramble_words("you've gotta dance like there's nobody watching, love like you
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-There is a message that is circulating via public media that claims a reader can easily read a message where the inner letters of each words is scrambled, as long as the first and last letters remain the same and the word contains all the letters. 
-
-Another example shows that it is quite difficult to read the text where all the letters are reversed rather than scrambled.
-
-In this kata we will make a generator that generates text in a similar pattern, but instead of scrambled or reversed, ours will be sorted alphabetically
-
-Requirement
-return a string where:
-
-1) the first and last characters remain in original place for each word
-2) characters between the first and last characters must be sorted alphabetically
-3) punctuation should remain at the same place as it started, for example: shan't -> sahn't
-
-Assumptions
-
-1) words are seperated by single spaces
-2) only spaces separate words, special characters do not, for example: tik-tak -> tai-ktk
-3) special characters do not take the position of the non special characters, for example: -dcba -> -dbca
-4) for this kata punctuation is limited to 4 characters: hyphen(-), apostrophe('), comma(,) and period(.)
-5) ignore capitalisation
-
-for reference: http://en.wikipedia.org/wiki/Typoglycemia
+Problem
+------------------------------------------
 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
+Inputs: 
+Outputs: 
 
----------------------------RULES-----------------------------------------
-Explicit:
-  - the first and last characters remain in original place for each word
-  - characters between the first and last characters must be sorted alphabetically
-  - punctuation should remain at the same place as it started, for example: shan't -> sahn't
-Implicit:
-  -words are seperated by single spaces
-  -only spaces separate words, special characters do not, for example: tik-tak -> tai-ktk
-  -special characters do not take the position of the non special characters, for example: -dcba -> -dbca
-  -for this kata punctuation is limited to 4 characters: hyphen(-), apostrophe('), comma(,) and period(.)
-  -ignore capitalisation
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-scramble_words('professionals') returns ==> 'paefilnoorsss'
---> 'professionals'
---> 'p' + 'rofessional' + 's'
---> 'p' + 'aefilnoorss' + 's'
---> 'paefilnoorsss'
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Find any non-alphabetical characters and save them and their index, then delete from the string. Save and remove the first char and the last char from the string. Sort the remaining characters. Prepend the first char and append the last char. Then insert the non-alphabetical char if applicable. 
+Examples, Test Cases
+------------------------------------------
 
--- scramble_words(string) --> string
-  -split string by blank spaces and iterate
-    -if there is any non-alphabetical characters, delete and save their index and char
-    -if string 3 chars or shorter return str
-    -delete first el and save to 'first'
-    -delete last el and save tio 'last'
-    -sort remaining characters
-    -prepend 'first
-    -append 'last'
-    -insert non-alphabetical chars if applicable
-  -join array
 
-  
-  
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
 
-def scramble_one_word(word)
-  if word.size <= 3 
-    word
-  else 
-    word = word.chars
-    first = word.delete_at(0)
-    last = word.delete_at(-1)
-    word = word.sort.join
-    word = first + word + last
-  end
-end
-
-def scramble_words(str)
-  str.split(' ').map do |word|
-
-    if word.match?(/[-.,']/)
-      punc_index = word.index(/[,.'-]/)
-      punc = word.chars.delete_at(punc_index)
-      word = word.delete(punc)
-    end
-    
-    word = scramble_one_word(word)
-    
-    if punc_index 
-      word.insert(punc_index, punc)
-    else
-      word
-    end
-  end.join(' ')
-end
 
 p scramble_words('professionals') == 'paefilnoorsss'
 p scramble_words('i') == 'i'
