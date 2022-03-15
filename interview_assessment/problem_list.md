@@ -74,3 +74,4 @@
       - [Integer reduction](./practice_problems/int_reduct.rb) - 
       - [Squared Arrays](./practice_problems/sq) -
       - [Permutations](./practice_problems/permutations.rb) - 5
+      - [Largest 5 digits](./practice_problems/largest_5.rb) - 10
