@@ -75,3 +75,6 @@
       - [Squared Arrays](./practice_problems/sq) -
       - [Permutations](./practice_problems/permutations.rb) - 5
       - [Largest 5 digits](./practice_problems/largest_5.rb) - 10
+      
+    - Watch Others Code
+      - [Max Sequence](./practice_problems/max_seq.rb) - 25
