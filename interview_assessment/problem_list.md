@@ -77,6 +77,7 @@
       - [Largest 5 digits](./practice_problems/largest_5.rb) - 10
       - [Even and Odd!](./practice_problems/even_and_odd.rb) - 10
       - [Valid Braces](./practice_problems/valid_braces.rb) - 15
+      - [Pascal's Triangle](./practice_problems/pascals.rb) - redo
       
     - Watch Others Code
       - [Max Sequence](./practice_problems/max_seq.rb) - 25
