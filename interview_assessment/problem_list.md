@@ -61,14 +61,14 @@
       - [Weird String Case](./practice_problems/weird_str_case.rb) - redo
       - [Are they the same?](./practice_problems/same_or_no.rb) - 8
       - [Grouping and Counting](./practice_problems/grouping_counting.rb) - 9
-      - [Find the Nexus](./practice_problems/nexus_codewars.rb) - 
-      - [Count letters in string](./practice_problems/count_let_str.rb) - 
-      - [Triple Trouble](./practice_problems/triple_trouble.rb) -
-      - [Which Are In?](./practice_problems/which_r_n.rb) - 
-      - [Format string of names...](./practice_problems/format_str.rb) - 
-      - [Find missing letter](./practice_problems/finding_miss_let.rb) - 
+      - [Find the Nexus](./practice_problems/nexus_codewars.rb) - solved
+      - [Count letters in string](./practice_problems/count_let_str.rb) - solved
+      - [Triple Trouble](./practice_problems/triple_trouble.rb) - solved
+      - [Which Are In?](./practice_problems/which_r_n.rb) - solved
+      - [Format string of names...](./practice_problems/format_str.rb) - solved 
+      - [Find missing letter](./practice_problems/finding_miss_let.rb) - solved
       - [Who likes it?](./practice_problems/who_like_it.rb) - 
-      - [Find the Parity Outlier](./practice_problems/find_parity.rb) - 
+      - [Find the Parity Outlier](./practice_problems/find_parity.rb) - 5
       - [Is integer array?](./practice_problems/int_arr.rb) - 
       - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - 
       - [Integer reduction](./practice_problems/int_reduct.rb) - 
