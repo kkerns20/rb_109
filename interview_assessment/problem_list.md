@@ -67,9 +67,9 @@
       - [Which Are In?](./practice_problems/which_r_n.rb) - solved
       - [Format string of names...](./practice_problems/format_str.rb) - solved 
       - [Find missing letter](./practice_problems/finding_miss_let.rb) - solved
-      - [Who likes it?](./practice_problems/who_like_it.rb) - 
+      - [Who likes it?](./practice_problems/who_like_it.rb) - solved
       - [Find the Parity Outlier](./practice_problems/find_parity.rb) - 5
-      - [Is integer array?](./practice_problems/int_arr.rb) - 
+      - [Is integer array?](./practice_problems/int_arr.rb) - 10
       - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - 
       - [Integer reduction](./practice_problems/int_reduct.rb) - 
       - [Squared Arrays](./practice_problems/sq) -
