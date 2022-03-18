@@ -71,7 +71,7 @@
       - [Find the Parity Outlier](./practice_problems/find_parity.rb) - 5
       - [Is integer array?](./practice_problems/int_arr.rb) - 10
       - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - redo
-      - [Integer reduction](./practice_problems/int_reduct.rb) - 
+      - [Integer reduction](./practice_problems/int_reduct.rb) - solved
       - [Squared Arrays](./practice_problems/sq) -
       - [Permutations](./practice_problems/permutations.rb) - 5
       - [Largest 5 digits](./practice_problems/largest_5.rb) - 10
