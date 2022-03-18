@@ -70,7 +70,7 @@
       - [Who likes it?](./practice_problems/who_like_it.rb) - solved
       - [Find the Parity Outlier](./practice_problems/find_parity.rb) - 5
       - [Is integer array?](./practice_problems/int_arr.rb) - 10
-      - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - 
+      - [Reversing and Combining Text](./practice_problems/reverse_combine.rb) - redo
       - [Integer reduction](./practice_problems/int_reduct.rb) - 
       - [Squared Arrays](./practice_problems/sq) -
       - [Permutations](./practice_problems/permutations.rb) - 5
