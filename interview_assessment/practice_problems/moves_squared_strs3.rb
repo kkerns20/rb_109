@@ -71,6 +71,26 @@ end
 s = "abcd\nefgh\nijkl\nmnop"
 t = "abcd\nefgh\nijkl\nmnop"
 
+def diag_1_sym(string)
+  transpose(string).join("\n")
+end
+
+def rot_90_clock(string)
+  transpose(string).map(&:reverse).join("\n")
+end
+
+def selfie_and_diag1(string)
+  string.split.zip(transpose(string)).map { |s| s.join("|") }.join("\n")
+end
+
+def oper(fct, s) 
+  fct.call(s)
+end
+
+def transpose(string)
+  string.split.map(&:chars).transpose.map(&:join)
+end
+
 p diag_1_sym(s)
 p rot_90_clock(s)
 p selfie_and_diag1(s)
