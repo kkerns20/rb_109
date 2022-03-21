@@ -84,6 +84,7 @@
       - [Moves in Squared Strings 3](./practice_problems/moves_squared_strs3.rb) - 2 days
       - [Battle of Chars 1](./practice_problems/battle_chars1.rb) - 10
       - [Battle of Chars 2](./practice_problems/battle_chars2.rb) - 10
+      - [Delete nth Occurrence](./practice_problems/delete_nth.rb) - 5
       
     - Watch Others Code
       - [Max Sequence](./practice_problems/max_seq.rb) - 25
