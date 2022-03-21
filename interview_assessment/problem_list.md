@@ -80,8 +80,10 @@
       - [Pascal's Triangle](./practice_problems/pascals.rb) - redo
       - [Sort Inner String](./practice_problems/sort_inner_string.rb) - 5
       - [Moves in Squared Strings 1](./practice_problems/moves_squared_strs1.rb) - 10
-      - [Moves in Squared Strings 2](./practice_problems/moves_squared_strs2.rb) - 
-      - [Moves in Squared Strings 3](./practice_problems/moves_squared_strs3.rb) -
+      - [Moves in Squared Strings 2](./practice_problems/moves_squared_strs2.rb) - 15
+      - [Moves in Squared Strings 3](./practice_problems/moves_squared_strs3.rb) - 2 days
+      - [Battle of Chars 1](./practice_problems/battle_chars1.rb) - 10
+      - [Battle of Chars 2](./practice_problems/battle_chars2.rb) - 
       
     - Watch Others Code
       - [Max Sequence](./practice_problems/max_seq.rb) - 25
