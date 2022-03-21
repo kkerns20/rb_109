@@ -25,43 +25,42 @@ Data Structure, Algorithm
 
 =end
 
-def solve(str)
-  vowels = %w(a e i o u)
-  subs = find_subs(str.chars)
-  vowel_arr = subs.select do |str|
-    str.chars.all? { |char| vowels.include?(char) }
-  end
-  vowel_arr.max { |str| str.size }.size
-end
+# def solve(str)
+#   vowels = %w(a e i o u)
+#   subs = find_subs(str.chars)
+#   vowel_arr = subs.select do |str|
+#     str.chars.all? { |char| vowels.include?(char) }
+#   end
+#   vowel_arr.max { |str| str.size }.size
+# end
 
-def find_subs(arr)
-  sub_strings = []
-  1.upto(arr.size) do |num|
-    arr.each_cons(num) { |sub_arr| sub_strings << sub_arr.join }
-  end
-  sub_strings
-  binding.pry
-end
+# def find_subs(arr)
+#   sub_strings = []
+#   1.upto(arr.size) do |num|
+#     arr.each_cons(num) { |sub_arr| sub_strings << sub_arr.join }
+#   end
+#   sub_strings
+#   binding.pry
+# end
 
 # p find_subs(%w(c o d e w a r r i o r s))
 
 =begin
-** MUCH QUICKER METHOD !!!
+
 
 -- main method --> solve(str) --> integer
   -substitute all characters of given string that are not vowels with a space
   -split string at blank spaces
-  -find string with greatest length
-  -return length
+  -map string array with length
+  - find max length
 
 =end
 
-def solve(str)
-  new_str = str.gsub(/[^'aeiou']/, ' ')
-  longest = new_str.split(' ').max { |a, b| a.size <=> b.size }  
-  longest.size
+def solve(s)
+  s.gsub(/[^aieou]/, ' ').split.map(&:length).max
 end
 
+# Codewars
 # def solve(s)
 #   s.scan(/[aeiou]+/).map(&:size).max
 # end
