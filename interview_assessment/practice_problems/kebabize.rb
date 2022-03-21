@@ -66,6 +66,59 @@ def kebabize(str)
   str.delete('^A-Za-z').split(/(?=[A-Z])/).join('-').downcase
 end
 
+# REEEEECDDDDDDOOOOOOOOOOOO
+=begin
+Problem
+------------------------------------------
+Convert camel case into kebab case
+
+Inputs: 1 string
+Outputs: 1 string
+
+Rules/Requirements
+- returned string is lowercase without integers
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+myCamelHas3Humps - 'my-camel-has-humps'
+subsitute out anything not an alpha
+- iterate throught the chars of hte string and if the current char is the same as that character upcase, append a '-' and then that char downcase
+- otherwise push to an output string
+
+Data Structure, Algorithm
+------------------------------------------
+output = []
+- gsub anything not an alpha with ''
+- interate through chars of string with transformation
+  - if char == char upcase AND output isn't empty
+    push '-' + char.downcase
+  - else
+    push char.downcase
+- join output
+
+=end
+
+def kebabize(str)
+  output = []
+  str = str.gsub(/[^a-zA-Z]/, '')
+  str.chars.each do |x|
+    if x == x.upcase && !output.empty?
+      output << '-' + x.downcase
+    else
+      output << x.downcase
+    end
+  end
+  output.join
+end
+
+p kebabize('myCamelHas3Humps')# == 'my-camel-has-humps'
+
+
+
+
 p kebabize('myCamelCasedString') #== 'my-camel-cased-string'
 p kebabize('myCamelHas3Humps') #== 'my-camel-has-humps'
 p kebabize('EeQw') #== 'ee-qw'
