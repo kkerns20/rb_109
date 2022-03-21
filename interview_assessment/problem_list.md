@@ -15,12 +15,12 @@
       - [Longest vowel chain](https://www.codewars.com/kata/reviews/5a1275d736c5d19eed002742/groups/60aeb640a3a2cf0001e0e99f) - 4
       - [Non-even substrings](https://www.codewars.com/kata/reviews/5a0a8ba68e5bf11cfd003b74/groups/60aeb82ea3a2cf0001e0e9d6) - 10-ish
       - [Substring fun](https://www.codewars.com/kata/reviews/56ce2da25b477c620000002e/groups/5e03c145884174000112580b) - 6:10
-      - [Repeated Substring](https://www.codewars.com/kata/reviews/54f0fce7210f75c03e000084/groups/60aebf9e1a594600010741af) - 
+      - [Repeated Substring](https://www.codewars.com/kata/reviews/54f0fce7210f75c03e000084/groups/60aebf9e1a594600010741af) - finsihed
       - [Typoglycemia Generator](https://www.codewars.com/kata/55953e906851cf2441000032/train/ruby) - 20ish
-      - [Most frequently used words in a text](https://www.codewars.com/kata/51e056fe544cf36c410000fb/train/ruby) - redo
+      - [Most frequently used words in a text](https://www.codewars.com/kata/51e056fe544cf36c410000fb/train/ruby) - done
       - [Extract the domain name from a URL](https://www.codewars.com/kata/514a024011ea4fb54200004b/train/ruby) - 10 min
       - [Detect Pangram](https://www.codewars.com/kata/reviews/5bf0a06ff8c527ebda000a4e/groups/60aed668534d1f0001f1182b) - 9:12
-      - [Kebabize](https://www.codewars.com/kata/reviews/57fff6c11bb504ea980000b7/groups/60aedaa8a3a2cf0001e0ee01) - redo
+      - [Kebabize](https://www.codewars.com/kata/reviews/57fff6c11bb504ea980000b7/groups/60aedaa8a3a2cf0001e0ee01) - 10ish
       - [Take a Ten Minute Walk](https://www.codewars.com/kata/reviews/55162ffa77dd9e7bc1000156/groups/60aedf90aec59d000148041a) - 9ish
       - [Spin Words](https://www.codewars.com/kata/reviews/5270aad4b1aa038d2c000189/groups/60aee1a20b93b600017ea884) - 7:20
       - [Number in Expanded Form](https://www.codewars.com/kata/reviews/58464e0b2435fa35d3000032/groups/60aee4ba534d1f0001f11952) - less than 10, but my solution wouldn't work for large numbers...
@@ -36,7 +36,7 @@
       - [Exponent Method](https://www.codewars.com/kata/reviews/5251f642dc71af49250002db/groups/60b16dced4810c0001f404d4) - 12
       - [Where my anagrams?](https://www.codewars.com/kata/reviews/523b40a5ad90113c2b00000f/groups/60b16f94963b480001b0d537)
       - [Split String](https://www.codewars.com/kata/reviews/516f30267c907a79f2000466/groups/60b17190d4810c0001f40545) - 10
-      - [Anagram Difference](https://www.codewars.com/kata/5b1b27c8f60e99a467000041) - redo
+      - [Anagram Difference](https://www.codewars.com/kata/5b1b27c8f60e99a467000041) - 
       - [Anagram Detection](https://www.codewars.com/kata/reviews/54ff7a98bae8cd4b6e0003ca/groups/60b672135e3f1d0001d841a9) - 1 min
       - [Highest Scoring Word](./practice_problems/highest_scoring.rb) - 27
       - [Replace with Alphabet Position](./practice_problems/replace_alphabet.rb) - 20
