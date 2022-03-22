@@ -141,13 +141,18 @@ double_consonants('') == ""
 =begin
 Problem
 ------------------------------------------
+Write a method that takes a string, and returns a new string in which every consonant character is doubled. Vowels (a,e,i,o,u), digits, punctuation, and whitespace should not be doubled.
 
+double_consonants('String') == "SSttrrinngg"
+double_consonants("Hello-World!") == "HHellllo-WWorrlldd!"
+double_consonants("July 4th") == "JJullyy 4tthh"
+double_consonants('') == ""
 
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: 1 string
 
 Rules/Requirements
-- 
+- don't mutate string
 
 Clarifying Questions
 - 
@@ -158,11 +163,27 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
+create an array of all consonants
+- initialize arr to the chars of the string
+- iterate through the arr with transformation
+  - if the current char is aincluded in consonants
+    - double that letter
+  - else
+    - leave the char alone
+- join the arr
 
 =end
 
+def double_consonants(str)
+  consonants = ('A'..'Z').zip('a'..'z').flatten - %w(A E I O U a e i o u)
+  arr = str.chars
+  arr.map {|ch| consonants.include?(ch) ? ch + ch : ch}.join
+end
 
+p double_consonants('String') == "SSttrrinngg"
+p double_consonants("Hello-World!") == "HHellllo-WWorrlldd!"
+p double_consonants("July 4th") == "JJullyy 4tthh"
+p double_consonants('') == ""
 ```
 ---
 
