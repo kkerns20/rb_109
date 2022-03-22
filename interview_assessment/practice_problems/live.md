@@ -1253,78 +1253,29 @@ on Sundays, made away with three-quarters of his income.""") == ["a", "of", "on"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a function that, given a string of text (possibly with punctuation and line-breaks), returns an array of the top-3 most occurring words, in descending order of the number of occurrences.
+Problem
+------------------------------------------
 
-A word is a string of letters (A to Z) optionally containing one or more apostrophes (') in ASCII. (No need to handle fancy punctuation.)
-Matches should be case-insensitive, and the words in the result should be lowercased.
-Ties may be broken arbitrarily.
-If a text contains fewer than three unique words, then either the top-2 or top-1 words should be returned, or an empty array if a text contains no words.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 Array, 3 most frequently used strings
+Inputs: 
+Outputs: 
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -A word is any string of letters or punctuation separated by a space
-  -matches are case insensitive
-  -output should be lowercase
-  -ties broken by first most frequently found string in the results array
-  -if less than 3 words return top 2 or 1 words
-  -return an array of the top 3 most frequently found words in the given string in descending order
-Implicit:
-  -Multiple spaces between words in given string is acceptable
-  -if given string has no alphabetical characters it will return an empty array
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-top_3_words("In a village of La Mancha, the name of which I have no desire to call to
-mind, there lived not long since one of those gentlemen that keep a lance
-in the lance-rack, an old buckler, a lean hack, and a greyhound for
-coursing. An olla of rather more beef than mutton, a salad on most
-nights, scraps on Saturdays, lentils on Fridays, and a pigeon or so extra
-on Sundays, made away with three-quarters of his income.")
-# => ["a", "of", "on"]
+Clarifying Questions
+- 
 
-top_3_words("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e")
-# => ["e", "ddd", "aa"]
+Examples, Test Cases
+------------------------------------------
 
-top_3_words("  //wont won't won't")
-# => ["won't", "wont"]
 
-----------------------------ALGO-----------------------------------------
-==> Clean up given string by removing unnecessary punctuation and white space while isolating individual words into an array. Tally the occurances of each word in the given string and then return the 3 most frequently found words.
+Data Structure, Algorithm
+------------------------------------------
 
--- top_3_words(string) --> array
-  -downcase given string
-  -convert to array of characters (arr)
-  -remove any blank spaces, lone numbers and lone punctuation
-  -tally the occurances of each word to a hash
-  -sort the hash by its values
-  -find the 3(or less) most frequently used keys and return in an array
 
 =end
 
-# def top_3_words(str)
-#   arr_of_words = str.downcase.gsub(/[^a-zA-Z ']/, '').split
-#   filtered_words = arr_of_words.select { |word| word.match?(/[a-z]/) }
-#   words_hash = filtered_words.tally
-#   words_hash.max_by(3) { |word, count| count }.to_h.keys
-# end
-
-def tally_words(arr)
-  arr.each_with_object(Hash.new(0)) do |word, hash|
-    hash[word] += 1
-  end
-end
-
-def top_3_words(str)
-  arr_of_words = str.downcase.gsub(/[^a-zA-Z ']/, '').split
-  filtered_words = arr_of_words.select { |word| word.match?(/[a-z]/) }
-  words_hash = tally_words(filtered_words)
-  words_hash.max_by(3) { |word, count| count }.to_h.keys
-end
 
 p top_3_words("a a a  b  c c  d d d d  e e e e e") == ["e", "d", "a"]
 p top_3_words("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e") == ["e", "ddd", "aa"]
