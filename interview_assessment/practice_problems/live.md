@@ -329,9 +329,56 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
+create find subs array
+initialize subs to []
+1 upto the size of the array work with length
+  split the string by chars and call each_cons based on length
+  add the sub_arr to subs
+return sub
 
+create palindrome?
+  str.reverse == str
 
+create longest_palidrome(str)
+  get subs strong find_subs
+  iterate through subs with transformation
+    if palidrome?
+      - get length of string
+  get max
 =end
+
+def find_subs(str)
+  subs = []
+  1.upto(str.size) do |length|
+    str.chars.each_cons(length) { |sub_arr| subs << sub_arr.join }
+  end
+  subs
+end
+
+def palindrome?(str)
+  str.reverse == str
+end
+
+def longest_palindrome(str)
+  subs = find_subs(str)
+  subs.map do |sub_arr|
+    if palindrome?(sub_arr.join)
+      sub_arr.length
+    end
+  end.max
+end
+
+
+p longest_palindrome('') == 0
+p longest_palindrome('a') == 1
+p longest_palindrome('aa') == 2
+p longest_palindrome('baa') == 2
+p longest_palindrome('aab') == 2
+p longest_palindrome('baabcd') == 4
+p longest_palindrome('baab1kj12345432133d') == 9
+p longest_palindrome("I like racecars that go fast") == 7
+p longest_palindrome("aa aa") == 5
+p longest_palindrome('abcde') == 1
 
 
 ```
