@@ -1,7 +1,7 @@
 # RB 109 Live Assessment Practice Problems #
 
-1. - [ ] [Repeater](#repeater)
-2. - [ ] [Double Consonants](#double-consonants)
+1. - [x] [Repeater](#repeater)
+2. - [x] [Double Consonants](#double-consonants)
 3. - [ ] [Rotate 13](#rotate-13)
 4. - [ ] [Longest Palindrome](#longest-palindrome)
 5. - [ ] [Find Chidren](#find-children)
@@ -87,7 +87,7 @@
 ## Repeater ##
 
 - Difficulty: **easy**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 Write a method that takes a string, and returns a new string in which every character is doubled.
 
@@ -120,6 +120,14 @@ Data Structure, Algorithm
 
 =end
 
+def repeater(str)
+  arr = str.chars
+  arr.map {|ch| ch + ch}.join
+end
+
+p repeater('Hello') == "HHeelllloo" 
+p repeater("Good job!") == "GGoooodd  jjoobb!!" 
+p repeater('') == ''
 
 ```
 
