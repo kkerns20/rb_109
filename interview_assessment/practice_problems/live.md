@@ -2,7 +2,7 @@
 
 1. - [x] [Repeater](#repeater)
 2. - [x] [Double Consonants](#double-consonants)
-3. - [ ] [Rotate 13](#rotate-13)
+3. - [x] [Rotate 13](#rotate-13)
 4. - [ ] [Longest Palindrome](#longest-palindrome)
 5. - [ ] [Find Chidren](#find-children)
 6. - [ ] [Double Consonants Alternative](#double-consonants-alternative)
