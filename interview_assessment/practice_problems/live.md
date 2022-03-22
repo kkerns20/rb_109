@@ -198,7 +198,7 @@ p double_consonants('') == ""
 ## Rotate 13 ##
 
 - Difficulty: **med/hard**
-- [] Problem Completed?
+- [x] Problem Completed?
 
 How can you tell an extrovert from an introvert at NSA? Va gur ryringbef, gur rkgebireg ybbxf ng gur BGURE thl'f fubrf.
 
@@ -238,10 +238,49 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
+create alphabet array
+initialize arr to the chars of input string
+interate with transformation over arr with index
+  - if alphabet includes current char downcased
+    - find the char 13 indices away if index is less than < 13 or - 13 if >=13  
+  - else
+    - char
+    repeat dependent on case
+- join arr
 
 =end
 
+# def rot13(str)
+#   alpha = ('a'..'z').to_a
+#   arr = str.chars
+#   arr.map.with_index do |char|
+#     if alpha.include?(char.downcase) && 
+#        char.downcase == char
+#       if alpha.index(char) < 13
+#         alpha[alpha.index(char.downcase) + 13]
+#       else
+#         alpha[alpha.index(char.downcase) - 13]
+#       end
+#     elsif alpha.include?(char.downcase) && 
+#           char.upcase == char
+#       if alpha.index(char.downcase) < 13
+#         alpha[alpha.index(char.downcase) + 13].upcase
+#       else
+#         alpha[alpha.index(char.downcase) - 13].upcase
+#       end
+#     else
+#       char
+#     end
+#   end.join
+# end
+
+def rot13(string)
+  string.tr("A-Za-z", "N-ZA-Mn-za-m")
+end
+
+p rot13("EBG13 rknzcyr.") == "ROT13 example."
+p rot13("This is my first ROT13 excercise!") == "Guvf vf zl svefg EBG13 rkprepvfr!"
+p rot13("Va gur ryringbef, gur rkgebireg ybbxf ng gur BGURE thl'f fubrf.")
 
 ```
 ---
