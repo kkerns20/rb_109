@@ -1297,7 +1297,7 @@ on Sundays, made away with three-quarters of his income.""") == ["a", "of", "on"
 ## Detect Pangram ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [] Problem Completed?
 
 A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
 
@@ -1308,47 +1308,28 @@ p panagram?("This is not a pangram.") == false
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
+Problem
+------------------------------------------
 
-Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
 
---------------------------PROBLEM----------------------------------------
-Questions:
--What's a pangram?
-  --> A pangram is a sentence that contains every single letter of the alphabet at least once.
-Input: 1 String
-Output: Boolean
+Inputs: 
+Outputs: 
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -determine whether the given string is a pangram
-    -if so, return true
-    -otherwise- return false
-  -ignore numbers and punctuation
-Implicit:
-  -inputs will be valid strings
---------------------------EXAMPLES---------------------------------------
-p panagram?("The quick brown fox jumps over the lazy dog.") == true
-Every letter in the alphabet is used within the given string
-Therefore, this will return 'true'
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Breakdown given string into characters and check to see if every letter of the alphabet has been used. 
+Clarifying Questions
+- 
 
--- method --> pangram?(string) --> boolean
-  -assign 'alpha' to an array of all alphabetical letters
-  -split the given string into characters
-  -determine if all letters of the alphabet are found in the array of characters
-  -return true if so,
-  -otherwise return false
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def panagram?(str)
-  alpha = ('a'..'z').to_a
-  alpha.all? { |letter| str.downcase.include?(letter) }
-end
 
 p panagram?("The quick brown fox jumps over the lazy dog.") == true
 p panagram?("This is not a pangram.") == false
@@ -1359,7 +1340,7 @@ p panagram?("This is not a pangram.") == false
 ## Kebabize ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [] Problem Completed?
 
 Modify the kebabize function so that it converts a camel case string into a kebab case.
 
@@ -1375,66 +1356,28 @@ p kebabize('myCamelHas3Humps') == 'my-camel-has-humps'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Modify the kebabize function so that it converts a camel case string into a kebab case.
+Problem
+------------------------------------------
 
-the returned string should only contain lowercase letters
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String, modified
+Inputs: 
+Outputs: 
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -convert a camel cased string into kebab cased. camelCase kabab-cased
-  -return string should be all lowercase letters
-Implicit:
-  -a number within a string will be ommited
-  
---------------------------EXAMPLES---------------------------------------
-kebabize('camelsHaveThreeHumps') // camels-have-three-humps
-kebabize('camelsHave3Humps') // camels-have-humps
+Rules/Requirements
+- 
 
-'camelsHaveThreeHumps' --> camel case
-'camels' + 'Have' + 'Three' + 'Humps'
--->     sH        eT        eH
-        s-h       e-t       e-h
-        'camels-have-three-humps'
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Go through the string character by character and identify when a lowercase letter is followed by an uppercase letter, then convert the uppercase to lower and put a dash between them.
+Examples, Test Cases
+------------------------------------------
 
--- method --> kebabize(string) --> string
-  -split string into characters (str_arr)
-  -initialize 'kebab_str' to an empty array
-  -iterate through str_arr with index
-    -if index is 0 
-      -push current element to 'kebab_str'
-    -if current element is the same as itself capitalized
-      -push a dash to 'kabab_str'
-      -push current element downcased to 'kabab_str'
-    -otherwise
-      -push current element to 'kabab_str'
-  - join and return 'kabab_str'
-  
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def kebabize(str)
-  kebab_str = []
-  str.chars.each_with_index do |char, index|
-    if char.to_i.to_s == char
-      next
-    elsif index == 0
-      kebab_str.push(char)
-    elsif char == char.upcase
-      kebab_str.push('-', char.downcase)
-    else
-      kebab_str.push(char)
-    end
-  end
-  kebab_str.join
-end
 
 
 p kebabize('myCamelCasedString') == 'my-camel-cased-string'
@@ -1470,52 +1413,28 @@ p song_decoder("WUBAWUBBWUBCWUB") == "A B C"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Polycarpus works as a Dhttps://www.codewars.com/kata/551dc350bf4e526099000ae5/train/rubyJ in the best Berland nightclub, and he often uses dubstep music in his performance. Recently, he has decided to take a couple of old songs and make dubstep remixes from them.
+Problem
+------------------------------------------
 
-Let's assume that a song consists of some number of words (that don't contain WUB). To make the dubstep remix of this song, Polycarpus inserts a certain number of words "WUB" before the first word of the song (the number may be zero), after the last word (the number may be zero), and between words (at least one between any pair of neighbouring words), and then the boy glues together all the words, including "WUB", in one string and plays the song at the club.
 
-For example, a song with words "I AM X" can transform into a dubstep remix as "WUBWUBIWUBAMWUBWUBX" and cannot transform into "WUBWUBIAMWUBX".
+Inputs: 
+Outputs: 
 
-Recently, Jonny has heard Polycarpus's new dubstep track, but since he isn't into modern music, he decided to find out what was the initial song that Polycarpus remixed. Help Jonny restore the original song.
+Rules/Requirements
+- 
 
-Input
-The input consists of a single non-empty string, consisting only of uppercase English letters, the string's length doesn't exceed 200 characters
+Clarifying Questions
+- 
 
-Output
-Return the words of the initial song that Polycarpus used to make a dubsteb remix. Separate the words with a space.
+Examples, Test Cases
+------------------------------------------
 
-Examples
-song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB")  =>  WE ARE THE CHAMPIONS MY FRIEND
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String, capitalized letters only
-Output: 1 String
+Data Structure, Algorithm
+------------------------------------------
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Find the letters of the given strings between 'WUB's
-  -return the leftover letters as a string separated by a space
-Implicit:
-  -inputs and outputs will all be capitalized
-  -will not be empty
-  -will only contain letters
 
---------------------------EXAMPLES---------------------------------------
-
-----------------------------ALGO-----------------------------------------
---- method --> song_decoder(string) --> string
-  -replace all instances of 'WUB' with '*' 
-  -split string by '*'
-  -delete all '*'
-  -join array by ' ' and return
-  
 =end
-
-def song_decoder(string)
-  string.gsub('WUB', ' ').split(' ').join(' ')  
-end
 
 p song_decoder("AWUBBWUBC") == "A B C"
 p song_decoder("AWUBWUBWUBBWUBWUBWUBC") == "A B C"
@@ -1541,47 +1460,28 @@ p is_valid_walk(['n','n','n','s','n','s','n','s','n','s']) == false
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-You live in the city of Cartesia where all roads are laid out in a perfect grid. You arrived ten minutes too early to an appointment, so you decided to take the opportunity to go for a short walk. The city provides its citizens with a Walk Generating App on their phones -- everytime you press the button it sends you an array of one-letter strings representing directions to walk (eg. ['n', 's', 'w', 'e']). You always walk only a single block in a direction and you know it takes you one minute to traverse one city block, so create a function that will return true if the walk the app gives you will take you exactly ten minutes (you don't want to be early or late!) and will, of course, return you to your starting point. Return false otherwise.
+Problem
+------------------------------------------
 
-Note: you will always receive a valid array containing a random assortment of direction letters ('n', 's', 'e', or 'w' only). It will never give you an empty array (that's not a walk, that's standing still!).
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Array
-Output: Boolean
----------------------------RULES-----------------------------------------
-Explicit:
-  -The given array will contain an assortment of the letters 'n', 's', 'e', and 'w' which are represenative of the directions of a map
-  -The directions array should have 10 elements total
-  -The directions array should have an equal number of 'n'/'s' and 'e'/'w' directions
-  -If these two conditions are not met return false, otherwise true
-Implicit:
-  -all letters are lowercase
-  
---------------------------EXAMPLES---------------------------------------
-is_valid_walk(['n','n','n','s','n','s','n','s','n','s']) == false
-The directions arr is 10 elements long but...
-..there are 6 'n' directions and only 4 's' directions
-so it returns false
+Inputs: 
+Outputs: 
 
-----------------------------ALGO-----------------------------------------
--- method --> is_valid_walk(array) --> boolean
-  -if directions array is 10 elements long
-  -AND
-  -there are equal number of 's' and 'n'
-  -AND 
-  -there are equal number of 'e' and 'w'
-  -return true
-  -otherwise return false
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def is_valid_walk(directions)
-  directions.size == 10 && 
-  directions.count('n') == directions.count('s') &&
-  directions.count('e') == directions.count('w')
-end
 
 p is_valid_walk(['n','s','n','s','n','s','n','s','n','s']) == true
 p is_valid_walk(['w','e','w','e','w','e','w','e','w','e','w','e']) == false
@@ -1594,7 +1494,7 @@ p is_valid_walk(['n','n','n','s','n','s','n','s','n','s']) == false
 ## Stop gninnipS My sdroW ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [] Problem Completed?
 
 Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
 
@@ -1607,52 +1507,28 @@ p spin_words('test') == 'test'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a function that takes in a string of one or more words, and returns the same string, but with all five or more letter words reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present. 
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
----------------------------RULES-----------------------------------------
-Explicit:
-  -Take any word of 5 or more characters and reverse the word within the string
-  -Given strings will only consist of letters and spaces
-  -spaces are only included when more than one word is found in the string
-  -return the string
-Implicit:
-  -Capital letters remain capitalized
-  
---------------------------EXAMPLES---------------------------------------
-Examples: spinWords( "Hey fellow warriors" ) => returns "Hey wollef sroirraw"
-Hey ==> only 3 characters
-fellow ==> more than 4 characters --> reversed
-warriors ==> more than 4 characters --> reversed
-new string --> "Hey wollef sroirraw"
 
-----------------------------ALGO-----------------------------------------
-==> Reverse all words that have more than 4 characters and then return the string in its original order.
+Inputs: 
+Outputs: 
 
--- method --> spin_words(string) --> string
-  -split string into individual words
-  -iterate using transformation --> new_arr
-    -if current element's length is > 4
-      -return current element reversed
-    -otherwise
-      -return current element
-  -join and return new-arr
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def spin_words(str)
-  str.split.map do |word|
-    if word.size > 4
-      word.reverse
-    else
-      word
-    end
-  end.join(' ')
-end
 
 p spin_words("Hey fellow warriors") == "Hey wollef sroirraw"
 p spin_words("This is a test") == "This is a test" 
@@ -1665,7 +1541,7 @@ p spin_words("test") == "test"
 ## Nested Brackets ##
 
 - Difficulty: **hard**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a string containing brackets [], braces {}, parentheses (), or any combination thereof, verify that any and all pairs are matched and nested correctly.
 
@@ -1680,76 +1556,28 @@ p paired?('(((185 + 223.85) * 15) - 543)/2') == true
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a string containing brackets [], braces {}, parentheses (), or any combination thereof, verify that any and all pairs are matched and nested correctly.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 boolean
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Given string will include brackets [], braces {}, parentheses (), or any combo of 
-  -verify that any and all pairs are matched and nested correctly.
-Implicit:
-  -given string can contain any other character types
-  -any bracket opening must be closed with the corresponding closing bracket
-  -a bracket within an outer bracket opening must be closed before the outer bracket can be closed
-  
---------------------------EXAMPLES---------------------------------------
-paired?('{}{}[()'); == false
-'{}{}[()'
- {}
-   {}
-     [   --> missing closing bracket # return false
-      ()
+Inputs: 
+Outputs: 
 
-----------------------------ALGO-----------------------------------------
+Rules/Requirements
+- 
 
--- method --> paired?(string) --> boolean
-  -create a hash of opening brackets and closing brackets (brackets)
-  -initialize local variable to empty arr (stack)
-  -iterate through the characters of the given string
-    -if character is found in the value associated with 'opening' in the brackets hash
-      -push character to 'stack'
-    -if character is found in the value associated with 'closing' in the brackets hash
-      -if the last element in 'stack' is the corresponding opening bracket 
-        -remove last element from 'stack'
-      -otherwise
-        -return false
-  -if 'stack' is empty 
-    -return true
-  -otherwise
-    -return false
-    
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-BRACKETS = { '{' => '}', '(' => ')', '[' => ']' }
-
-def matching_brackets?(closing, stack)
-  index = BRACKETS.values.index(closing)
-  
-  BRACKETS.keys[index] == stack.last
-end
-
-def paired?(string)
-  stack = []
-  
-  string.each_char do |char|
-    if BRACKETS.keys.include?(char)
-      stack << char
-    elsif BRACKETS.values.include?(char)
-      if matching_brackets?(char, stack)
-        stack.pop
-      else
-        return false
-      end
-    end
-  end
-  stack.empty?
-end
-
 
 p paired?('[]]') == false
 p paired?(']][[') == false
@@ -1766,7 +1594,7 @@ p paired?('(((185 + 223.85) * 15) - 543)/2') == true
 ## Write Number in Expanded Form ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write Number in Expanded Form
 You will be given a number and you will need to return it as a string in Expanded Form.
@@ -1784,69 +1612,28 @@ p expanded_form(70304) == '70000 + 300 + 4'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-You will be given a number and you will need to return it as a string in Expanded Form. For example:
+Problem
+------------------------------------------
 
-NOTE: All numbers will be whole numbers greater than 0.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Integer
-Output: 1 String
+Inputs: 
+Outputs: 
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Return given integer into its expanded form as a string object
-  -Given will be a whole number grater than 0
-Implicit:
-  -If a digit in the given integer is zero the return string will not include that, because it is not valid
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-expanded_form(12); # Should return '10 + 2'
-expanded_form(42); # Should return '40 + 2'
-expanded_form(70304); # Should return '70000 + 300 + 4'
-    70304
---> 70000
--->  0000 (not valid)
--->    300
--->     00 (not valid)
--->      4
+Clarifying Questions
+- 
 
-==> '70000 + 300 + 4' (only valid numbers)
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-==> Split the given integer into an array of indivdual numbers based on their first digit and their place within the given integer. Remove any of the numbers that start with 0, join with spaces and a plus sign and return. 
 
--- method --> expanded_form(integer) --> string
-  -intialize an empty string to 'expanded'
-  -split integer into array of digits
-  -convert array of digits to strings
-  -iterate through the array of strings utilizing index (index)
-    -take each element and based on its position in the array of strings add '0' to the element until it is the length of the array element starting from the elements current position, then push to 'expanded'
-  -remove any string in the array of strings that starts with '0'
-  -join the array of strings with ' + '
-  -return new string
-  
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def expanded_form(number)
-  expanded = []
-  arr_of_strings = number.to_s.chars
-  
-  expanded_arr = arr_of_strings.map.with_index do |num, index|
-    final_str = num
-    length = 1
-    loop do
-      break if length >= arr_of_strings.size - index
-      num << '0'
-      length += 1
-    end
-    
-    num
-  end
-  
-  expanded_arr.select { |str| str[0] != '0' }.join (' + ')
-end
 
 p expanded_form(12) == '10 + 2'
 p expanded_form(42) == '40 + 2'
@@ -1858,7 +1645,7 @@ p expanded_form(70304) == '70000 + 300 + 4'
 ## Mexican Wave Variation 1 ##
 
 - Difficulty: **hard**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
 
@@ -1874,80 +1661,28 @@ p wave(" gap ") == [" Gap ", " gAp ", " gaP "]
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-In this simple Kata your task is to create a function that turns a string into a Mexican Wave. You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
+Problem
+------------------------------------------
 
-Rules
-  1.  The input string will always be lower case but maybe empty.
-  2.  If the character in the string is whitespace then pass over it as if it was an empty seat.
-  
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 Array, of strings depicting a mexican wave
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -input string will always be lowercase
-  -input string may be empty
-  -pass over any white space encountered
-  -insert a copy of the given string to an array a number of times equal to the strings length
-  -each copy pased to the array will have a single character capitalized based on the current index
-Implicit:
-  -empty string input will return an empty arrauy
-  -if input string has whitespace only insert a copy of the string for each letter character
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-p wave("hello") == ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
-"hello"
-index 0 ==> 'Hello'
-index 1 ==> 'hEllo'
-index 2 ==> 'heLlo'
-index 3 ==> 'helLo'
-index 4 ==> 'hellO'
-each copy passed to an array and returned
-==> ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Create a copy of the given string and capitalize the appropriate character then pass to an array. 
+Clarifying Questions
+- 
 
--- method --> wave(string) --> array
-  -split string into array of characters
-  -iterate through array using transformation using index (outer_index)
-    -if current element is not a letter 
-      -return nil
-    -otherwise
-      -initialize an empty string (current)
-      -iterate through a copy of the input string using index (inner_index)
-        -if 'outer_index' and 'inner_index' are the same 
-          -push uppercase version of current element to 'current'
-        -otherwise
-          -push current element to 'current'
-      -return 'current'
-  -filter out all instances of array that are nil and return
-  
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def wave(str)
-  split_str = str.chars
-  
-  wave_arr = split_str.map.with_index do |char, outer_index|
-    if char.match?(/[^A-z]/)
-      nil
-    else
-      current = ''
-      split_str.each_with_index do |inner_char, inner_index|
-        if outer_index == inner_index
-          current << inner_char.upcase
-        else
-          current << inner_char
-        end
-      end
-      current
-    end
-  end
-  wave_arr.compact
-end
 
 
 p wave("hello") == ["Hello", "hEllo", "heLlo", "helLo", "hellO"]
@@ -1962,7 +1697,7 @@ p wave(" gap ") == [" Gap ", " gAp ", " gaP "]
 ## Sum Consecutives ##
 
 - Difficulty: **hard**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 You are given an array that contains only integers (positive and negative). Your job is to sum only the numbers that are the same and consecutive. The result should be one array.
 
@@ -1974,127 +1709,33 @@ p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-You are given an array that contains only integers (positive and negative). Your job is to sum only the numbers that are the same and consecutive. The result should be one array.
-
-You can assume there is never an empty array and there will always be an integer.
-
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -given array will contain pos and neg integers
-  -return the sum of the numbers that are the same and consecutive in an array
-  -given array will never be empty
-Implicit Rules:
-  -zero is an acceptable input
-Questions:
-  -
-
---------------------------EXAMPLES---------------------------------------
-[1, 1, 7, 7, 3]
-organize into subarrays of like integers
-
-[[1, 1], [7, 7], [3]]
-then find the sum for these like integer collections
-
-[2, 14, 3]
-return the array of these collections summed
+Problem
+------------------------------------------
 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 array
-Output: 1 array
-Additional DS Utilized:
-  -utilizing integers within the arrays
+Inputs: 
+Outputs: 
 
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
-* separate the like integers into sub-arrays
-* find the sum of these sub-arrays
-* return array of the sums
+Rules/Requirements
+- 
 
--- method --> sum_consecutives(array) --> array
-  -slice the given array into sub-arrays when the element is not the same as the last
-  -iterate through the array using transformation
-    -find the sum of each sub-array
-  -return the array of sums
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def sum_consecutives(arr)
-  sliced_arr = arr.slice_when { |a, b| a != b }.to_a
-  sliced_arr.map { |sub_arr| sub_arr.sum }
-end
 
 p sum_consecutives([1,4,4,4,0,4,3,3,1,1]) == [1,12,0,4,6,2]
 p sum_consecutives([1,1,7,7,3]) == [2,14,3] 
 p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
 
-
-
-
-#### ALTERNATIVE SOLUTION ####
-
-
-
-=begin
------------------------INSTRUCTIONS--------------------------------------
-You are given an array that contains only integers (positive and negative). Your job is to sum only the numbers that are the same and consecutive. The result should be one array.
-
-You can assume there is never an empty array and there will always be an integer.
-
---------------------------PROBLEM----------------------------------------
-Questions: 
-Input: 1 Array
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:
-  -sum numbers in given array that are the same and consecutive
-  -Integers in given array can be positive or negative
-  
-Implicit:
-  -given array will not be empty
-
---------------------------EXAMPLES---------------------------------------
-sum_consecutives([1,1,7,7,3]) ==> [2,14,3]
-[1,1,7,7,3] -->  1 + 1 = 2, 7 + 7 = 14, 3 --> [2, 14, 3]
-
-----------------------------ALGO-----------------------------------------
--- method sum_consecutives(array) --> array
-  -initialize 'sums' to an empty array
-  -iterate through the given array with index (num, index)
-    -initialize 'sum' to 0
-    -initialize 'current' to 0
-    -loop 
-      -set 'current' to 'num'
-      -increment 'sum' by 'current'
-      -break if array[index] is not equal to array[index + 1]
-    -end
-    -push 'sum' to 'sums'
-  -return 'sums'
-
-=end
-
-def sum_consecutives(arr)
-  temp = []
-  result = []
-  
-  arr.each do |num|
-    if temp.last == num
-     temp << num
-    else
-      result << temp
-      temp = []
-      temp << num
-    end
-  end
-    result << temp
-    result.shift
-    result.map(&:sum)
-end
-
-p sum_consecutives([1,4,4,4,0,4,3,3,1,1]) == [1,12,0,4,6,2]
-p sum_consecutives([1,1,7,7,3]) == [2,14,3]
-p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
 ```
 
 ---
@@ -2102,7 +1743,7 @@ p sum_consecutives([-5,-5,7,7,12,0]) ==  [-10,14,12,0]
 ## Mexican Wave Variation 2 ##
 
 - Difficulty: **hard**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Your task is to create a method that turns a string into a wave (like at a stadium). You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
 
@@ -2119,172 +1760,29 @@ p wave("") == []
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Your task is to create a method that turns a string into a wave (like at a stadium). You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
+Problem
+------------------------------------------
 
-Rules
 
- 1. The input string will always be lower case but maybe empty.
- 2. If the character in the string is whitespace then pass over it
- 3. Leave each fourth letter unaltered—-do not make those letters uppercase
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Questions: 
-Input: 1 String
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:
-  -input string will be lowercase but may be an empty string
-  -it char is white space pass it over
-  -leave each 4th letter unaltered
-Implicit:
-  -empty string input with return an empty array
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-wave("hello") == ["Hello", "hEllo", "heLlo", "hello", "hellO"]
-1st -- "Hello"
-2nd -- "hEllo"
-3rd -- "heLlo"
-4th -- "hello"
-5th -- "hellO"
---> ["Hello", "hEllo", "heLlo", "hello", "hellO"]
-----------------------------ALGO-----------------------------------------
+Clarifying Questions
+- 
 
--- method --> wave(string) --> array
-  -intialize 'wave_arr' to empty array
-  -split given string into characters and iterate utilizing index
-    -if current element is ' '
-      -return nil
-    -otherwise
-    `-initialize 'current' to an empty string
-      -iterate over string split into characters utilizing index
-        -if inner index and outer index are 3 
-          -push current element to 'wave_arr'
-        -if outer index and inner index are the same 
-          -push current capitalized current letter to 'wave_arr'
-        -otherwise
-          -push current element to 'wave_arr'
-  -return new array with `nil` values removed
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def wave(str)
   
-  wave_arr = str.chars.map.with_index do |outer_char, outer_index|
-    if outer_char == ' '
-      nil
-    else
-      
-      current = ''
-      str.chars.each_with_index do |inner_char, inner_index|
-        if inner_index == 3 && outer_index == 3
-        # if we_skip(inner_index)
-          current << inner_char
-        elsif inner_index == outer_index
-          current << inner_char.capitalize
-        else
-          current << inner_char
-        end
-      end
-      
-      current
-    end
-  end
-  
-  wave_arr.compact
-end
-
-def we_skip(index)
-  INDEX_TO_SKIP = 4
-  
-  (index + 1) % INDEX_TO_SKIP == 0
-end
-  
-p wave("hello") == ["Hello", "hEllo", "heLlo", "hello", "hellO"]
-p wave("studying") == ["Studying", "sTudying", "stUdying", "studying", "studYing", "studyIng", "studyiNg", "studying"]
-p wave("launch school") == ["Launch school", "lAunch school", "laUnch school", "launch school", "launCh school", "launcH school", "launch School", "launch school", "launch scHool", "launch schOol", "launch schoOl", "launch school"]
-p wave("") == []
-```
-
-```ruby
-#### ALTERNATIVE SOLUTION ####
-
-
-=begin
------------------------INSTRUCTIONS--------------------------------------
-Your task is to create a method that turns a string into a wave (like at a stadium). You will be passed a string and you must return that string in an array where an uppercase letter is a person standing up.
-
-Rules
-
- 1. The input string will always be lower case but maybe empty.
- 2. If the character in the string is whitespace then pass over it
- 3. Leave each fourth letter unaltered—-do not make those letters uppercase
-
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -return an array of the given string where each letter is capitalized at the next index
-  -given string will always be lowercase
-  -if the current char is whitespace, pass it over
-  -every 4th letter remains unaltered
-Implicit Rules:
-  -given an empty string return an empty string
-  -
-Questions:
-
---------------------------EXAMPLES---------------------------------------
-("studying")-> ["Studying", "sTudying", "stUdying", "studying", "studYing", "studyIng", "studyiNg", "studying"]
-                 idx 0       idx 1        idx 2    idx 3 no cap   idx 4       idx 5        idx 6  idx 7 no caps
-
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 Array, of strings
-Additional DS Utilized:
-  -splitting strings into arrays
-  -joining arrays into strings
-  -integers to keep track of indices
-
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
-* iterate over the chars of the given string
-* populate a new array with modified versions of the given string
-* return the array
-
--- method --> wave(string) --> array
--initialize letter_count to 1
-  -split the given string into an array of characters (str_arr)
-  -iterate through str_arr using transformation 
-    -initialize str_arr to given string split into array of characters
-    -if current char is whitespace
-      -skip
-    -if char is not a fourth iteration
-      -increment letter_count
-      -given string
-    -otherwise
-      -increment letter_count
-      -capital the char of given string at the current index and push to wave
-  -return wave, removing nils
-  
-=end
-
-def wave(string)
-  letter_count = 1
-  wave = string.chars.map.with_index do |char, index|
-    str_arr = string.chars
-    if char == ' '
-      next
-    elsif letter_count % 4 == 0 
-      letter_count += 1
-      string
-    else
-      letter_count += 1
-      str_arr[index] = char.upcase 
-      str_arr.join
-    end
-  end
-  
-  wave.select { |word| word }
-end
-
 p wave("hello") == ["Hello", "hEllo", "heLlo", "hello", "hellO"]
 p wave("studying") == ["Studying", "sTudying", "stUdying", "studying", "studYing", "studyIng", "studyiNg", "studying"]
 p wave("launch school") == ["Launch school", "lAunch school", "laUnch school", "launch school", "launCh school", "launcH school", "launch School", "launch school", "launch scHool", "launch schOol", "launch schoOl", "launch school"]
@@ -2296,7 +1794,7 @@ p wave("") == []
 ## Persistent Bugger ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
 
@@ -2317,68 +1815,28 @@ p persistence(999) == 4
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Integer 
-Output: 1 Integer
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Return the number of times the given number must be split into digits and summed until it is a single digit number. 
-  -Given input will be a positive number
-Implicit:
-  -if given number is already a single digit, return 0
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-persistence(39) # returns 3, because 3*9=27, 2*7=14, 1*4=4
-               # and 4 has only one digit
-39
-3 * 9 --> 27 (1)
-27
-2 * 7 --> 14 (2)
-14
-1 * 4 --> 4 (3)
-4 --> only 1 digit
+Rules/Requirements
+- 
 
-==> return 3
+Clarifying Questions
+- 
 
-persistence(999) # returns 4, because 9*9*9=729, 7*2*9=126,
-                # 1*2*6=12, and finally 1*2=2
+Examples, Test Cases
+------------------------------------------
 
-persistence(4) # returns 0, because 4 is already a one-digit number
 
-----------------------------ALGO-----------------------------------------
-==> Count the number of a times the given integer needs to be split into individual digits and multiplied together until the result is a single-digit integer. 
+Data Structure, Algorithm
+------------------------------------------
 
--- method --> persistence(integer) --> integer
-  -initialize 'current' to 'integer'
-  -initialize 'count' to 0
-  -loop 
-    -break out of loop if 'current' is a single digit 
-    -initialize 'temp' to nil
-    -split current into digits and multiply them together, set to 'current'
-    -increment 'count'
-  -return count
 
 =end
-
-def persistence(given_num)
-  current_num = given_num
-  count = 0
-  
-  loop do 
-    break if current_num.to_s.size <= 1
-      count += 1
-      temp = 1
-      current_num.digits.each { |num| temp *= num }
-      current_num = temp
-  end
-  count
-end
-
 p persistence(39) == 3
 p persistence(4) == 0
 p persistence(25) == 2
@@ -2390,7 +1848,7 @@ p persistence(999) == 4
 ## Title Case ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.
 
@@ -2402,70 +1860,28 @@ p title_case('the quick brown fox') == 'The Quick Brown Fox'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-A string is considered to be in title case if each word in the string is either (a) capitalised (that is, only the first letter of the word is in upper case) or (b) considered to be an exception and put entirely into lower case unless it is the first word, which is always capitalised.
+Problem
+------------------------------------------
 
-Write a function that will convert a string into title case, given an optional list of exceptions (minor words). The list of minor words will be given as a string with each word separated by a space. Your function should ignore the case of the minor words string -- it should behave in the same way even if the case of the minor word string is changed.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Strings, first: string to be title cases, second: optional string of minor words
-Output: 1 String, title cased
+Inputs: 
+Outputs: 
 
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Title Case if either each word is:
-    -capitalized(only first letter of word uppercased)
-    -considered an exception(entirely in lowercase **unless it is the forst word)
-  -First word in string is always capitalized
-  -if word is not first in string and a minor word, lowercase
-  -otherwise, capitalize
-  -minor words will be given as a string of words separated by a space
-Implicit:
-  -second string argument is optional, if missing all words are capitalized
-  -the case of input strings does not effect the case of the output
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-title_case('a clash of KINGS', 'a an the of') ==> 'A Clash of Kings'
-sentence to be title cased --> 'a clash of KINGS'
-minor words --> 'a an the of'
-'a'     is first word      --> capitalized
-'clash' not a minor word   --> capitalized
-'of'    a minor wird       --> lowercased
-'KINGS' not a minor words  --> capitalized
+Clarifying Questions
+- 
 
-==> 'A Clash of Kings'
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
 
---method --> title_case(str1, str2(optional)) --> string
-  -initialize title_string to str1 aplit into words and downcased
-  -initialize minor_words to string 2 split into characters and downcased
-  -initialize title_cased to an empty string
-  -iterate through title_words with index using transformation
-    -if index 0 or word not found in minor_words
-      -capitalize word
-    -otherwise
-      -downcase word
-  -join array of cased words and return
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def title_case(title, minors='')
-  title_words = title.split.map(&:downcase)
-  minor_words = minors.split.map(&:downcase)
-  
-  title_cased = title_words.map.with_index do |word, index|
-    if index == 0 || !minor_words.include?(word)
-      word.capitalize
-    else
-      word
-    end
-  end
-  
-  title_cased.join(' ')  
-end
-
 p title_case('a clash of KINGS', 'a an the of') == 'A Clash of Kings'
 p title_case('THE WIND IN THE WILLOWS', 'The In') == 'The Wind in the Willows'
 p title_case('the quick brown fox') == 'The Quick Brown Fox'
@@ -2476,7 +1892,7 @@ p title_case('the quick brown fox') == 'The Quick Brown Fox'
 ## Count and Group Character Occurrences in a String ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write a method that takes a string as an argument and groups the number of times each character appears in the string as a hash sorted by the highest number of occurrences.
 
@@ -2493,90 +1909,28 @@ p get_char_count("abc123") == {1=>["1", "2", "3", "a", "b", "c"]}
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a method that takes a string as an argument and groups the number of times each character appears in the string as a hash sorted by the highest number of occurrences.
+Problem
+------------------------------------------
 
-The characters should be sorted alphabetically e.g:
 
-You should ignore spaces, special characters and count uppercase letters as lowercase ones.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 Hash, key==> occurances of a letter, value, array containing the letters
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Find the occurances of each letter in a given string and return them in a hash
-    -Hash will be sorted by the highest occurances
-    -The values will be an array of the letters matching the number of occurances sorted alphabetically
-  -Ignore space, spoecial characters
-  -Ignore case when counting letter occurances
-Implicit:
-  -Given string will not be empty
-  -Integer characters are acceptable inputs
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-get_char_count("cba") => {1=>["a", "b", "c"]}
-"cba"
-"c" --> 1 occurance
-"b" --> 1 occurance
-"a" --> 1 occurance
-returns => { 1 => ['a', 'b', 'c'] }
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Breakdown the given string finding the number of occurances of all valid characters. Organize these occurances into a hash where the keys are the number of occurances, and the values are an array of characters that occur a number of times equal to their key. Keys are sorted greatest to elast, and values are sorted alphabetically. 
+Examples, Test Cases
+------------------------------------------
 
--- method --> get_char_count(string) --> hash
-  -split given string into characters and iterate using each_with_object (occurances)
-    -if valid_char?
-      -increment the value of the current key
-  -initialize 'final_occurances' as an empty hash
-  -iterate through occurances
-    -pass all keys to an array object if their values are alike, set the value to the new key in final_occurances
-  -return final_occurances
 
-    
--- method --> valid_char?(string) --> boolean
-  -if character is valid
-    -returns true 
-  -otherwise
-    -returns false
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def valid_char?(char)
-  if char == '^'
-    false
-  else
-    /[A-z0-9]/.match?(char)
-  end
-end
-
-def find_occurances(str)
-  str.downcase.chars.each_with_object(Hash.new(0)) do |char, hash|
-    hash[char] += 1 if valid_char?(char)
-  end  
-end
-
-def organize_occurances(occurances)
-  occurances.each_with_object({}) do |(letter, times), organized_hsh|
-    if organized_hsh[times].nil?
-      organized_hsh[times] = [letter]
-    else
-      organized_hsh[times].push(letter)
-    end
-  end
-end
-
-def get_char_count(str)
-  occurances = find_occurances(str)
-  organized_occurances = organize_occurances(occurances)
-  
-  organized_occurances.sort.reverse.to_h.map do |k, v|
-    [k, v.sort]
-  end.to_h
-end
-
 # p valid_char?('a')
 # p valid_char?('!')
 
@@ -2588,73 +1942,14 @@ p get_char_count("abc123") == {1=>["1", "2", "3", "a", "b", "c"]}
 p get_char_count("P%c5Ve6OtTFsh-Y4lnBlpiM5%+beCTdjNiO,nxG.X!jjzp*Jt.7tB^Nt8^VScr.BQ1") == {6=>["t"], 4=>["b", "j", "n"], 3=>["c", "p"], 2=>["5", "e", "i", "l", "o", "s", "v", "x"], 1=>["1", "4", "6", "7", "8", "d", "f", "g", "h", "m", "q", "r", "y", "z"]}
 ```
 
-Secondary Solution:
 
-```ruby
-=begin
------------------------INSTRUCTIONS--------------------------------------
-Write a method that takes a string as an argument and groups the number of times each character appears in the string as a hash sorted by the highest number of occurrences.
-
-The characters should be sorted alphabetically e.g:
-
-You should ignore spaces, special characters and count uppercase letters as lowercase ones.
-
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 Hash, key==> occurances of a letter, value, array containing the letters
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Find the occurances of each letter in a given string and return them in a hash
-    -Hash will be sorted by the highest occurances
-    -The values will be an array of the letters matching the number of occurances sorted alphabetically
-  -Ignore space, spoecial characters
-  -Ignore case when counting letter occurances
-Implicit:
-  -Given string will not be empty
-  -Integer characters are acceptable inputs
-
---------------------------EXAMPLES---------------------------------------
-get_char_count("cba") => {1=>["a", "b", "c"]}
-"cba"
-"c" --> 1 occurance
-"b" --> 1 occurance
-"a" --> 1 occurance
-returns => { 1 => ['a', 'b', 'c'] }
-
-----------------------------ALGO-----------------------------------------
-==> Breakdown the given string finding the number of occurances of all valid characters. Organize these occurances into a hash where the keys are the number of occurances, and the values are an array of characters that occur a number of times equal to their key. Keys are sorted greatest to elast, and values are sorted alphabetically. 
-
--- method --> get_char_count(string) --> hash
-  -filter out all unwanted characters from the string
-  -group the collection into a hash
-    -keys are occurances
-    -values are the charatcers with that number of occurances
-  -return the hash
-  
-=end
-
-def get_char_count(str)
-  downcased_str = str.downcase.gsub('^', '')
-  downcased_str.gsub!(/[^A-z0-9]/, '')
-  occurances = downcased_str.chars.group_by { |char| downcased_str.count(char) }
-  occurances.map { |k, v| [k, v.uniq.sort] }.to_h.sort.to_h
-end
-
-p get_char_count("Mississippi") == {4=>["i", "s"], 2=>["p"], 1=>["m"]}
-p get_char_count("Hello. Hello? HELLO!!") == {6=>["l"], 3=>["e", "h", "o"]}
-p get_char_count("aaa...bb...c!") == {3=>["a"], 2=>["b"], 1=>["c"]}
-p get_char_count("aaabbbccc") == {3=>["a", "b", "c"]}
-p get_char_count("abc123") == {1=>["1", "2", "3", "a", "b", "c"]}
-p get_char_count("P%c5Ve6OtTFsh-Y4lnBlpiM5%+beCTdjNiO,nxG.X!jjzp*Jt.7tB^Nt8^VScr.BQ1") == {6=>["t"], 4=>["b", "j", "n"], 3=>["c", "p"], 2=>["5", "e", "i", "l", "o", "s", "v", "x"], 1=>["1", "4", "6", "7", "8", "d", "f", "g", "h", "m", "q", "r", "y", "z"]}
-```
 
 ---
 
 ## Sum of Squared Divisors a Square ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Divisors of 42 are : 1, 2, 3, 6, 7, 14, 21, 42. These divisors squared are: 1, 4, 9, 36, 49, 196, 441, 1764. The sum of the squared divisors is 2500 which is 50 * 50, a square!
 
@@ -2668,95 +1963,28 @@ p list_squared(250, 500) == [[287, 84100]]
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-# Divisors of 42 are : 1, 2, 3, 6, 7, 14, 21, 42. These divisors squared are: 1, 4, 9, 36, 49, 196, 441, 1764. The sum of the squared divisors is 2500 which is 50 * 50, a square!
+Problem
+------------------------------------------
 
-# Given two positive integers we want to find all integers between them whose sum of squared divisors is itself a square. 42 is such a number.
 
-# The result will be an array of arrays, each subarray having two elements, first the number whose squared divisors is a square and then the sum of the squared divisors.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Integers, representing a range of numbers
-Output: 1 Array of arrays, each sub_array will contain; 
-          -the numbers whose squared divisors is a square
-          -sum of the squared divisors
+Rules/Requirements
+- 
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Given integers will be positive
-  -find all integers between given integers whose sum of squared divisors is a square
-    -find all divisors of a number
-    -find the sum of all divisors squared
-    -if the sum if a perfect square --> include array of number and sum of squared divisors
-Implicit:
-  -inputs will not be empty
-  -will always be a integer (whole number)
+Clarifying Questions
+- 
 
---------------------------EXAMPLES---------------------------------------
-p list_squared(42, 250) == [[42, 2500], [246, 84100]]
-42..250
-42 divisors --> 1, 2, 3, 6, 7, 14, 21, 42
-squares of divisors --> 1, 4, 9, 36, 49, 196, 441, 1764
-sum of squared divisors --> 2500
-2500 if a square of 50! (50 * 50 == 2500)
-returns ==> [42, 2500]
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-==> For each integer within the range of integers given as arguments, check to see if all of the divisors of the integers, when squared and added together is the product of a square. 
 
--- method --> list_squared(integer1, integer2) --> 1 Array of Arrays
-  -intialize 'squared' to an empty array
-  -iterate through the range of numbers given as arguments
-    -find divisors of the current integer (divisors)
-    -if divisors squared and added together form the product of a square
-      -push sub_array to 'squared'
-  -return 'squared'
-    
--- method --> find_divisors(integer) --> array
-  -initialize 'divisors' as empty array
-  -iterate through all numbers between 1 and the given integer
-    -initialize 'square' to current number can be divided evenly into given number
-    -if 'square' is truthy
-      -push current element and square to 'divisors'
-  -return 'divisors'
-  
--- method --> square_product(array) --> integer or nil
-  -transform all elements of given array to themselves squared
-  -find sum of all sqaured divisors
-  -if sum is a product of aperfect square
-    -return square
-  -otherwise
-    -return nil
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def find_divisors(num)
-  divisors = []
-  1.upto(num) do |current_num|
-    divisors << current_num if num % current_num == 0
-  end
-  divisors
-end
-
-def square_product(array)
-  squared = array.map { |num| num * num }.sum
-  if Math.sqrt(squared) % 1 == 0
-    squared
-  end
-end
-
-def list_squared(start_num, end_num)
-  squared = []
-  start_num.upto(end_num) do |num|
-    divisors = find_divisors(num)
-    if square_product(divisors)
-      squared << [num, square_product(divisors)]
-    end
-  end
-  squared
-end
-
 p list_squared(1, 250) == [[1, 1], [42, 2500], [246, 84100]]
 p list_squared(42, 250) == [[42, 2500], [246, 84100]]
 p list_squared(250, 500) == [[287, 84100]]
@@ -2767,7 +1995,7 @@ p list_squared(250, 500) == [[287, 84100]]
 ## Find the Mine ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 You've just discovered a square (NxN) field and you notice a warning sign. The sign states that there's a single bomb in the 2D grid-like field in front of you.
 
@@ -2784,61 +2012,28 @@ p mine_location([ [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1, 0], [0, 0, 0, 0] ]) == [
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-You've just discovered a square (NxN) field and you notice a warning sign. The sign states that there's a single bomb in the 2D grid-like field in front of you.
+Problem
+------------------------------------------
 
-Write a function mineLocation/MineLocation that accepts a 2D array, and returns the location of the mine. The mine is represented as the integer 1 in the 2D array. Areas in the 2D array that are not the mine will be represented as 0s.
 
-The location returned should be an array where the first element is the row index, and the second element is the column index of the bomb location (both should be 0 based). All 2D arrays passed into your function will be square (NxN), and there will only be one mine in the array.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Array, with nested arrays within
-Output: 1 Array, location of the 1 (bomb)
----------------------------RULES-----------------------------------------
-Explicit:  
-  -integer 1 represents the bomb
-  -return the location of the bomb in the form of an array;
-    -first element is the index of the nested array that contains 1
-    -second element is the index within the nested array of 1
-    
-Implicit:  
-  -There will be no empty inputs
-  -all nested array will be of the same length
-  -there is only one 1 in the array
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-p mineLocation( [ [0, 0, 0], [0, 1, 0], [0, 0, 0] ] ) == [1, 1]
-field = [ [0, 0, 0], [0, 1, 0], [0, 0, 0] ]
-field[1] --> [0, 1, 0]
-field[1][1] --> 1
-returns --> [1, 1]
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> find the index of the nested array containing the 1 and then find the index within the nexted array where the 1 is located and return these indices in an array
+Examples, Test Cases
+------------------------------------------
 
--- method --> mine_location(array) --> array
-  -initialize 'mine_location' to an empty array
-  -iterate through the given array
-    -if the sub_array contains a 1
-      -push the index of the sub_array to mine_location
-      -push the index of the 1 found in the sub_array to mine_location
-  -return mine_location
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-MINE = 1
-
-def mine_location(arr)
-  mine_location = []
-  arr.each_with_index do |sub_arr, index|
-    if sub_arr.include?(MINE)
-      mine_location << index
-      mine_location << sub_arr.index(MINE)
-    end
-  end
-  mine_location
-end
 
 p mine_location( [ [1, 0, 0], [0, 0, 0], [0, 0, 0] ] ) == [0, 0]
 p mine_location( [ [0, 0, 0], [0, 1, 0], [0, 0, 0] ] ) == [1, 1]
@@ -2853,7 +2048,7 @@ p mine_location([ [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1, 0], [0, 0, 0, 0] ]) == [
 ## Scramblies ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
 
@@ -2874,64 +2069,28 @@ p scramble('scriptingjava','javascript') == true
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
+Problem
+------------------------------------------
 
-Notes:
 
-Only lower case letters will be used (a-z). No punctuation or digits will be included.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -figure out if any of the characters in str1 can be rearranged to match str2
-  -given strings will b elowercase letters
-  -no punctuation or digits will be in given strings
-Implicit Rules:
-  -characters in str1 cannot count for multiple chars in str2
-Questions:
-  -Null terminated? 
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-rkqodlw', 'world'
+Clarifying Questions
+- 
 
-str1 --> d k l o q r w
-           x     x
-str2 --> d   l o   r w --> matches up!
+Examples, Test Cases
+------------------------------------------
 
-retuns true
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 2 Strings
-Output: boolean
-Additional DS Utilized:
-  -splitting strings into arrays
+Data Structure, Algorithm
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
-* iterate through the chars of str 2 to check if they exist in str 1
-* retunr true if all characters are found, otherwise return false
-
--- method --> scramble(string, string) --> boolean
-  -iinitialize index to 0
-  -split str2 into array of characters
-  -loop 
-    -if char is found in str1
-      -remove char from str1
-    -otherwise
-      -return false
-  -return true
 
 =end
-
-def scramble(str1, str2)
-  index = 0
-  
-  while index < (str2.size - 1) do 
-    return false unless str1.include?(str2[index])
-    index += 1
-  end
-  true
-end
 
 p scramble('rkqodlw', 'world') == true
 p scramble('cedewaraaossoqqyt', 'codewars') == true
@@ -2943,96 +2102,6 @@ p scramble('scriptjava','javascript') == true
 p scramble('scriptingjava','javascript') == true
 ```
 
-```ruby
-#### ALTERNATE SOLUTION ####
-
-=begin
------------------------INSTRUCTIONS--------------------------------------
-Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
-
-Notes:
-
-Only lower case letters will be used (a-z). No punctuation or digits will be included.
-Performance needs to be considered
-Input strings s1 and s2 are null terminated.
-
-
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Strings
-Output: boolean
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Return true if a portion of str1 can be rearranged to match str2
-  -otherwise return false
-  -only lowercase letters will be used (a-z)
-  -no punctuation or digits
-  -consider performance
-  
-Implicit:  
-  -no empty inputs
-  -str2 will never be longer than str1
- 
---------------------------EXAMPLES---------------------------------------
-p scramble('rkqodlw', 'world') == true
-str1 --> 'rkqodlw'
-str2 --> 'world'
-r  - 'r' from world
-k  - not in str2
-q  - not in str2
-o  - 'o' from world
-d  - 'd' from world
-l  - 'l' from world
-w  - 'w' from world
-
-returns true because all characters from str2 are found in str1
-
-----------------------------ALGO-----------------------------------------
-==> return true if all the characters in str2 are found in str1
-
--- method --> scramble(string, string) --> boolean
-  -split str1 into array of characters
-  -initialize 'index' to 0
-  -loop
-    -break if index greater than str2 length - 1 
-    -return false if str1 doesn't include the character at current index
-    -increment index by 1
-    -delete element from str1 that matches index of str2
-  -return true
-    
-
-=end
-
-def scramble(str1, str2)
-  str1_arr = str1.chars
-  index = 0
-  
-  loop do 
-    break if index >= str2.size
-    if str1_arr.include?(str2[index])
-      str1_arr = str1_arr.join.sub(str2[index], '').chars
-      # p str1_arr, str2
-      index += 1
-    else
-      return false
-    end
-  end
-  true
-end
-
-p scramble('rkqodlw', 'world') == true
-p scramble('cedewaraaossoqqyt', 'codewars') == true
-p scramble('katas', 'steak') == false
-p scramble('rkqodlw','world') == true
-p scramble('cedewaraaossoqqyt','codewars') == true
-p scramble('katas','steak') == false
-p scramble('scriptjava','javascript') == true
-p scramble('scriptingjava','javascript') == true
-p scramble("scriptjavx", "javascript") == false
-p scramble("aabbcamaomsccdd", "commas") == true
-
-## Still isn't passing codewars efficiency tests
-```
 
 ---
 
@@ -3061,85 +2130,28 @@ p longest('zyba') == 'z'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Find the longest substring in alphabetical order.
+Problem
+------------------------------------------
 
-There are tests with strings up to 10 000 characters long so your code will need to be efficient.
 
-The input will only consist of lowercase characters and will be at least one letter long.
+Inputs: 
+Outputs: 
 
-If there are multiple solutions, return the one that appears first.
+Rules/Requirements
+- 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-  if given string is alphabetical already will that be the correct output?
-Input: 1 String
-Output: 1 String
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Find the longest alphabetical substring in the given string
-  -given string will contain only lowercase letters at least one character long
-  -if multiple solutions return the first in the order they appear
-Implicit:  
-  -a single character input string will output itself
-  
- 
---------------------------EXAMPLES---------------------------------------
-Example: the longest alphabetical substring in "asdfaaaabbbbcttavvfffffdf" is "aaaabbbbctt".
-"asdfaaaabbbbcttavvfffffdf"
-asdf
-aaaabbbbctt --> longest alphabetical substring
-avv
-fffff
-df
-d
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> find all alphabetical substring within the given string and save to an array object. Find the longest alphabetical substring within the array and return. If there are multiple of the same length, return the first in the order. 
+Examples, Test Cases
+------------------------------------------
 
--- method --> longest(string) --> string
-  -initialize 'alpha_subs' to an array of alphabetical substrings (find_alpha_subs(string))
-  -find the longest substring in alpha_subs and return
 
--- method --> find_alpha_subs(string) --> array
-  -initialized 'alpha_subs' to an empty array
-  -split string into an array of characters
-  -iterate through 1 upto the length of the array (length)
-    -iterate through the array of strings based on the given 'length'
-      -finding consective substrings that are alphabetical and pushinig them to alpha_subs
-  -return alpha_subs
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-
-### My way, not fast enough to pass on Codewars
-
-def find_alpha_subs(str)
-  alpha_subs = []
-  1.upto(str.size) do |length|
-    str.chars.each_cons(length) do |sub_arr|
-      alpha_subs << sub_arr.join if sub_arr == sub_arr.sort
-    end
-  end
-  alpha_subs
-end
-
-def longest(string)
-  alpha_subs = find_alpha_subs(string)
-  alpha_subs.max_by { |alpha_str| alpha_str.size }
-end
-
-
-### Faster way found on Codewars
-
-# def longest(str)
-#   p str.chars.slice_when { |a, b| a > b }
-#              .max_by(&:size)
-#              .join
-# end
-
-
-# p find_alpha_subs('nab')
 
 p longest('asd') == 'as'
 p longest('nab') == 'ab'
@@ -3155,7 +2167,7 @@ p longest('zyba') == 'z'
 ## Hashtag Generator ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 The marketing team is spending way too much time typing in hashtags.
 Let's help them with our own Hashtag Generator!
@@ -3185,56 +2197,28 @@ p generateHashtag("a" * 140) == false
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-The marketing team is spending way too much time typing in hashtags.
-Let's help them with our own Hashtag Generator!
+Problem
+------------------------------------------
 
-Here's the deal:
 
-It must start with a hashtag (#).
-All words must have their first letter capitalized.
-If the final result is longer than 140 chars it must return false.
-If the input or the result is an empty string it must return false.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
----------------------------RULES-----------------------------------------
-Explicit:  
-  -output string must begin with a '#'
-  -all words in hashtag must have their first letter capitalized
-  -return false if output string is > 140 characters
-  -if input or output string is empty return false
-Implicit:  
-  -A hashtag begins with a '#' and every word capitalized with no spaces
-  -
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-Examples
-" Hello there thanks for trying my Kata"  =>  "#HelloThereThanksForTryingMyKata"
-"    Hello     World   "                  =>  "#HelloWorld"
-""                                        =>  false
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Break down given string into words, capitalize each words, remove all spaces and add '#' to the begining. 
+Examples, Test Cases
+------------------------------------------
 
--- method --> generate_hashtag(string) --> string or boolean object
-  -return false if given string is empty
-  -split string into array of words, removing all whitespace
-  -transform array of words by capitalizing each word
-  -add '#' to the beginning of the array
-  -join array with ''
-  -return false if new_string is greater than 140 characters
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def generate_hashtag(str)
-  split_str = str.split
-  return false if split_str.size == 0
-  hashtagged = split_str.map(&:capitalize).unshift('#').join
-  hashtagged.size > 140 ? false : hashtagged
-end
 
 p generate_hashtag("") == false
 p generate_hashtag(" " * 200) == false
@@ -3253,7 +2237,7 @@ p generate_hashtag("a" * 140) == false
 ## Pete the Baker ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Pete likes to bake some cakes. He has some recipes and ingredients. Unfortunately he is not good in maths. Can you help him to find out, how many cakes he could bake considering his recipes?
 
@@ -3276,51 +2260,28 @@ p cakes({"cream"=>1, "flour"=>3, "sugar"=>1, "milk"=>1, "oil"=>1, "eggs"=>1},{"s
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Pete likes to bake some cakes. He has some recipes and ingredients. Unfortunately he is not good in maths. Can you help him to find out, how many cakes he could bake considering his recipes?
+Problem
+------------------------------------------
 
-Write a function cakes(), which takes the recipe (object) and the available ingredients (also an object) and returns the maximum number of cakes Pete can bake (integer). For simplicity there are no units for the amounts (e.g. 1 lb of flour or 200 g of sugar are simply 1 or 200). Ingredients that are not present in the objects, can be considered as 0.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Hashes, recipe requirements, ingredients had
-Output: 1 Integer
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Find out the maximum number of cakes that can be made based on;
-    -recipes requirements
-    -ingredients available
-  -return number of cakes that be made
-  -an ingredient not within the given hash equals 0
-Implicit:  
-  -inputs will not be blank
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-cakes({flour: 500, sugar: 200, eggs: 1}, {flour: 1200, sugar: 1200, eggs: 5, milk: 200}); 
-reciped requirements --> {flour: 500,  sugar: 200,  eggs: 1}
-ingredients had      --> {flour: 1200, sugar: 1200, eggs: 5, milk: 200}
-ingredients had / recipe         2            6           5
+Rules/Requirements
+- 
 
-maximum cakes that can be made --> 2
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Divide the ingredients had by the recipe requirements and return the smallest value
+Examples, Test Cases
+------------------------------------------
 
--- method --> cakes(hash, hash) --> integer
-  -iterate through the recipe hash initialize max_cakes to return value
-    -divide the value of the recipe hash by the corrisponding ingredients value
-    -push result to max_cakes
-    -push 0 if value is not found in ingredients hash
-  -find minimum value within max_cakes and return
-  
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def cakes(recipe, ingredients)
-  max_cakes = recipe.map do |component, amount|
-    ingredients[component].to_i / amount
-  end
-  max_cakes.min
-end
 
 
 p cakes({"flour"=>500, "sugar"=>200, "eggs"=>1},{"flour"=>1200, "sugar"=>1200, "eggs"=>5, "milk"=>200}) == 2
@@ -3337,7 +2298,7 @@ p cakes({"cream"=>1, "flour"=>3, "sugar"=>1, "milk"=>1, "oil"=>1, "eggs"=>1},{"s
 ## Mean Square Error ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Complete the function that
 
@@ -3357,81 +2318,28 @@ p solution([-1, 0], [0, -1]) == 1
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Complete the function that
+Problem
+------------------------------------------
 
-accepts two integer arrays of equal length
-compares the value each member in one array to the corresponding member in the other
-squares the absolute value difference between those two values
-and returns the average of those squared absolute value difference between each member pair.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input:  2 Arrays
-Output: 1 Integer or Float
----------------------------RULES-----------------------------------------
-Explicit:  
-  -given array object will be of equal length
-  -compares the elements at equal indices
-  -find square of absolute value of element of array 2 subtracted from element of array 1
-  -find and return the average between all elements
-Implicit:  
-  -positive and negative numbers accepted in given arrays
-  -given arrays will not be empty
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-Examples
-[1, 2, 3], [4, 5, 6]              -->   9   because (9 + 9 + 9) / 3
-1 - 4 = -3 (AV) --> 3 * 3 --> 9
-2 - 5 = -3 (AV) --> 3 * 3 --> 9
-3 - 6 = -3 (AV) --> 3 - 3 --> 9
-                          -------
-                             27 / 3 --> 9
-                             
-----------------------------ALGO-----------------------------------------
+Rules/Requirements
+- 
 
--- method --> solution(array, array) --> integer
-  -intialize 'sum' to an empty array
-  -initialize 'index' to 0
-  -loop
-    -subtract element of arr1 from arr2 at current index
-    -square the absolute value of result
-    -push result to 'sum'
-    -increment index by 1
-    -break if index > arr1 length
-  -find sum of 'sum' array and divide by length of arr1
-  -return result
-  
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def solution(arr1, arr2)
-  sum = []
-  index = 0
-  
-  loop do 
-    product = arr1[index] - arr2[index]
-    sum << product * product
-    index +=1
-    break if index >= arr1.size
-  end
-  
-  sum.map(&:to_f).sum / arr1.size
-end
-
-### ALTERNATIVE
-
-# -- method --> solution(array, array) --> integer
-#   -transpose the two arrays
-#   -iterate through the new array (transformation)
-#     -subtract second el from first
-#     -square the result
-#   -find sum of new array and divide it by length of arr1
-
-def solution(arr1, arr2)
-  [arr1, arr2].transpose.map.with_index do |num, index|
-    (num[0] - num[1]) ** 2
-  end.sum.to_f / arr1.size
-end
 
 
 p solution([1, 2, 3], [4, 5, 6]) == 9
@@ -3444,7 +2352,7 @@ p solution([-1, 0], [0, -1]) == 1
 ## Exponent Method ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Create a method called "power" that takes two integers and returns the value of the first argument raised to the power of the second. Return nil if the second argument is negative.
 
@@ -3465,52 +2373,28 @@ p power(8, -2) == nil
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Create a method called "power" that takes two integers and returns the value of the first argument raised to the power of the second. Return nil if the second argument is negative.
+Problem
+------------------------------------------
 
-Note: The ** operator has been disabled.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Integers
-Output: 1 integer
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Multiply the first input integer by itself number of times equal to the second input integer
-  -do not use the ** operator
-  -return nil if the second integer input is negative
-Implicit:  
-  -if the second input integer is 0 return 1
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-p power(2, 3) == 8
-2 * 2 = 4 (2 times)
-4 * 2 = 8 (3rd time)
+Rules/Requirements
+- 
 
-==> 8
-                             
-----------------------------ALGO-----------------------------------------
+Clarifying Questions
+- 
 
--- method --> power(integer, integer) --> integer
-  -return nil if num2 < 0
-  -initialize current to num1
-  -iterate through numbers starting at 1 upto num2
-    -current is equal to current * num1
-  -return current
-  
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def power(num1, num2)
-  return nil if num2 < 0
-  return 1 if num2 == 0
-  current = num1
-  
-  2.upto(num2) do
-    current = current * num1
-  end
-  
-  current
-end
 
 p power(2, 3) == 8
 p power(10, 0) == 1
@@ -3549,45 +2433,27 @@ p anagrams('laser', ['lazing', 'lazy',  'lacer']) == []
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-What is an anagram? Well, two words are anagrams of each other if they both contain the same letters. 
+Problem
+------------------------------------------
 
-Write a function that will find all the anagrams of a word from a list. You will be given two inputs a word and an array with words. You should return an array of all the anagrams or an empty array if there are none. 
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String, and 1 Array
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Find any anagrams of the given string input contained within the given array. 
-  -Any found anagrams should be returned in an array
-  -return an empty array if there are no anagrams
-Implicit:  
-  -Inputs will not be empty
-  -only lowercase letters will used in string inputs
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-'abba' & 'baab' == true
---> both strings contain the letters 'a' 'a' 'b' 'b' ==> ['baab']
+Rules/Requirements
+- 
 
-'abba' & 'bbaa' == true
---> both strings contain the letters 'a' 'a' 'b' 'b' ==> ['bbaa']
+Clarifying Questions
+- 
 
-'abba' & 'abbba' == false
---> 'abbba' has more letters than 'abba' ==> []
+Examples, Test Cases
+------------------------------------------
 
-'abba' & 'abca' == false
-the two strings do not have the same letters => []
 
-----------------------------ALGO-----------------------------------------
+Data Structure, Algorithm
+------------------------------------------
 
---method --> anagrams(string, array) --> array
-  -initialize 'anagrams' to an empty string
-  -set 'input_str' to given string split into array of characters and sorted
-  -iterate through given array
-    -
-  
+
 =end
 
 p anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) == ['aabb', 'bbaa']
@@ -3601,66 +2467,32 @@ p anagrams('laser', ['lazing', 'lazy',  'lacer']) == []
 ## Determine Missing Letters ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array.
+Problem
+------------------------------------------
 
-You will always get an valid array. And it will be always exactly one letter be missing. The length of the array will always be at least 2.
-The array will always contain letters in only one case.
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Array
-Output:  1 string
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Find the missing character in the array of consecutive strings
-  -Array will always be valid
-  -There will always be exactly 1 letter missing
-  -Array length will always be at least 2
-  -ALl letters in the array will be cased the same
-Implicit:  
-  -
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-['O','Q','R','S'] == 'P'
-    ^
-The 'P' is missing from this sequence
-Returns 'P'
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
+Clarifying Questions
+- 
 
---> method --> determine_missing_letter(array) --> string
-  -initialize 'alpha' to an array of upper and lowercase letters
-  -intialize 'current_index' to the index of the first char in given array within the alpha array
-  -iterate through the given array utilizing index
-    -if index is 0 go to next
-    -if current elements index within the alpha array is not equal to 'current_index' plus 1
-      -return the character from alpha at 'current_index' plus 1  
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def determine_missing_letter(arr)
-  alpha = ('A'..'z').to_a
-  current_index = alpha.index(arr.first)
-  arr.each_with_index do |char, index|
-    next if index == 0
-    if alpha.index(char) != current_index + 1
-      return alpha[current_index + 1]
-    end
-    current_index += 1
-  end
-end
-
-# Alternative Solution using #next
-
-def determine_missing_letter(arr)
-  arr.each_with_index do |char, index|
-    return char.next if char.next != arr[index + 1]
-  end
-end
 
 p determine_missing_letter(['a','b','c','d','f']) == 'e' 
 p determine_missing_letter(['O','Q','R','S']) == 'P'
@@ -3673,7 +2505,7 @@ p determine_missing_letter(["O","Q","R","S"]) == "P"
 ## Find Primes ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write a method that takes two numbers. Return an array containing all primes between the two numbers (include the two given numbers in your answer if they are prime). Don't use Ruby's 'prime' class.
 
@@ -3685,57 +2517,28 @@ p find_primes(1, 2) == [2]
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a method that takes two numbers. Return an array containing all primes between the two numbers (include the two given numbers in your answer if they are prime). Don't use Ruby's 'prime' class.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Integers
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:  
-  -return all prime numbers between the 2 given integers, within an array
-  -don't use Ruby's prime class
-Implicit:  
-  -given integers will always start greater than 0
-  -given integers will be whole numbers
 
---------------------------EXAMPLES---------------------------------------
-p find_primes(3, 10) == [3, 5, 7]
-3..10 --> 3, 4, 5, 6, 7, 8, 9, 10
-3 is prime
-5 is prime
-7 is prime
+Inputs: 
+Outputs: 
 
-return ==> [3, 5, 7]
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Find all prime numbers between the first and second integers given, including the given numbers. Return them in an array. 
+Clarifying Questions
+- 
 
--- method --> find_primes(integer, integer) --> array
-  -initialize 'primes' to an empty array
-  -iterate through num1 upto num2 (outer_num)
-    -initialize 'divisors' to an empty array
-    -iterate through all numbers starting from 1 upto the (current_num)
-      -if inner_num is evenly divisible by outer num
-        -push to divisors
-    -if divisors is 2 or less elements long
-      -push last element of divisors to primes
-  -return primes
-  
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def find_primes(num1, num2)
-  primes = []
-  num1.upto(num2) do |outer_num|
-    divisors = []
-    1.upto(outer_num) do |inner_num|
-      divisors << inner_num if (outer_num % inner_num) == 0
-    end
-    primes << divisors.last if divisors.size <= 2 && divisors.last!= 1
-  end
-  primes
-end
 
 p find_primes(3, 10) == [3, 5, 7]
 p find_primes(11, 20) == [11, 13, 17, 19]
@@ -3749,7 +2552,7 @@ p find_primes(1, 2) == [2]
 ## Find Some Substrings ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given two arrays of strings a1 and a2 return a sorted array r in alphabetical order of the strings of a1 which are substrings of strings of a2.
 
@@ -3760,51 +2563,28 @@ substrings(["albe", "negam"], ["alphabetical", "beta-carotene", "gamma rays", "d
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-# Given two arrays of strings a1 and a2 return a sorted array r in alphabetical order of the strings of a1 which are substrings of strings of a2.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Arrays
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:  
-  -Return a sorted alphabetically array of all strings within arr1, that are substrings of the strings in arr2. 
-  -
-Implicit:  
-  -all array arguments will contain strings/not be empty
-  -all strings will be lowercase
-  -strings may contain some special characters
 
---------------------------EXAMPLES---------------------------------------
-["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]
-'arp' is a substring of 'harp'
-'live' is a substring of 'lively'
-'strong' is a substring of 'armstrong'
+Inputs: 
+Outputs: 
 
-==> ["arp", "live", "strong"]
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
+Clarifying Questions
+- 
 
--- method --> substrings(array, array) --> array
-  -initialize 'subs' to an empty array
-  -iterate through the second array (full_str)
-    -iterate through the first array (small_str)
-      -if the full_str contains the current small_str
-        -push small_str to subs
-  -return all unique strings in subs sorted alphabetically
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def substrings(arr1, arr2)
-  subs = []
-  arr2.each do |full_str|
-    arr1.each do |small_str|
-      subs << small_str if full_str.include?(small_str)
-    end
-  end
-  subs.uniq.sort
-end
 
 p substrings(["arp", "live", "strong"], ["lively", "alive", "harp", "sharp", "armstrong"]) == ["arp", "live", "strong"]
 p substrings(["tarp", "mice", "bull"], ["lively", "alive", "harp", "sharp", "armstrong"]) == []
@@ -3925,33 +2705,29 @@ p solution("") == []
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:
-  -Split string into pairs of 2 characters
-  -if string has an odd number of integers the last element should be `_`
-Implicit:
-  -empty string is an acceptable input
-  -only lowercase letters will be used in given strings
---------------------------EXAMPLES---------------------------------------
-p solution('abc') == ['ab', 'c_']
-'abc'
---> ['ab', 'c_']
-----------------------------ALGO-----------------------------------------
--- method --> solution(string) --> array
-  -if string length is ogg?
-    -push '_' to string
-  -split string into array of characters and group the characters in pairs
+Problem
+------------------------------------------
+
+
+Inputs: 
+Outputs: 
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-def solution(str)
-  str << '_' if str.size.odd?
-  str.chars.each_slice(2).t o_a.map(&:join)
-end
+
 p solution('abc') == ['ab', 'c_']
 p solution('abcdef') == ['ab', 'cd', 'ef']
 p solution("abcdef") == ["ab", "cd", "ef"]
@@ -3964,7 +2740,7 @@ p solution("") == []
 ## Record Temps ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 You are given two arrays that each contain data that represents the min and max weather temperatures for each day of the week.
 
@@ -3990,65 +2766,29 @@ record_temps([[34, 82], [24, 82], [20, 89],  [5, 88],  [9, 88], [26, 89], [27, 8
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-You are given two arrays that each contain data that represents the min and max weather temperatures for each day of the week.
-The first array, the records array, contains the all-time record low/high temperatures for that day of the week.
-e.g. [[record low, record high], ...]
-The second array, the current week array contains the daily low/high temperatures for each day of the current week.
-e.g. [[daily low, daily high], ...]
-A daily high temperature is considered a new record high if it is higher than the record high for that day of the week. A daily low temperature is considered a new record low if it is lower than the record low for that day of the week.
-Compare the daily low/high temperatures of the current week to the record lows/highs and return an array with the updated record temperatures.
-There may be multiple record temperatures in a week.
-If there are no broken records return the original records array.
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 2 Arrays, 1st --> records array, 2nd --> current array
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:  
-  -First input array is the record low and high temps for this week
-  -second input array is the current low and high temps for this week
-  -compare the record low/high and the current low/high and return a new array containing all record lows/highs, including any records set this week. 
-  -if no new records are set return the old records array
-Implicit:  
-  -input temps will always be whole numbers
---------------------------EXAMPLES---------------------------------------
-#             sun       mon      tues       wed      thur      fri       sat
-record_temps([[34, 82], [24, 82], [20, 89],  [5, 88],  [9, 88], [26, 89], [27, 83]],
-            [[44, 72], [19, 70], [40, 69], [39, 68], [33, 64], [36, 70], [38, 69]])
-➞           [[34, 82], [19, 82], [20, 89], [5, 88], [9, 88], [26, 89], [27, 83]]
-=begin
-----------------------------ALGO-----------------------------------------
-==> Run the through the record low/high temps and compare the low/highs for this week, replacing any new records set this week and return the new records. 
--- method --> record_temps(array, array) --> array
-  -iterate through the records array using transformation and the index 
-    -initialize 'current_record' to an empty array
-    
-    -push the return value of record_low to current_record
-    -push the return value of record_high to current_record
-    -returns current_record
-    
-  -returns transfortmed array
-    
--- method --> record_high(integer, integer) --> boolean
-  -return higher value between record high and current high
--- method --> record_low(integer, integer) --> boolean
-  -return lower value between record low and record low
-    
+Problem
+------------------------------------------
+
+
+Inputs: 
+Outputs: 
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-def record_low(record, temp)
-  temp < record ? temp : record
-end
-def record_high(record, temp)
-  temp > record ? temp : record
-end
-def record_temps(records, weeks_temps)
-  records.map.with_index do |day_rec, index|
-    record_low_and_high = []
-    record_low_and_high << record_low(day_rec.first, weeks_temps[index].first)
-    record_low_and_high << record_high(day_rec.last, weeks_temps[index].last)
-  end
-end
+
 p record_temps([[34, 82], [24, 82], [20, 89],  [5, 88],  [9, 88], [26, 89], [27, 83]], [[44, 72], [19, 70], [40, 69], [39, 68], [33, 64], [36, 70], [38, 69]]) == [[34, 82], [19, 82], [20, 89], [5, 88], [9, 88], [26, 89], [27, 83]]
 ```
 
@@ -4084,7 +2824,7 @@ p anagram_difference('codewars', 'hackerrank') == 10
 ## Highest Scoring Word ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a string of words, you need to find the highest scoring word.
 
@@ -4103,61 +2843,29 @@ p high('aaa b') == 'aaa'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a string of words, you need to find the highest scoring word.
-Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
-You need to return the highest scoring word as a string.
-If two words score the same, return the word that appears earliest in the original string.
-All letters will be lowercase and all inputs will be valid.
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
----------------------------RULES-----------------------------------------
-Explicit:
-  -Of the given string, find the word with the highest score
-  -Scores are based on the position the lettter is found in the alphabet
-  -return the highest scoring word
-  -if more than one word has the highest score, return the one that appears first in the given string
-  -letters will be downcased
-  -all inputs will be valid
-Implicit:
-  -no empty strings passed in
---------------------------EXAMPLES---------------------------------------
-p high('aaa b') == 'aaa'
-'aaa' ==> 'a' equals 1 because it's the first letter in the alphabet. Total => 3
-'b'   ==> 'b' equals 2 because it's the second letter in the alphabet. Total => 2
-==> returns 'aaa'
-----------------------------ALGO-----------------------------------------
-==> Take the individual words found in the given string, evaluate their score, compare all scores, return the word with the greatest score.
--- method --> high(string) --> string
-  -initialize 'word_scores' to an empty array
-  -split sentence into an array of words
-    -set the word as key and return value of get_score as the value to the word_scores hash
-  -find the max value in the hash and return the associated key
-    
-    
--- method --> get_score(string) --> integer
-  -initialize 'alpha' to an array of all letters in an array
-  -initialize 'score' to 0
-  -split string into array of characters
-  -iterate through the array 
-    -find the index of the character from the 'alpha' array
-    -add 1 to the index and ncrement the score by product
+Problem
+------------------------------------------
+
+
+Inputs: 
+Outputs: 
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-def get_score(word)
-  alpha = ('a'..'z').to_a
-  score = 0
-  word.chars.each { |char| score += alpha.index(char) + 1 }
-  score
-end
-def high(sentence)
-  word_scores = sentence.split.each_with_object({}) do |word, scores|
-    scores[word] = get_score(word)
-  end
-  
-  word_scores.max_by { |k, v| v }.first
-end
+
 # p get_score('man')
 p high('man i need a taxi up to ubud') == 'taxi'
 p high('what time are we climbing up the volcano') == 'volcano'
@@ -4170,7 +2878,7 @@ p high('aaa b') == 'aaa'
 ## Replace with ALphabet Position ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 In this kata you are required to, given a string, replace every letter with its position in the alphabet.
 
@@ -4187,39 +2895,29 @@ p alphabet_position("-.-'") == ""
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-In this kata you are required to, given a string, replace every letter with its position in the alphabet.
-If anything in the text isn't a letter, ignore it and don't return it.
-"a" = 1, "b" = 2, etc.
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
----------------------------RULES-----------------------------------------
-Explicit:
-  -replace every letter in the given string with its position in the alphabet
-  -ignore anything that isn't a letter
-Implicit:
-  -case insensitive
---------------------------EXAMPLES---------------------------------------
-alphabet_position("The sunset sets at twelve o' clock.")
-Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" (as a string)
-----------------------------ALGO-----------------------------------------
--- method --> alphabet_position(string) --> string
-  -downcase strings and remove any non-letter characters
-  -initialize 'alpha' to an array of all alphabetical characters
-  -split string into array of characters and iterate using transformation
-    -find index of current letter in alpha, add 1 and return
-  -join array returns by transformation with ' '
+Problem
+------------------------------------------
+
+
+Inputs: 
+Outputs: 
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-def alphabet_position(sentence)
-  char_arr = sentence.downcase.gsub(/[^a-z]/, '').chars
-  alpha = ('a'..'z').to_a
-  
-  char_arr.map do |letter|
-    (alpha.index(letter) + 1).to_s
-  end.join(' ')
-end
+
 p alphabet_position("The sunset sets at twelve o' clock.") == "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
 p alphabet_position("-.-'") == ""
 ```
@@ -4229,7 +2927,7 @@ p alphabet_position("-.-'") == ""
 ## Sherlock on Pockets ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [] Problem Completed?
 
 Sherlock has to find suspects on his latest case. He will use your method, dear Watson. Suspect in this case is a person which has something not allowed in his/her pockets.
 
@@ -4252,56 +2950,29 @@ p find_suspects(pockets, [7]) == [:bob, :tom]
 
 ```ruby
 =begin
+Problem
+------------------------------------------
 
-DOESN"T PASS CODEWARS TESTS BUT GETS ALL TRUES BY SELF ????
 
------------------------INSTRUCTIONS--------------------------------------
-Sherlock has to find suspects on his latest case. He will use your method, dear Watson. Suspect in this case is a person which has something not allowed in his/her pockets.
-Allowed items are defined by array of numbers.
-Pockets contents are in a hash where key is a person and value is one or few things represented by an array of numbers (can be nil or empty array if empty), example:
-pockets = { 
-  bob: [1],
-  tom: [2, 5],
-  jane: [7]
-} 
-Write a method which helps Sherlock to find suspects. If no suspect is found or there are no pockets (pockets == nil), the method should return nil.
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 hash, 1 Array
-Output: 1 Array
----------------------------RULES-----------------------------------------
-Explicit:
-  -return an array of the suspects who have something in their pocket not on the list of allowed items
-  -if there are no pockets or suspects return nil
-Implicit:
-  -empty array argument is valid
-  -if a person has one allowed thing and one non-allowed thing in their pocket they are still a suspect
---------------------------EXAMPLES---------------------------------------
-find_suspects(pockets, [1, 2]) == [:tom, :jane]
-1 and 2 are allowed items
-bob has 1 in his pocket --> not a suspect
-tom has 1 allowed and unallowd item in pocket --> suspect
-jane has 1 not allowed item in pocket --> suspect
-[:tom, :jane]
-----------------------------ALGO-----------------------------------------
--- method --> find_suspects(hash, array) --> array or nil
-  -initialize suspects as an empty array
-  -iterate through the pockets hash
-    -if all of the items in a persons pockets are not found in the allowed items array
-      -push persons name to suspects
-  -return suspects
-  
+Inputs: 
+Outputs: 
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-def find_suspects(pockets, allowed)
-  return pockets.keys if allowed.empty?
-  suspects = []
-  
-  pockets.each do |name, items|
-    suspects << name unless items.all? { |item| allowed.include?(item) }
-  end
-  
-  suspects.empty? ? nil : suspects
-end
+
 pockets = { 
   bob: [1],
   tom: [2, 5],
@@ -4321,7 +2992,7 @@ p find_suspects(pockets2, []) == [:meg, :tom]
 ## Capitalize Second of Third ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Capitalize every second character of every third word of a given string.
 
@@ -4332,52 +3003,28 @@ p to_weird_case("Miss Mary Poppins word is supercalifragilisticexpialidocious") 
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Capitalize every second character of every third word of a given string.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Return a variation of the given string, where every second letter of every third word is capitalized
-Implicit:
-  -Input will be uppercase and lowercase letters
-  -Whitespace separating words in given string
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-"Lorem Ipsum is simply dummy text of the printing"
-             x                x             x
-             iS              tExT        pRiNtInG
+Rules/Requirements
+- 
 
-==> "Lorem Ipsum iS simply dummy tExT of the pRiNtInG"
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> FOr each 3rd word within the given string, uppercase eavery 2nd letter.
+Examples, Test Cases
+------------------------------------------
 
--- method --> to_weird_case(string) --> string
-  -split given string into an array of words
-  -itereate through the array utilizing index and transformation
-    -if the current word is in the 3rd or subsequent 3rd position
-      -iterate through the characters of the word usiing transformation
-        -capitalize every second character in the word
-  -join the transformed words and return
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def to_weird_case(sentence)
-  words_array = sentence.split
-  
-  words_array.map.with_index do |word, index|
-    if (index + 1) % 3 == 0
-      word.chars.map.with_index { |char, idx| idx.odd? ? char.upcase : char }.join
-    else
-      word
-    end
-  end.join(' ')
-end
 
 p to_weird_case("Lorem Ipsum is simply dummy text of the printing") == "Lorem Ipsum iS simply dummy tExT of the pRiNtInG"
 p to_weird_case("It is a long established fact that a reader will be distracted") == "It is a long established fAcT that a rEaDeR will be dIsTrAcTeD"
@@ -4390,72 +3037,35 @@ p to_weird_case("Miss Mary Poppins word is supercalifragilisticexpialidocious") 
 ## Difference of Two ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 The objective is to return all pairs of integers from a given array of integers
 that have a difference of 2. The result array should be sorted in ascending order of values. Assume there are no duplicate integers in the array. The order of the integers in the input array should not matter.
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Difference of Two: The objective is to return all pairs of integers from a given array of integers
-that have a difference of 2. The result array should be sorted in ascending order of values. Assume there are no duplicate integers in the array. The order of the integers in the input array should not matter.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Array
-Output: 1 Array (nested, if applicable)
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -return all pairs of integers that have a difference of 2
-  -the return array should be sorted in ascending order
-  -the given array will have no duplicate integers
-  -the order of the given array should not matter
-Implicit:
-  -an integer within the given array can be used more than once in the return array
-  -all integers are positive
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-[4, 1, 2, 3] == [[1, 3], [2, 4]]
-1, 2, 3, 4
-1 & 3 are have a dif of 2
-2 & 4 have a dif of 2
-1 & 2 do not
-1 & 4 do not
-returns => [[1, 3], [2, 4]]
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-High-Level --> Sort the given array and then iterate through it to find all pairs that have a difference of 2. Return as an array of arrays.
+Clarifying Questions
+- 
 
--- method --> difference_of_two(array) --> array
-  -initialize 'pairs' to an empty array
-  -sort the given array
-  -iterate through the array (num)
-    -iterate through the array again (second_num)
-      -initialize 'pair' as an empty array
-      -if the difference between num and second_num is 2
-        -push both numbers to pair
-        -sort pair and push to 'pairs'
-  -return pairs
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def difference_of_two(arr)
-  pairs = []
-  sorted_arr = arr.sort
-
-  sorted_arr.each do |num|
-    sorted_arr.each do |second_num|
-      pair = []
-      if num - second_num == 2
-        pairs << pair.push(num, second_num).sort 
-      end
-    end
-  end
-  
-  pairs.uniq
-end
 
 difference_of_two([1, 2, 3, 4]) == [[1, 3], [2, 4]]
 difference_of_two([4, 1, 2, 3]) == [[1, 3], [2, 4]]
@@ -4470,7 +3080,7 @@ difference_of_two([1, 4, 7, 10, 13]) == []
 ## Vowel Back ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 You need to play around with the provided string (s). \
 Move consonants forward 9 places through the alphabet. If they pass ‘z’, start
@@ -4487,109 +3097,28 @@ p vowel_back("weneedanofficedog") == "fzwzzmvwjoodlzmjp"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-You need to play around with the provided string (s).
-Move consonants forward 9 places through the alphabet. If they pass ‘z’, start
-again at ‘a’. Move vowels back 5 places through the alphabet. If they pass ‘a’,
-start again at ‘z’.  Provided string will always be lower case, won’t be empty
-and will have no special characters.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 String
-Output: 1 String
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -Move consonants FORWARD 9 places
-  -move vowels BACK 5 places
-  -if either get to the end of the alphabet start continue from the opposite end
-  -Given string will always be lowercase
-  -Given string will not be empty
-  -Given string will have no special characters
-Implicit:
-  -
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-"testcase" == "czbclvbz"
-t -> forward   9 places --> 'c' (t to z is 6 places, 3 more places from the beginning of the alphabet is 'c')
-e -> backwards 5 places --> 'z'
-s -> forward   9 places -->...
-t -> forward   9 places
-c -> forward   9 places
-a -> backwards 5 places
-s -> forward   9 places
-e -> backwards 5 places
+Rules/Requirements
+- 
 
-==> "czbclvbz"
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Break given string into array of characters, go through each character and find the charatcer 9 places ahead for a consonant and 5 places back for a vowel, then return string.
+Examples, Test Cases
+------------------------------------------
 
--- method --> vowel_back(string) --> string
-  -initialize constants 'vowels' and 'consonants' to these specific letters as an array 
-  -split given string into characters
-  -interate over characters using transformation (char)
-    -if char is a consonant
-      -return the value form find_consonant(char)
-    -if char is a vowel
-      -return the value from find_vowel(char)
-  -join the array returned by my iterative transformation
 
--- method --> find_consonant(string) --> string
-  -if strings ord value plus 9 >= 122
-    -return string ord value plus 9 to a character
-  -otherwise
-    -subtract strings ord value from 122, 
-    -then subtract that value from 9, and add to 96, 
-    -then turn into character and return
+Data Structure, Algorithm
+------------------------------------------
 
--- method --> find_vowel(string) --> string
-  -if strings ord value minus 5 >= 97 
-    -return string ord value minuis 5 to a character
-  -otherwise
-    -subtract 96 from strings ord value,
-    -then subtract that value from 5, and subtract that value from 122, 
-    -then turn into character and return
 
 =end
-
-# CONSONANTS = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "y", "z"]
-# VOWELS = ['a', 'e', 'i', 'o', 'u']
-
-# def find_consonant(char)
-#   if (char.ord + 9) <= 122
-#     (char.ord + 9).chr
-#   else
-#     ((9 - (122 - char.ord)) + 96).chr
-#   end
-# end
-
-# def find_vowel(char)
-#   if (char.ord - 5) >= 97
-#     (char.ord - 5).chr
-#   else
-#     (122 - (5 - (char.ord - 96))).chr
-#   end
-# end
-
-# def vowel_back(str)
-#   str.chars.map do |char|
-#     if CONSONANTS.include?(char)
-#       find_consonant(char)
-#     else
-#       find_vowel(char)
-#     end
-#   end.join
-# end
-
-def vowel_back(str)
-  p const = ("a".."z").to_a + ("a".."z").to_a
-  str.chars.map do |l|
-    i = const.index(l)
-    "aeiou".include?(l) ? const[i - 5] : const[i + 9]
-  end.join
-end
 
 p vowel_back("testcase") == "czbclvbz"
 p vowel_back("codewars") == "ljmzfvab" 
@@ -4605,7 +3134,7 @@ p vowel_back("weneedanofficedog") == "fzwzzmvwjoodlzmjp"
 ## Find Missing Letter ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Find the missing letter: Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array. You will always get an valid
 array. And it will be always exactly one letter be missing. The length of the array will always be at least 2. The array will always contain letters in only  one case. Use the English alphabet with 26 letters.
@@ -4618,50 +3147,28 @@ find_missing_letter(["b","d","e"]) == "c"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Find the missing letter: Write a method that takes an array of consecutive (increasing) letters as input and that returns the missing letter in the array. You will always get an valid
-array. And it will be always exactly one letter be missing. The length of the array will always be at least 2. The array will always contain letters in only  one case. Use the English alphabet with 26 letters.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Questions:
-Input: 1 Array of letters (Strings)
-Output: 1 String (missing letter)
-Interim:
 
----------------------------RULES-----------------------------------------
-Explicit:
-  -given array will contain consecutive letters (increasing) with one letter missing
-  -find and return the missing letter
-  -given array will always be valid
-  -there will always be exactly 1 letter missing from given array
-  -given array will always be at least 2 elements long
-  -strings within given array will always have matching case
-  -letters will only be english alphabetical letters (26 total)
-Implicit:
-  -
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-find_missing_letter(["b","d"]) == "c"
-b _ d
-  c is the missing letter
-  
-returns => 'c'
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-==> Iterate through the given array and check to see if the next element in the array is the same as the next element in the alphabet, if it's different return the next element in the alphabet
+Clarifying Questions
+- 
 
--- method --> find_missing_letter(array) --> string
-  -iterate through the given array utilizing the index
-    -unless the next element in the given array is the same as the next element in the alphabet
-      -return the next element in the alphabet
-      
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
+
 =end
-
-def find_missing_letter(arr)
-  arr.each_with_index do |letter, index|
-    return letter.next unless arr[index + 1] == letter.next
-  end
-end
 
 p find_missing_letter(["a","b","c","d","f"]) == "e"
 p find_missing_letter(["O","Q","R","S"]) == "P"
@@ -4675,7 +3182,7 @@ p find_missing_letter(["b","d","e"]) == "c"
 ## Word Scramble ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Complete the function `scramble(str1, str2)` that returns true if a portion of
 str1 characters can be rearranged to match str2, otherwise returns false. Notes: Only lower case letters will be used (a-z). No punctuation or digits will be included.
@@ -4693,67 +3200,28 @@ scramble('scriptingjava','javascript') == true
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Complete the function `scramble(str1, str2)` that returns true if a portion of
-str1 characters can be rearranged to match str2, otherwise returns false. Notes: Only lower case letters will be used (a-z). No punctuation or digits will be included.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Input: 2 Strings (main string, and potential sub-string)
-Output: 1 Booelan
-Questions:
-  -No punc or digits, does this include any non-letter character?
-  -Can I mutate the objects passed in to the method? 
-  
----------------------------RULES-----------------------------------------
-Explicit:
-  -return true if a portion of str1 can be rearranged to form str2
-  -otherwise return false
-  -only lowercase letters will be used
-  -no punc or digits*
-Implicit:
-  -strings will not be empty
-  -
-Interim:
-  -Array will be used to iterate through the sttring elements
-  
---------------------------EXAMPLES---------------------------------------
-scramble('rkqodlw', 'world') == true
-rkqodlw
-x  xxxx ---> r o d l w --> rearranged  ==> world
 
-returns ==> true
+Inputs: 
+Outputs: 
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Iterate through the characters of the second argument and delete them in both strings if they exist in the first string. If a character in string 2 doesn't exist in string 1 or after the complete iteration string 2 is an empty string return true, otherwise return false. 
+Rules/Requirements
+- 
 
--- method --> scramble(string, string) --> boolean
-  -intiialize 'test_str' to a duplicate of str2
-  -split the second string into an array of characters
-  -iterate through the array of charatcers
-    -if the current character is found within str1
-      -substitute current characters with empty string in str1 and str2
-    -otherwise
-      -return false
-  -if test_str is empty return true
-  -otherwise return false
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def scramble(str1, str2)
-  test_str1 = str1.dup
-  test_str2 = str2.dup
-  
-  test_str2.chars.each do |char|
-    if test_str1.include?(char)
-      test_str1.sub!(char, '')
-      test_str2.sub!(char, '')
-    else
-      return false
-    end
-  end
-  
-  test_str2.empty?
-end
 
 
 p scramble('fnollfkjchgjgedghmc', 'cwyydgtuidth') == false
@@ -4774,7 +3242,7 @@ p scramble('laifnalg','faaaalling') == false
 ## Alphabetized ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a string, concatenate into a new string with case-insensitive alphabetical
 order of appeareance. Whitespace and punctuation shall be removed.
@@ -4783,49 +3251,28 @@ alphabetized("The Holy Bible") == "BbeehHilloTy"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a string, concatenate into a new string with case-insensitive alphabetical
-order of appeareance. Whitespace and punctuation shall be removed.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Input: 1 String
-Output: 1 String
-Questions:
-  -Concatenation is required for this problem? 
-  -If I return a new string without concatenation does that count?
-  
----------------------------RULES-----------------------------------------
-Explicit:
-  -concatenate given string into a new string with the letters ordered alphabetically ignoring case
-  -punctuation and white space will be removed
-Implicit:
-  -input will not be empty
-  -input will be a valid string
-Interim:
-  -using array to sort the characters of the given string
---------------------------EXAMPLES---------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> convert the given string and sort while treating uppercase elements like lowercase elements. Then concatenate each letter to a new string removing punctuation and white space.
+Inputs: 
+Outputs: 
 
--- method --> alphabetized(string) --> string
-  -initialize 'result' to an empty string
-  -split the given string into an array of characters
-  -sort the array of chars by their downcased values
-  -iterate through the array of characters
-    -if current char is a letter 
-      -concatenate to the 'result' string
-  -return the 'result' string
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def alphabetized(string)
-  result = ''
-  string.chars.sort_by { |sorting_char| sorting_char.downcase }.each do |char|
-    result.concat(char) if /[A-z]/.match?(char)
-  end
-  result
-end
 
 p alphabetized("The Holy Bible") == "BbeehHilloTy"
 ```
@@ -4835,7 +3282,7 @@ p alphabetized("The Holy Bible") == "BbeehHilloTy"
 ## Anagram Detection ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
 
@@ -4858,44 +3305,28 @@ p is_anagram("apple", "pale") == false
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-An anagram is the result of rearranging the letters of a word to produce a new word (see wikipedia).
+Problem
+------------------------------------------
 
-Note: anagrams are case insensitive
 
-Complete the function to return true if the two arguments given are anagrams of each other; return false otherwise.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Input: 2 Strings
-Output: boolean value
-Questions:
-  -Will given strings contain only lowercase letters? Punctuation? White space?
----------------------------RULES-----------------------------------------
-Explicit:
-  -Anagram: the result of rearranging the letters of a word to produce a new word
-  -anagrams are case insensitive
-  -return true if the given strings are anagrams of each other, otherwise false
-Implicit:
-  -given strings will not be empty
-  -given strings will not contain punctuation or whitespace
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-"foefet" is an anagram of "toffee"
+Clarifying Questions
+- 
 
-"Buckethead" is an anagram of "DeathCubeK"
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Split up strings into arrays of characters and compare to see if they are the same if sorted. 
 
--- method --> is_anagram(string, string) --> boolean
-  -downcase and then split both strings into array of characters, then sort
-  -compare whether these arrays are the same
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def is_anagram(str1, str2)
-  str1.downcase.chars.sort == str2.downcase.chars.sort
-end
 
 p is_anagram('Creative', 'Reactive') == true
 p is_anagram("foefet", "toffee") == true
@@ -4911,7 +3342,7 @@ p is_anagram("apple", "pale") == false
 ## Highest Scoring Word Again ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a string of words, you need to find the highest scoring word.
 
@@ -4930,80 +3361,28 @@ p high('aaa b') == 'aaa'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a string of words, you need to find the highest scoring word.
+Problem
+------------------------------------------
 
-Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
 
-You need to return the highest scoring word as a string.
+Inputs: 
+Outputs: 
 
-If two words score the same, return the word that appears earliest in the original string.
+Rules/Requirements
+- 
 
-All letters will be lowercase and all inputs will be valid.  
+Clarifying Questions
+- 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -Find the highest scoring word within the given string
-  -letter values are equal to their numerical place within the alphabet (a -> 1, b -> 2, etc)
-  -return the WORD with the highest score
-  -if multiple words have the highest score, return the first to appear
-  -given inputs will be lowercase and valid
-Implicit Rules:
-  -a word is a cluster of characters within the given string separated by white space
-  -only letters separated by white space will be included in the given strings
-Questions:
-  -what is considered a word?
-  -will given string include punctuation or digits?
-  
---------------------------EXAMPLES---------------------------------------
-('aaa b') == 'aaa'
-a ==> 1
-'aaa' --> 3 points
+Examples, Test Cases
+------------------------------------------
 
-b ==> 2
-'b' --> 2 points
 
-'aaa' > 'b'
+Data Structure, Algorithm
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 String, highest scoring word
-Additional DS Utilized:
-  -Array to split given string into words, and then into characters
-  -Hash to organze word scores
-  -Integers to calculate the score of words
-
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Split given string into an array of words, then calcualte the value of each letter of each word to gather each words total score, then return the word with the highest score.
-
--- method --> high(string) --> string
-  -split given string into an array of words
-  -initialize 'scores' to an empty hash
-  -iterate through the array of words
-    -split word into array of characters and iterate through using transformation
-      -return value of find_value(char)
-    -assign  word as key and return value of transformation as key to 'scores'
-  -find the maximum value within scores and return the key associated with it
-
--- method --> find_value(string) --> integer
-  -initialize 'alpha' to an array of each letter in the alphabet
-  -return the index of the character + 1
 
 =end
-
-def find_value(char)
-  alpha = ('a'..'z').to_a
-  alpha.index(char) + 1
-end
-
-def high(sentence)
-  scores = {}
-  sentence.split.each do |word|
-    word_score = word.chars.map { |char| find_value(char) }.sum
-    scores[word] = word_score  
-  end
-  scores.max_by { |word, score| score }.first
-end
 
 # p find_value('a') == 1
 # p find_value('c') == 3
@@ -5056,84 +3435,28 @@ rotateClockwise(["a", "b", "c"])) #, ["cba"]);
 ```ruby
 
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a matrix represented as a list of strings, such as...
+Problem
+------------------------------------------
 
-matrix = ['###.....',
-          '..###...',
-          '....###.',
-          '.....###',
-          '.....###',
-          '....###.',
-          '..###...',
-          '###.....']
-          
-write a function; rotateClockwise(matrix), that return its 90° clockwise rotation, for example:
 
-['#......#',
- '#......#',
- '##....##',
- '.#....#.',
- '.##..##.',
- '..####..',
- '..####..',
- '...##...']
-  
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -matrix: a 2 dimensional collection, in this circumstance represented by an array of strings
-  -write a method that rotates the given matrix 90 degrees clockwise
-  -
-Implicit Rules:
-  -the elements within the first string should be the last elements in all of the strings of the output matrix
-  -all elements within the given array will be strings of the same length
-  -strings within given array will have a length of at least 1
-  -string elements within given array can be any characters
-Questions:
-  -what is a matrix?
-  
---------------------------EXAMPLES---------------------------------------
-["abc", "def"] --> ["da", "eb", "fc"]
+Inputs: 
+Outputs: 
 
-[[a, b, c], [d, e, f]]
-[[d, a], [e, b], [f, c]]
+Rules/Requirements
+- 
 
-[da, eb, fc]
+Clarifying Questions
+- 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 array of strings
-Output: 1 array
-Additional DS Utilized:
-  -Strings within given array will be converted to arrays then converted back to strings 
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Reverse the given array, then group the characters of each element by index in and push them to a new array where they are joined into strings.,
 
--- method --> rotate_clockwise(array) --> array
-  -initialize an empty array (output)
-  -reverse the given array
-  -iterate a number times equal to the strings length in the given array (index)
-    -initialize an empty array (nested)
-    -iterate through the given array
-      -remove and push the elements at the current 'index' to 'nested'
-    -push nested to output
-  -return output
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def rotate_clockwise(arr)
-  output = []
-  reversed_arr = arr.reverse
-  
-  arr.first.size.times do |index|
-    nested_arr = reversed_arr.each_with_object([]) do |str, nested|
-      nested << str.chars[index]
-    end
-    output << nested_arr
-  end
-  
-  output.map(&:join)
-end
 
 p rotate_clockwise(["abc", "def"]) == ["da", "eb", "fc"]
 p rotate_clockwise(["c","b","a"]) == ["abc"]
@@ -5147,7 +3470,7 @@ p rotate_clockwise(['###.....', '..###...', '....###.', '.....###', '.....###', 
 ## Longest Common Prefix ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write a method to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string,
 
@@ -5161,69 +3484,28 @@ puts common_prefix(["throne", "throne"]) == "throne"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a method to find the longest common prefix string amongst an array of strings. If there is no common prefix, return an empty string,
+Problem
+------------------------------------------
 
-All given inputs are in lowercase letters a-z.
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -find and return the longest common prefix of an array of strings
-  -return an empty string if no common prefix exists
-  -all given strings will be lowercase letters (a-z)
-Implicit Rules:
-  -All strings will be at least one letter in length
-Questions:
-  -What is a prefix?
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-["flower", "flow", "flight"]) == "fl"
+Rules/Requirements
+- 
 
-flower
-flxxxx
+Clarifying Questions
+- 
 
-flow
-flxx
+Examples, Test Cases
+------------------------------------------
 
-flight
-flxxxx
 
-'fl' is the longest common prefix of the given strings
+Data Structure, Algorithm
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Array
-Output: 1 String
-Additional DS Utilized:
-  -split given strings into an array
-  -join array of strings to string
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Split the first string into an array of characters, then compare all the strings character by character to see if they match the charatcers of the array, when a character doesn't match return the characters from the array up to that point, joined into a string.
-
-* split first string into array of characters
-* iterate based on index of array and compare the characters within the array at current index
-* when a character doesn't match return the array of characters up to the current index, joined as a string
-
--- method --> common_prefix(array) --> string
-  -split first element of array into array of characters (base_chars)
-  -iterate from 0 upto the length of base_chars (index)
-    -unless all strings within given arr at current index equal the char of base_chars at current index
-      -return the chars of the first string in given arr from index 0, to current index
-  -otherwise return first string within given array
-      
 =end
-
-def common_prefix(arr)
-  base_chars = arr.first.chars
-  
-  base_chars.size.times do |index|
-    unless arr.all? { |word| word[index] == base_chars[index] }
-      return arr.first[0, index]
-    end
-  end
-  
-  arr.first
-end
   
 p common_prefix(["flower", "flow", "flight"]) == "fl"
 p common_prefix(["dog", "racecar", "car"]) == ""
@@ -5237,7 +3519,7 @@ p common_prefix(["throne", "throne"]) == "throne"
 ## Consecutive Runs ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a certain string, create a hash with each character in string as key andall possible substrings in string starting at each character as value.
 
@@ -5248,86 +3530,28 @@ p consecutive_runs('abcd') == {"a"=>["a", "ab", "abc", "abcd"], /
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a certain string, create a hash with each character in string as key andall possible substrings in string starting at each character as value.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -create a hash where the keys are a character from the given string and the value is an array of all possible substrings starting with the key.
-Implicit Rules:
-  -input will be be a valid non-empty string
-  -lowercase letters only
-Questions:
-  -lowercase letters only? 
-  
---------------------------EXAMPLES---------------------------------------
-'abcd'
-a --> a, ab, abc, abcd
-b --> b, bc, bcd
-etc.
 
-{"a"=>["a", "ab", "abc", "abcd"], 
- "b"=>["b", "bc", "bcd"], 
- "c"=>["c", "cd"], 
- "d"=>["d"]}
+Inputs: 
+Outputs: 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 Hash, keys will be strings, values will be arrays
-Additional DS Utilized:
-  -splitting strings into array of characters
-  -joining arrays into strings
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Split given string into array of characters, iterate through all numbers upto the length of the array, collect all substrings starting at specific indices and add them to a hash collection based on the starting character.
+Clarifying Questions
+- 
 
-* split string into array of characters
-* collect all substring into an array
-* iterate through the array of characters
-* gather all substrings that begin with current character and push to hash
-* retruning hash
+Examples, Test Cases
+------------------------------------------
 
--- method --> consecutive_runs(string) --> hash
-  -initialize an empty hash (subs)
-  -split given string into array of characters (chars)
-  -intialize subs to get_subs(arr)
-  -iterate through array of characters 
-    -select all chars that begin with current char and push to hash
-  -return hash
 
--- method --> get_subs(array) --> array
-  -initialize subs as empty array
-  -iterate through 1 upto length of arr (length)
-    -iterate through the arr of characters by length
-      -push joined sub arrays to subs
-  -return subs
-  [a ab etc]
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def get_subs(arr)
-  subs = []
-  1.upto(arr.size) do |length|
-    arr.each_cons(length) do |sub_arr|
-      subs << sub_arr.join
-    end
-  end
-  subs
-end
-
-def consecutive_runs(str)
-  sub_hash = {}
-  str = str.chars
-  subs = get_subs(str)
-  
-  str.each do |char|
-    sub_hash[char] = subs.select { |sub| sub[0] == char }
-  end
-  
-  sub_hash
-end
-
-# p get_subs(%w(a b c d))
 
 p consecutive_runs('abcd') == {"a"=>["a", "ab", "abc", "abcd"], 
                                "b"=>["b", "bc", "bcd"], 
@@ -5340,7 +3564,7 @@ p consecutive_runs('abcd') == {"a"=>["a", "ab", "abc", "abcd"],
 ## Search Query ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Solve utilizing the given examples;
 
@@ -5379,115 +3603,28 @@ p search(query2) == [ { name: "Dell Inspiron", price: 300}, { name: "Dell Inspir
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Solve utilizing the given examples;
+Problem
+------------------------------------------
 
-PRODUCTS = [
-  { name: "Thinkpad x210", price: 220},
-  { name: "Thinkpad x220", price: 250},
-  { name: "Thinkpad x250", price: 979},
-  { name: "Thinkpad x230", price: 300},
-  { name: "Thinkpad x230", price: 330},
-  { name: "Thinkpad x230", price: 350},
-  { name: "Thinkpad x240", price: 700},
-  { name: "Macbook Leopard", price: 300},
-  { name: "Macbook Air", price: 700},
-  { name: "Macbook Pro", price: 600},
-  { name: "Macbook", price: 1449},
-  { name: "Dell Latitude", price: 200},
-  { name: "Dell Latitude", price: 650},
-  { name: "Dell Inspiron", price: 300},
-  { name: "Dell Inspiron", price: 450}
-]
 
-query = {
-  price_min: 240,
-  price_max: 280,
-  q: "thinkpad"
-}
+Inputs: 
+Outputs: 
 
-query2 = {
-  price_min: 300,
-  price_max: 450,
-  q: 'dell'
-}
+Rules/Requirements
+- 
 
-p search(query) == [ { name: "Thinkpad x220", price: 250} ]
-p search(query2) == [ { name: "Dell Inspiron", price: 300}, { name: "Dell Inspiron", price: 450} ]
+Clarifying Questions
+- 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-Implicit Rules:
-  -return an array of hashes, where the hashes meet the search criteria passed in as an argument
-  -criteria icludes:
-    -price min
-    -price max
-    -keyword
-    
-Questions:
---------------------------EXAMPLES---------------------------------------
-search(query) == [ { name: "Thinkpad x220", price: 250} ]
+Examples, Test Cases
+------------------------------------------
 
-min price = 240
-max price 280
-keyword = 'thinkpad'
 
-option that meets criteria => [ { name: "Thinkpad x220", price: 250} ]
+Data Structure, Algorithm
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Hash, 3 criteria(key/values)
-Output: 1 Array of hashes, hashes are options that meet given criteria
-Additional DS Utilized:
-  - Array to return hash options
-  - Hashes for argument, constant options, and return options
-
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Utilizing the criteria passed in as an argument, iterate through the PRODUCTS constant and push all hashes that meet the criteria to a new array, return new array
-
--- method --> search(hash) --> array
-  -iterate through the PRODUCTS array using selection (hash)
-    -current hash price >= min and <= max and name downcased contains keyword?
-  -return new array object
 
 =end
-
-PRODUCTS = [
-  { name: "Thinkpad x210", price: 220},
-  { name: "Thinkpad x220", price: 250},
-  { name: "Thinkpad x250", price: 979},
-  { name: "Thinkpad x230", price: 300},
-  { name: "Thinkpad x230", price: 330},
-  { name: "Thinkpad x230", price: 350},
-  { name: "Thinkpad x240", price: 700},
-  { name: "Macbook Leopard", price: 300},
-  { name: "Macbook Air", price: 700},
-  { name: "Macbook Pro", price: 600},
-  { name: "Macbook", price: 1449},
-  { name: "Dell Latitude", price: 200},
-  { name: "Dell Latitude", price: 650},
-  { name: "Dell Inspiron", price: 300},
-  { name: "Dell Inspiron", price: 450}
-]
-
-query = {
-  price_min: 240,
-  price_max: 280,
-  q: "thinkpad"
-}
-
-query2 = {
-  price_min: 300,
-  price_max: 450,
-  q: 'dell'
-}
-
-def search(query)
-  PRODUCTS.select do |hash|
-    hash[:price] >= query[:price_min] &&
-    hash[:price] <= query[:price_max] &&
-    hash[:name].downcase.include?(query[:q])
-  end
-end
 
 p search(query) == [ { name: "Thinkpad x220", price: 250} ]
 p search(query2) == [ { name: "Dell Inspiron", price: 300}, { name: "Dell Inspiron", price: 450} ]
@@ -5498,7 +3635,7 @@ p search(query2) == [ { name: "Dell Inspiron", price: 300}, { name: "Dell Inspir
 ## Repeated Substring 2 ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a non-empty string, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together. You may assume the given string consists of lowercase English letters only.
 
@@ -5520,98 +3657,28 @@ p repeated_substring('aaaaa') == true
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Problem 1: Repeated substring
+Problem
+------------------------------------------
 
-Given a non-empty string, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together. You may assume the given string consists of lowercase English letters only.
 
-Example 1:
- - Input "abab"
- - Output: True
- - Explanation: It's the substring 'ab' twice.
+Inputs: 
+Outputs: 
 
-Example 2:
- - Input: "aba"
- - Output: False
+Rules/Requirements
+- 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -Check if  the given string can be constructed by taking a substring of itself and repeating. 
-  -Given string will consist of lowercase letters only
-Implicit Rules:
-  -no empty strings given
-  -no whitespace or punctuation
-  -substring cannot be the same length as the given string
-Questions:
-  -
-  
---------------------------EXAMPLES---------------------------------------
-"abab"
-a, ab, aba, abab
-a does not work
-ab if repeated twice, will be the same as the given string
-aba does not work
-abab is not valid
+Clarifying Questions
+- 
 
-==> true, because 'ab' repeated twice is the same as the given string
+Examples, Test Cases
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 boolean
-Additional DS Utilized:
-  -split string into an array
-  -join array into a string
-  -integers used to countinstances of repeated substrings
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Find all substrings of a length less than the givens string, repeat each substring to determine if it casn be repeated to construct the given string, if it can return ture, else return false.
+Data Structure, Algorithm
+------------------------------------------
 
--- method --> repeated_substring(string) --> boolean
-  -initialize subs to return value of find_subs
-  -iterate through the subs array
-    -intialize 'temp_string'
-    -loop
-      -concatenate the current sub_string to itslef until the length is greater or equal to the lenght of the given string
-    -if temp_string equals given string return true
-  -return false
-  
--- method --> find_subs(string) --> array
-  -initialize an emoty array (subs)
-  -iterate from 1 to the length of the given string minus 1 (length)
-    -iterate through the given string broken into array of characters finding each consecutive combo based on length
-      -join and push sub_arrays into subs array
-  -return subs
-  
+
 =end
-
-def find_subs(str)
-  subs = []
-  1.upto(str.size - 1) do |length|
-    str.chars.each_cons(length) do |sub_arr|
-      subs << sub_arr.join
-    end
-  end
-  subs
-end
-
-def repeated_substring(str)
-  subs = find_subs(str)
-  subs.each do |sub_str|
-    temp_str = sub_str
-    rounds = 1   
-  
-    loop do
-      temp_str += sub_str
-      rounds += 1
-      break if temp_str.size >= str.size
-    end
-    return true if temp_str == str
-  end
-  false
-end
-
-# p find_subs('abab') == %w(a b a b ab ba ab aba bab)
-
 p repeated_substring('abab') == true
 p repeated_substring('aba') == false
 p repeated_substring('aabaaba') == false
@@ -5625,7 +3692,7 @@ p repeated_substring('aaaaa') == true
 ## Reverse String ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Problem 1: Reverse a string without using the built-in #reverse method
 
@@ -5637,58 +3704,28 @@ reverse_string("football") == "llabtoof"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Reverse a string without using the built-in #reverse method
+Problem
+------------------------------------------
 
-take a string as an argument, return the string in reverse order without using the built-in reverse method.
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -take a string as an argument and reverse the order of the characters 
-  -do not use the reverse method
-Implicit Rules:
-  -whitespace allowed
-  -any character type allowed
-Questions:
-  -no questions currently
-  
---------------------------EXAMPLES---------------------------------------
-'abcde'
+Inputs: 
+Outputs: 
 
-a b c d e
-e d c b a
+Rules/Requirements
+- 
 
-'edcba'
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 String
-Additional DS Utilized:
-  -splitting string into an array
-  -joining arrays into strings
-  
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> split given string into an array of characters and push each character into a new string object starting from the end, then join and return the new string
+Clarifying Questions
+- 
 
--- method --> reverse_string(string) --> string
-  -initialize an empty string object (new_string)
-  -initialize 'index' to -1
-  -while length of str is greater or equal to positive version of index
-    -concat character at current index to new_string
-    -decrement index by 1
-  -return new_string
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def reverse_string(str)
-  new_string = ''
-  index = -1
-  
-  while str.size >= index.abs do
-    new_string << str[index]
-    index -= 1
-  end
-  new_string
-end
 
 p reverse_string("abcde") == "edcba"
 p reverse_string(" ") == " "
@@ -5700,7 +3737,7 @@ p reverse_string("football") == "llabtoof"
 ## Fizzbuzz ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write a method that takes two arguments: the first is the starting number, and the second is the ending number. Print out all numbers between the two numbers except if a number is divisible by 3, print out "Fizz", if a number is divisible by 5, print out "Buzz", and if a number is divisible by 3 and 5, print out "FizzBuzz".
 
@@ -5709,45 +3746,28 @@ fizzbuzz(1, 15)
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a method that takes two arguments: the first is the starting number, and the second is the ending number. Print out all numbers between the two numbers except if a number is divisible by 3, print out "Fizz", if a number is divisible by 5, print out "Buzz", and if a number is divisible by 3 and 5, print out "FizzBuzz".
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -return all digits from a given range
-  -if the digit is divisible by 3 return 'Fizz' instead
-  -if the digit is divisible by 5 return 'Buzz' instead
-  -if the digit is divisible by 3 and 5 return 'FizzBuzz' instead
-Implicit Rules:
-Questions:
-  
---------------------------EXAMPLES---------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 
-Output: 
-Additional DS Utilized:
+Inputs: 
+Outputs: 
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> 
+Rules/Requirements
+- 
 
--- method 
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def fizzbuzz(starting, ending)
-  starting.upto(ending) do |num|
-    if num % 3 == 0 && num % 5 == 0
-      puts 'FizzBuzz'
-    elsif num % 3 == 0
-      puts 'Fizz'
-    elsif num % 5 == 0
-      puts 'Buzz'
-    else
-      puts num
-    end
-  end
-end
 
 fizzbuzz(1, 10)
 fizzbuzz(1, 15)
@@ -5758,7 +3778,7 @@ fizzbuzz(1, 15)
 ## Remove Vowels ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [] Problem Completed?
 
 Problem 1: remove vowels from an array of strings
 
@@ -5768,58 +3788,28 @@ p remove_vowels(['green', 'yellow', 'black', 'white']) == ['grn', 'yllw', 'blck'
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Problem 1: remove vowels from an array of strings
+Problem
+------------------------------------------
 
-Write a method that takes an array of strings and returns an array of the same string values, except with the vowels removed.
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -remove all vowels from the given array of strings and return
-Implicit Rules:
-  -all given strings will comtain lowercase letters only
-  -input will be valid and strings will not be empty
-Questions:
-  -none
-  
---------------------------EXAMPLES---------------------------------------
-['green', 'yellow', 'black', 'white'] == ['grn', 'yllw', 'blck', 'wht']
+Inputs: 
+Outputs: 
 
-green --> grn
-yellow --> yllw
-black --> blck
-white --> wht
+Rules/Requirements
+- 
 
-returns --> ['grn', 'yllw', 'blck', 'wht']
+Clarifying Questions
+- 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Array of strings
-Output: 1 Array of strings
-Additional DS Utilized:
-  -split string into array
-  -join array into string
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Itersate through the array of strings, then iterate through each vowel character and remove from current string if applicable, return an array with al vowels removed from strings.
 
--intialize 'vowels' to a constant of lowercase vowel characters
+Data Structure, Algorithm
+------------------------------------------
 
--- method --> remove_vowels(array) --> array
-  -iterate through the given array using transformation
-    -iterate through current word split into characters using selection 
-      -check if the current char is not a vowel
-    -join split word back together and return to transformation
-    
+
 =end
-
-VOWELS = ['a', 'e', 'i', 'o', 'u']
-
-def remove_vowels(arr)
-  arr.map do |word|
-    word.chars.select { |char| !VOWELS.include?(char) }.join
-  end
-end
-
 p remove_vowels(['green', 'yellow', 'black', 'white']) == ['grn', 'yllw', 'blck', 'wht']
 ```
 
@@ -5828,7 +3818,7 @@ p remove_vowels(['green', 'yellow', 'black', 'white']) == ['grn', 'yllw', 'blck'
 ## Delete Digit ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Task: Given an integer n, find the maximal number you can obtain by deleting exactly one digit of the given number.
 
@@ -5850,73 +3840,28 @@ p delete_digit(10) == 1
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Task
-Given an integer n, find the maximal number you can obtain by deleting exactly one digit of the given number.
-
-Example
-For n = 152, the output should be 52;
-
-For n = 1001, the output should be 101.
-
-Input/Output
-[input] integer n
-
-Constraints: 10 ≤ n ≤ 1,000,000.
-
-[output] an integer
+Problem
+------------------------------------------
 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -find the maximal number obtainable by removing a single digit from the given input
-  -input will be between 10 and 1,000,000
-Implicit Rules:
-  -
-Questions:
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
-1001
+Rules/Requirements
+- 
 
-001
-101
-101
-100
+Clarifying Questions
+- 
 
-101 is greatest of possible outputs
+Examples, Test Cases
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Integer
-Output: 1 Integer
-Additional DS Utilized:
- -converting integers into strings
- -converting strings into integers
- -splitting strings into array
- -joining arrays into strings
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> convert given number into a string, split and iterate finding all possible different sub_digits by removing a single digit, then return the greatest of these digits.
+Data Structure, Algorithm
+------------------------------------------
 
-* convert to string and split, iterate over each char
-* feed each possible combination of removing a single digit into an array
-* find the greatest and return
-
--- method --> deleet_digit(integer) --> integer
-  -convert num into string, split into chars and iterate over using transformation and index
-    -initialize str_num to num converted to string
-    -remove the current digit, join the remaining digits and convert to integer
-    -return this integer to the iteration
-  -find and return the greatest digit in the returned array
 
 =end
-
-def delete_digit(num)
-  num.to_s.chars.map.with_index do |digit, index|
-    temp = num.to_s
-    temp[index] = ''
-    temp.to_i
-  end.max
-end
 
 p delete_digit(152) == 52
 p delete_digit(1001) == 101
@@ -5928,7 +3873,7 @@ p delete_digit(10) == 1
 ## Multiples of 3 or 5 ##
 
 - Difficulty: **easy**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
 
@@ -5942,63 +3887,28 @@ p solution(200) == 9168
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+Problem
+------------------------------------------
 
-Finish the solution so that it returns the sum of all the multiples of 3 or 5 below the number passed in.
 
-Note: If the number is a multiple of both 3 and 5, only count it once.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -find all the multiples of 3 and 5 below the given number
-  -return the sum of all of these numbers
-  -if a number is divisible by 3 and 5 only include it once
-Implicit Rules:
-  -the given number is not included in the possible divisible number
-  -given number will always be a valid whole number
-Questions:
-  -
---------------------------EXAMPLES---------------------------------------
-10
+Rules/Requirements
+- 
 
-3, 5, 6, 9 are all divisble by 3 and/or 5 
+Clarifying Questions
+- 
 
-summed --> 23
+Examples, Test Cases
+------------------------------------------
 
-returns 23
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Integer
-Output: 1 Integer
-Additional DS Utilized:
-  -array to hold divisible values
-  -range to search through possible numbers
+Data Structure, Algorithm
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Find all numbers between 1 and upto the given number that are divisble by 3 and/or 5, add them all together and return the sum
-
-* iterate through numbers 1 upto given number aand push all divisible numbers to an array
-* find sum of digits within array and return
-
--- method --> solution(integer) --> integer
-  -initialize en empty array (divisors)
-  -iterate through numbers 1 upto given integer
-    -if current num is divisible by 3 and/or 5 
-      -push to divisors
-  -find sum of divisors and return 
 
 =end
-
-def solution(num)
-  divisors = []
-  
-  3.upto(num - 1) do |current_num|
-    divisors << current_num if current_num % 3 == 0 || current_num % 5 == 0
-  end
-  
-  divisors.sum
-end
 
 p solution(10) == 23
 p solution(20) == 78
@@ -6010,7 +3920,7 @@ p solution(200) == 9168
 ## String Transformer ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a string, return a new string that has transformed based on the input:
 
@@ -6030,57 +3940,26 @@ string_transformer("Example Input") == "iNPUT eXAMPLE"
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a string, return a new string that has transformed based on the input:
+Problem
+------------------------------------------
 
-Change case of every character, ie. lower case to upper case, upper case to lower case.
-Reverse the order of words from the input.
 
-Note: You will have to handle multiple spaces, and leading/trailing spaces.
+Inputs: 
+Outputs: 
 
-You may assume the input only contain English alphabet and spaces.
+Rules/Requirements
+- 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -Change the case of every letter within the given string
-  -reverse the order of words in the string
-Implicit Rules:
-  -string inputs will not be empty
-  -split words in given string at ' '
-Questions:
-  -
-  
---------------------------EXAMPLES---------------------------------------
-For example:
+Clarifying Questions
+- 
 
-"Example Input" ==> "iNPUT eXAMPLE"
-swap order of words  
---> Input Example
+Examples, Test Cases
+------------------------------------------
 
-swap case
---> 'iNPUT eXAMPLE
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 String
-Additional DS Utilized:
-  -split strings into arrays
-  -join arrays into strings
+Data Structure, Algorithm
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> 
-
-* split given stirng into array of words
-* interate through each character of each word and swap their case
-* return new string
-
--- method --> string_transformer(string) --> string
-  -split given string into array of words (words)
-  -iterate through words transformatively
-    -split word and iterate through each character
-      -swap case
-    -join array back into a word
-  -join array of words back into a string abd return
 
 =end
 
@@ -6112,7 +3991,7 @@ p string_transformer(" A b C d E f G ") == " g F e D c B a "
 ## Largest Product in a Series ##
 
 - Difficulty: **hard**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Complete the greatestProduct method so that it'll find the greatest product of five consecutive digits in the given string of digits.
 
@@ -6129,97 +4008,28 @@ p greatest_product("02494037820244202221011110532909999") == 0
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Complete the greatestProduct method so that it'll find the greatest product of five consecutive digits in the given string of digits.
+Problem
+------------------------------------------
 
-The input string always has more than five digits.
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -Find the greatest product of 5 consecutive digits within the given string
-  -product is the result of numbers being multipled together
-  -input string will always have more than 5 digits
-Implicit Rules:
-  -digits will all be considered positive
-  -given string number can start with 0
-  -given string will only consist of digits (0-9)
-Questions:
-  -What is the product? 
---------------------------EXAMPLES---------------------------------------
-For example:
+Inputs: 
+Outputs: 
 
-greatestProduct("123834539327238239583") // should return 3240
+Rules/Requirements
+- 
 
-"123834539327238239583"
-12383 --> 1 * 2 * 3 * 8 * 3 --> product
-23834
-38345
-...
+Clarifying Questions
+- 
 
-greatest product of 5 consecutive digits --> 3240
+Examples, Test Cases
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 Integer
-Additional DS Utilized:
-  -converting string into array
-  -joining array into string
-  -converting between strings an integers
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Find all substrings of the given string that are 5 characters long, convert these substring into individual digits and find the product, the find and return the greatest of these products
+Data Structure, Algorithm
+------------------------------------------
 
-* find all substrings that are 5 chars long
-* find all products of the individual digits within these substrings
-* find the greatest product and return
-
--- method --> greatest_product(string) --> integer
-  -assign the return value of find_subs to 'subs'
-  -assign the return value of find_products to products
-  -find and return the greatest value in products
-  
--- method --> find_subs(string) --> array
-  -split given string into array of characters
-  -initialize an empty array (subs_of_five)
-  -iterate through the array and collect all consecutive sub_arrays that have a length of 5
-    -join the sub_array and push to subs_of_five
-  -return subs_of_five
-  
--- method --> find_products(array) --> array
-  -initialize an empty array (products)
-  -iterate through the given array
-    -initialize produt to 1
-      -split the current array into characters
-      -convert each char to an integer
-      -multiply the chars together
-      -return product
-  -return products
 
 =end
-
-def find_subs(str)
-  subs_of_five = []
-  str.chars.each_cons(5) { |sub_arr| subs_of_five << sub_arr.join }
-  subs_of_five
-end
-
-def find_products(subs_of_five)
-  subs_of_five.map do |sub|
-    product = 1
-    sub.chars.map(&:to_i).map { |num_sub| product *= num_sub }
-    product
-  end
-end
-
-def greatest_product(str)
-  subs = find_subs(str)
-  products = find_products(subs)
-  products.max
-end
-
-# p find_products(find_subs("123834539327238239583"))
-
-# p find_subs("123834539327238239583")
 
 p greatest_product("123834539327238239583") == 3240
 p greatest_product("395831238345393272382") == 3240
@@ -6233,7 +4043,7 @@ p greatest_product("02494037820244202221011110532909999") == 0
 ## Duplicate Encoder ##
 
 - Difficulty: **hard**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
 
@@ -6250,82 +4060,28 @@ p duplicate_encode("(( @") == "))(("
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -create a new string object based on the given string object where;
-    -each character is replaced with '(' if that char only appears once in the given string
-    -if the char appears more than once in the given string replace it with ')'
-  -ignore case when determining if a char is a duplicate
-Implicit Rules:
-  -given string can contain upper and lower case letters
-  -given string can contain white spacce
-  -given string can contain punctuation
-  -given string can contain '(' and ')' characters as well
-  -given string will not be empty
-Questions:
---------------------------EXAMPLES---------------------------------------
-"recede"   =>  "()()()"
-recede
-r --> 1 instance  --> '(' 
-e --> 3 instances --> ')'
-c --> 1 instance  --> '('
-d --> 1 instance  --> '('
 
-returns ==> "()()()"
+Inputs: 
+Outputs: 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 String
-Additional DS Utilized:
-  -converting string into array 
-  -joining array into string
-  -utilizing hash for tallying the number of char instances
-  -integers for tallying instances
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> 
+Clarifying Questions
+- 
 
-* Tally the number of instances of each character in the given string
-* Iterate through the given string broken into an array of characters
-  * construct a new string string based on whether the chars occur 1 time or more
+Examples, Test Cases
+------------------------------------------
 
--- method --> duplicate_encode(string) --> string
-  -intialize 'instances' to the return value of 'tally_instances' with the given string downcased and apssed as an argument
-  -initialize an empty string (encoded)
-  -iterate through the given string downcased and split into an array of characters
-    -if current char occurs more than once in instances
-      -concat ')' to encoded
-    -otherwise
-      -concat '(' to encoded
-  -return encoded
 
--- method --> tally_instances(string) --> hash
-  -initialize an empty hash (instances)
-  -split the given string into array of characters and iterate through
-    -if the current char is not a key within instances
-      -assigned the char as a key and its count within the arr as the value
-    -otherwise
-      -increment the value associated with the key by 1
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def tally_instances(str)
-  str.chars.each_with_object(Hash.new(0)) do |char, instances|
-    instances[char] += 1
-  end
-end
-
-def duplicate_encode(str)
-  instances = tally_instances(str.downcase)
-  str.downcase.chars.each_with_object('') do |char, encoded_str|
-    instances[char] > 1 ? encoded_str << ')' : encoded_str << '('
-  end
-end
-
-# p tally_instances("recede")
 
 p duplicate_encode("din") == "((("
 p duplicate_encode("recede") == "()()()"
@@ -6338,7 +4094,7 @@ p duplicate_encode("(( @") == "))(("
 ## Backspaces in String ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
 
@@ -6355,56 +4111,28 @@ p clean_string('abc####d##c#') == ""
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Assume "#" is like a backspace in string. This means that string "a#bc#d" actually is "bd"
+Problem
+------------------------------------------
 
-Your task is to process a string with "#" symbols.
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -'#' acts like a backspace
-  -return a string where for every '#' in the string, the character before it will be removed
-Implicit Rules:
-  -string inputs will be non-empty
-  -an empty string input will return an empty string
-  -string containing only '#' characters will return an empty string
-Questions:
-  -n/a
-  
---------------------------EXAMPLES---------------------------------------
-Examples
-"abc#d##c"      ==>  "ac"
-"abc##d######"  ==>  ""
-"#######"       ==>  ""
-""              ==>  ""
+Inputs: 
+Outputs: 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 String
-Additional DS Utilized:
-  -converting string into array
-  -converting array into string
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Split given string into array and iterate through the collection pushing each element to a new array unless the character is '#' in which case remove the last element pushed to the new array, then join and return the new string
+Clarifying Questions
+- 
 
--- method --> clean_string(string) --> string
-  -initialize an empty array (clean_arr)
-  -split given string into array of characters and iterate through the collection
-    -if the char is not '#' 
-      -push to clean_arr
-    -otherwise
-      -remove the last element in clean_arr
-  -join clean_arr and return
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def clean_string(str)
-  str.chars.each_with_object([]) do |char, clean_arr|
-    char == '#' ? clean_arr.pop : clean_arr << char
-  end.join
-end
-
 p clean_string('abc#d##c') == "ac"
 p clean_string('abc####d##c#') == ""
 ```
@@ -6414,7 +4142,7 @@ p clean_string('abc####d##c#') == ""
 ## Alphabetized Again ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Re-order the characters of a string, so that they are concatenated into a new string in "case-insensitively-alphabetical-order-of-appearance".\
 Whitespace and punctuation shall simply be removed.\
@@ -6447,7 +4175,7 @@ p alphabetized("codeWars Can't Load Today") == "aaaacCdddeLnooorstTWy"
 ## Transform to Prime ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a List [] of n integers , find the minimum number to be inserted in a list, so that the sum of all elements of the list should equal the closest prime number .
 
@@ -6483,100 +4211,28 @@ p minimum_number([50,39,49,6,17,28]) == 2
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given a List [] of n integers , find the minimum number to be inserted in a list, so that the sum of all elements of the list should equal the closest prime number.
-
-Notes
-List size is at least 2 .
-
-List's numbers will only have positives (n > 0) .
-
-Repetition of numbers in the list could occur .
-
-The newer list's sum should equal the closest prime number .
-
-Input >> Output Examples
-
-1. minimum_number([3,1,2]) ==> return (1)
-Explanation:
-Since , the sum of the list's elements equal to (6) , the minimum number to be inserted to transform the sum to prime number is (1) , which will make the sum of the List** equal the closest prime number (7) .
-
-2. minimum_number([2,12,8,4,6]) ==> return (5)
-Explanation:
-Since , the sum of the list's elements equal to (32) , the minimum number to be inserted to transform the sum to prime number is (5) , which will make the sum of the List** equal the closest prime number (37) .
-
-3. minimum_number([50,39,49,6,17,28]) ==> return (2)
-Explanation:
-Since , the sum of the list's elements equal to (189), the minimum number to be inserted to transform the sum to prime number is (2) , which will make the sum of the List equal the closest prime number (191) .
+Problem
+------------------------------------------
 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -given array will be at least 2 elements long
-  -given array integers will be pos
-  -there may be repeated numbers within the given array
-  -new array, when summed, should equal the closest prime number
-  -return an integer, that when included within the given array and summed equals the closest* prime number
-Implicit Rules:
-  -the closest prime number will always be greater than the sum of the array integers
-  -if the sum of the warray integers is a prime, return 0
-Questions:
-  -closest prime number? Up? Down? Either?
-    --> closest prime number greater than the sum of the array integers
---------------------------EXAMPLES---------------------------------------
-p minimum_number([3,1,2]) == 1
-[3, 1, 2] summed --> 6
-6 is not prime
-add 1 and check 
-7 is prime!
+Inputs: 
+Outputs: 
 
-therefore, return 1
+Rules/Requirements
+- 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 array, containing positive integers
-Output: 1 integer
-Additional DS Utilized:
-  -arrays and integers
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> Find the sum of the given array, check if it is a prime number, add 1 to the sum and check again until the new total is a prime, then return the amount added to the original sum.
+Examples, Test Cases
+------------------------------------------
 
-* find the sum of the given array
-* loop
-  * check if the sum is prime, increment sum by 1 and check again until its prime
-* return the amount incremented
 
--- method --> minimum_number(array) --> integer
-  -find the sum of the given array (sum)
-  -initialize 'result' set to 0
-  -unless is_prime? == true
-    -increment result by 1
-    -increment sum by 1
-  -return result
-  
--- method --> is_prime?(integer) --> boolean
-  -iterate through 2 upto the given integer to see if any of them are divisibles
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def is_prime?(given_num)
-  !(2..given_num -1).to_a.any? { |num| given_num % num == 0 }
-end
-
-def minimum_number(arr)
-  sum = arr.sum
-  result = 0
-  
-  until is_prime?(sum) do
-    result += 1
-    sum += 1
-  end
-  
-  result
-end
-
-# p is_prime?(6) == false
-# p is_prime?(7) == true
 
 p minimum_number([3,1,2]) == 1
 p minimum_number([5,2]) == 0
@@ -6590,7 +4246,7 @@ p minimum_number([50,39,49,6,17,28]) == 2
 ## Word to Digit ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given a string that contains the written versions of the numbers 0-9, return the same string that has converted each writtten number within the string to an integer.
 
@@ -6609,70 +4265,29 @@ convert_word_to_number('one word') == '1 word'
 convert_word_to_number('lone word') == 'lone word'
 
 ```ruby
------------------------INSTRUCTIONS--------------------------------------
-Given a string that contains the written versions of the numbers 0-9, return the same string that has converted each writtten number within the string to an integer.
+=begin
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -given string will include word versions of numbers 0-9
-  -return the same string converting words nums to nums
-  
-Implicit Rules:
-  -maintain all other characters besides word numbers
-  -white space, other words etc will remainn the same
-  -all words are separated by one space
-  -words can be capitalized or lowercase
-Questions:
 
---------------------------EXAMPLES---------------------------------------
-('one word') == '1 word'
-one ==> 1
+Inputs: 
+Outputs: 
 
-so we swap out the word number
+Rules/Requirements
+- 
 
-returns '1 word'
+Clarifying Questions
+- 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 String
-Additional DS Utilized:
-  -converting string into array of words
+Examples, Test Cases
+------------------------------------------
 
-----------------------------ALGO-----------------------------------------
-Higher-Level ==> 
 
-* initialize contant 'WORD-NUMS' to words and their numberical equal in a hash
-* iterate through the WORD_NUM and for each key word found in the given string sub with the value
-* return the string
+Data Structure, Algorithm
+------------------------------------------
 
-- initialize WORD_NUM to ...
-
--- method --> convert_word_to_number(string) --> string
-  -iterate through WORD_NUM
-    -substitute globally any instance of a element with ita index
-  -return string
 
 =end
-
-
-
-WORD_NUMS = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
-
-# def convert_word_to_number(str)
-#   WORD_NUMS.each_with_index do |word, index|
-#     str.gsub!(word, index.to_s)
-#   end
-#   str
-# end
-def convert_word_to_number(str)
-  str.split.each do |word|
-    if WORD_NUMS.include?(word.downcase)
-      str.gsub!(word, WORD_NUMS.index(word.downcase).to_s)
-    end
-  end
-
-  str
-end
 
 a = 'One Two Three'
 convert_word_to_number(a) == '1 2 3'
@@ -6694,7 +4309,7 @@ p convert_word_to_number('lone word') == 'lone word'
 ## Longest AE ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Find the length of the longest substring in the given string that contains exatly 2 characters "a" and 2 characters "e" in it.
 
@@ -6712,53 +4327,26 @@ p longest_ae("secaundogenituareabb") == 16
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Find the length of the longest substring in the given string that contains exatly 2 characters "a" and 2 characters "e" in it.
+Problem
+------------------------------------------
 
-As an example, if the input was “aaee”, the substring (aaee) length would be 4.
-For a string "babanctekeaa", the longest substring is "babancteke" and its length is 10.
 
-If the length of the input string is 0, return value must be -1 and if none of the substrings contain 2 "a" and "e" characters return -1 as well.
+Inputs: 
+Outputs: 
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -Find longest substring of given string that has 2 'a' and 'e' characters
-  -if givens tring is empty return -1
-  -if there are no substrings with 2 'a' and 'e' characters return -1
-Implicit Rules:
-  -all string characters will be lowercase letters
-Questions:
+Rules/Requirements
+- 
 
---------------------------EXAMPLES---------------------------------------
-"babanctekeaa" ==> 10
+Clarifying Questions
+- 
 
-babancteke --> contains exactly 2 'a' and 'e' characters and is the longest substring
+Examples, Test Cases
+------------------------------------------
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 String
-Output: 1 Integer
-Additional DS Utilized:
-  -splitting string into array
-  -joining array into string
 
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
+Data Structure, Algorithm
+------------------------------------------
 
-* Find all substrings of the given string
-* iterate through substrings and find all substrings with exactlt 2 'a' and 'e' chars
-* find and return the longest of these substrings
-
--- method --> longest_ae(string) --> integer
-  -intialize 'subs' to the return value of find_subs
-  -select all the substring that contain 2 'a' and 'e' characters (two_ae)
-  -find and return the length of the longest element in two_ae
-  
--- method --> find_subs(string) --> array
-  -initialize an empty array (subs)
-  -itertae through 1 upto the length of the givens string (length)
-    -split the given string into an array of chars and iterate over (collecting sub_arrays)
-      -joing and push sub_arrays to subs
-  -return length of longest string or -1
 
 =end
 
@@ -6791,7 +4379,7 @@ p longest_ae("secaundogenituareabb") == 16
 ## Minimum Sub Length ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
 
@@ -6802,53 +4390,28 @@ p minSubLength([1, 2, 4], 8) == 0
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Given an array of n positive integers and a positive integer s, find the minimal length of a contiguous subarray of which the sum ≥ s. If there isn't one, return 0 instead.
+Problem
+------------------------------------------
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -given an array of positive integers and an integer object (s)
-  -find shortest array of integers that, when summed, is greater than or equal to parameter s
-  -if there isn't one, return 0
-  -give integers will be positive
-Implicit Rules:
-  -given array will not be empty
-  -given integer will be positive
-Questions:
 
---------------------------EXAMPLES---------------------------------------
-([1, 10, 5, 2, 7], 9) == 1
-[1, 10] >= 9
-[10] >= 9 --> shortest sub-array >= 9
-[5, 2, 7] >= 9
+Inputs: 
+Outputs: 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Array of integers, 1 Integer
-Output: 1 integer
-Additional DS Utilized:
-  -integers, arrays
+Rules/Requirements
+- 
 
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
-* find all sub-arrays
-* filter out any sub-arrays thats sum is less than parameter s
-* find the shortest sub-array and return its length, otherwise return 0
+Clarifying Questions
+- 
 
--- method --> min_sub_length(array, integer) --> integer
-  -initialize subs to the return value of find_subs
-  -select the sub-arrays from subs whose sum is >= to s
-  -find the shortest sub-array 
-  -return shortest sub-array length or 0
-  
--- method --> find_subs(array) --> array
-  -initialize an empty array (subs)
-  -iterate through numbers 1 upto arrays length (length)
-    -iterate through array finding consecutive sub-arrays  
-      -push all sub_arrays to subs
-  -return subs
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
 def find_subs(arr)
   subs = []
   1.upto(arr.size) do |length|
@@ -6877,7 +4440,7 @@ p min_sub_length([1, 2, 4], 8) == 0
 ## Two Sum ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple like so: (index1, index2).
 
@@ -6889,60 +4452,28 @@ p two_sum([2, 2, 3], 4).sort == [0, 1]
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple like so: (index1, index2).
+Problem
+------------------------------------------
 
-The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -given an array of integers and a target integer
-  -find two different numbers in the array thats sum is the target
-  -the indices of these numbers should be returned in an array
-  -inputs will always be a valid array with at least 2 valid integers
-  -target will always be the sum of 2 numbers in the array
-Implicit Rules:
-  -given integers will always be greater than 0
-Questions:
+Inputs: 
+Outputs: 
 
---------------------------EXAMPLES---------------------------------------
+Rules/Requirements
+- 
 
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 array, 1 integer
-Output: 1 array
-Additional DS Utilized:
-  -
+Clarifying Questions
+- 
 
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
-* find all possible 2 element long sub-arrays
-* iterate through the sub_arrays and find combos thats sum is the target and the numbes are different
-* find the indices of these 2 numbers and return them in an array
+Examples, Test Cases
+------------------------------------------
 
--- method --> two_sum(array, integer) --> array
-  -find all 2 element long sub-arrays (all_subs)
-  -iterate through all_subs using selection
-    -two numbers == target & two numbers different?
-  -find the indices of the 2 numbers and return
+
+Data Structure, Algorithm
+------------------------------------------
+
 
 =end
-
-def two_sum(arr, target)
-  all_subs = arr.combination(2).to_a
-  result_subs = all_subs.select { |sub| sub.sum == target }
-  
-  result_subs = result_subs.first 
-  result = []
-  
-  1.times do |_|
-    first_index = arr.index(result_subs[0])
-    result << first_index
-    arr[first_index] = ''
-    result << arr.index(result_subs[1])
-  end
-
-  result
-end
 
 p two_sum([1, 2, 3], 4).sort == [0, 2]
 p two_sum([1234, 5678, 9012], 14690).sort == [1, 2]
@@ -6954,7 +4485,7 @@ p two_sum([2, 2, 3], 4).sort == [0, 1]
 ## Digital Root ##
 
 - Difficulty: **medium**
-- [x] Problem Completed?
+- [ ] Problem Completed?
 
 In this kata, you must create a digital root function.
 
@@ -6993,87 +4524,29 @@ p digital_root(493193) == 2
 
 ```ruby
 =begin
------------------------INSTRUCTIONS--------------------------------------
-In this kata, you must create a digital root function.
+=begin
+Problem
+------------------------------------------
 
-A digital root is the recursive sum of all the digits in a number. Given n, take the sum of the digits of n. If that value has more than one digit, continue reducing in this way until a single-digit number is produced. This is only applicable to the natural numbers.
 
-Here's how it works:
+Inputs: 
+Outputs: 
 
-digital_root(16)
-=> 1 + 6
-=> 7
+Rules/Requirements
+- 
 
-digital_root(942)
-=> 9 + 4 + 2
-=> 15 ...
-=> 1 + 5
-=> 6
+Clarifying Questions
+- 
 
-digital_root(132189)
-=> 1 + 3 + 2 + 1 + 8 + 9
-=> 24 ...
-=> 2 + 4
-=> 6
+Examples, Test Cases
+------------------------------------------
 
-digital_root(493193)
-=> 4 + 9 + 3 + 1 + 9 + 3
-=> 29 ...
-=> 2 + 9
-=> 11 ...
-=> 1 + 1
-=> 2
 
---------------------------PROBLEM----------------------------------------
-Explicit Rules:
-  -given an integer input
-    -take the sum of the digits of the given integer
-    -if that value is a double digit, repeat, until a single digit
-    -return the number of times this must be done
-Implicit Rules:
-  -given number will be gresater than 0
-  -given number will be a whole number
-Questions:
+Data Structure, Algorithm
+------------------------------------------
 
---------------------------EXAMPLES---------------------------------------
-456
---> 4 + 5 + 6 (1)
-15
---> 1 + 5 (2)
-6
 
-returns 2
-
------------------------DATA STRUCTURES-----------------------------------
-Input: 1 Integer
-Output: 1 Integer
-Additional DS Utilized:
-  -splitting integers into an array of digits
-
-----------------------------ALGO-----------------------------------------
-High-Level-Algo:
-* unless given integer is a single digit, split into digits and find sum
-* increment a counter for every time this must be done
-* return the counter 
-
--- method --> digital_root(integer) --> integer
-  -initialize 'counter' to 0
-  -if given number split into array of digits is longer than 1 element long
-    -pass sum of array of digits to digital_root
-    -increment counter by 1
-  -otherwise
-    -return counter
 =end
-
-def digital_root(num)
-  num = num.digits
-  if num.size > 1
-    num = num.sum
-    digital_root(num)
-  else
-    return num.sum
-  end
-end
 
 p digital_root(16) == 7 
 p digital_root(456) == 6 
