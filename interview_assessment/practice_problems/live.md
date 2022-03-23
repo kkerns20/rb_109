@@ -5,13 +5,13 @@
 3. - [x] [Rotate 13](#rotate-13)
 4. - [x] [Longest Palindrome](#longest-palindrome)
 5. - [x] [Find Chidren](#find-children)
-6. - [ ] [Double Consonants Alternative](#double-consonants-alternative)
-7. - [ ] [Reversed Number](#reversed-number)
-8. - [ ] [Get the Middle Character](#get-the-middle-character)
-9. - [ ] [Rotation Pt 1](#rotation-pt-1)
-10. - [ ] [Rotation Pt 2](#rotation-pt-2)
-11. - [ ] [Rotation Pt 3](#rotation-pt-3)
-12. - [ ] [1000 Lights](#1000-lights)
+6. - [x] [Double Consonants Alternative](#double-consonants-alternative)
+7. - [x] [Reversed Number](#reversed-number)
+8. - [x] [Get the Middle Character](#get-the-middle-character)
+9. - [x] [Rotation Pt 1](#rotation-pt-1)
+10. - [x] [Rotation Pt 2](#rotation-pt-2)
+11. - [x] [Rotation Pt 3](#rotation-pt-3)
+12. - [x] [1000 Lights](#1000-lights)
 13. - [ ] [Next Largest Num](#next-largest-num)
 14. - [ ] [Count Letters in Strings](#count-letters-in-strings)
 15. - [ ] [Count Pairs in String](#count-pairs-in-string)
@@ -445,7 +445,7 @@ p find_child( "aAbaBb") == "AaaBbb"
 ## Double Consonants Alternative ##
 
 - Difficulty: **easy**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 Write a method that takes a string, and returns a new string in which every consonant character is doubled. Vowels (a,e,i,o,u), digits, punctuation, and whitespace should not be doubled.
 
@@ -525,6 +525,16 @@ Data Structure, Algorithm
 
 =end
 
+def reversed_number(int)
+  int.to_s.reverse.to_i
+end
+
+p reversed_number(12345) == 54321 
+p reversed_number(12213) == 31221 
+p reversed_number(12000) == 21 # No leading zeros in return value! 
+p reversed_number(12003) == 30021 
+p reversed_number(456) == 654 
+p reversed_number(1) == 1 
 
 ```
 ---
@@ -532,7 +542,7 @@ Data Structure, Algorithm
 ## Get The Middle Character ##
 
 - Difficulty: **easy**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 Write a method that takes a non-empty string argument, and returns the middle character or characters of the argument. If the argument has an odd length, you should return exactly one character. If the argument has an even length, you should return exactly two characters.
 
@@ -570,6 +580,16 @@ Data Structure, Algorithm
 
 =end
 
+def center_of(str)
+  l = str.length
+  l.even? ? str[l / 2 - 1] + str[l / 2] : str[l / 2]
+end
+
+p center_of('I love ruby') == 'e'  
+p center_of('Launch School') == ' ' 
+p center_of('Launch') #== 'un' 
+p center_of('Launchschool') == 'hs' 
+p center_of('x') == 'x'
 
 ```
 ---
@@ -608,6 +628,9 @@ Data Structure, Algorithm
 
 =end
 
+def rotate_array(arr)
+  arr[1..-1].append(arr[0])
+end
 
 x = [1, 2, 3, 4]
 p rotate_array(x) == [2, 3, 4, 1]   # => true
@@ -619,7 +642,7 @@ p x == [1, 2, 3, 4]                 # => true
 ## Rotation Pt 2 ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 Write a method that can rotate the last n digits of a number. For example:
 
@@ -660,7 +683,20 @@ Data Structure, Algorithm
 
 =end
 
+def rotate_array(arr)
+  arr[1..-1].append(arr[0])
+end
 
+def rotate_rightmost_digits(int, n)
+  arr = int.to_s.chars
+  arr = arr[0...-n].append(rotate_array(arr[-n..-1]))
+  arr.join.to_i
+end
+
+x = [1, 2, 3, 4]
+
+p rotate_array(x) == [2, 3, 4, 1]   # => true
+p x == [1, 2, 3, 4]                 # => true
 
 p rotate_rightmost_digits(735291, 1) == 735291
 p rotate_rightmost_digits(735291, 2) == 735219
@@ -675,7 +711,7 @@ p rotate_rightmost_digits(735291, 6) == 352917
 ## Rotation pt 3 ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 If you take a number like 735291, and rotate it to the left, you get 352917. If you now keep the first digit fixed in place, and rotate the remaining digits, you get 329175. Keep the first 2 digits fixed in place and rotate again to 321759. Keep the first 3 digits fixed in place and rotate again to get 321597. Finally, keep the first 4 digits fixed in place and rotate the final 2 digits to get 321579. The resulting number is called the maximum rotation of the original number.
 
@@ -693,32 +729,67 @@ max_rotation(8_703_529_146) == 7_321_609_845
 =begin
 Problem
 ------------------------------------------
+If you take a number like 735291, and rotate it to the left, you get 352917. If you now keep the first digit fixed in place, and rotate the remaining digits, you get 329175. Keep the first 2 digits fixed in place and rotate again to 321759. Keep the first 3 digits fixed in place and rotate again to get 321597. Finally, keep the first 4 digits fixed in place and rotate the final 2 digits to get 321579. The resulting number is called the maximum rotation of the original number.
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 integer
+Outputs: 1 integer
 
 Rules/Requirements
-- 
+- max rotation as shown below
 
 Clarifying Questions
 - 
 
 Examples, Test Cases
 ------------------------------------------
-
+735291 => 352917
+to_s.chars rotate_rightmost based on arr size [-6..-1]
+size 6, leave none behind
+352917 => 329175
+rotate right most [ -5..-1]
+leave [0] behind and concat
 
 Data Structure, Algorithm
 ------------------------------------------
-
+int as a string size down to 1 as n
+  int = return of sendin int and n to rightmost digits
+return int
 
 =end
 
+def rotate_array(arr)
+  arr[1..-1].append(arr[0])
+end
 
-p max_rotation(735291) == 321579
-p max_rotation(3) == 3
-p max_rotation(35) == 53
-p max_rotation(105) == 15 # the leading zero gets dropped
+def rotate_rightmost_digits(int, n)
+  arr = int.to_s.chars
+  arr = arr[0...-n].append(rotate_array(arr[-n..-1]))
+  arr.join.to_i
+end
+
+def max_rotation(int)
+  int.to_s.size.downto(1) do |n|
+    int = rotate_rightmost_digits(int, n)
+  end
+  int
+end
+
+x = [1, 2, 3, 4]
+
+p rotate_array(x) == [2, 3, 4, 1]   # => true
+p x == [1, 2, 3, 4]                 # => true
+
+p rotate_rightmost_digits(735291, 1) == 735291
+p rotate_rightmost_digits(735291, 2) == 735219
+p rotate_rightmost_digits(735291, 3) == 735912
+p rotate_rightmost_digits(735291, 4) == 732915
+p rotate_rightmost_digits(735291, 5) == 752913
+p rotate_rightmost_digits(735291, 6) == 352917
+
+p max_rotation(735291) == 321579 
+p max_rotation(3) == 3 
+p max_rotation(35) == 53 
+p max_rotation(105) == 15 # the leading zero gets dropped 
 p max_rotation(8_703_529_146) == 7_321_609_845
 ```
 
@@ -727,7 +798,7 @@ p max_rotation(8_703_529_146) == 7_321_609_845
 ## 1000 Lights ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 You have a bank of switches before you, numbered from 1 to n. Each switch is connected to exactly one light that is initially off. You walk down the row of switches and toggle every one of them. You go back to the beginning, and on this second pass, you toggle switches 2, 4, 6, and so on. On the third pass, you go back again to the beginning and toggle switches 3, 6, 9, and so on. You repeat this process and keep going until you have been through n repetitions.
 
@@ -745,29 +816,29 @@ The result is that 2 lights are left on, lights 1 and 4. The return value is [1,
 With 10 lights, 3 lights are left on: lights 1, 4, and 9. The return value is [1, 4, 9].
 
 ```ruby
-=begin
-Problem
-------------------------------------------
-
-
-Inputs: 
-Outputs: 
-
-Rules/Requirements
-- 
-
-Clarifying Questions
-- 
-
-Examples, Test Cases
-------------------------------------------
-
-
-Data Structure, Algorithm
-------------------------------------------
-
+assign lights to [true] times n
+from 2 up to n do switch
+  from swtich step to n from switch do flip
+    lights[switch - 1] equals !lights flip - 1
+iterate through lights with transformation and index
+  return idx if light
+-0 call compact
 
 =end
+
+def toggle_lights(n)
+  lights = [true] * n
+  2.upto(n) do |switch|
+    switch.step(n, switch) do |flip|
+      lights[flip - 1] = !lights[flip - 1]
+    end
+  end
+  lights.map.with_index(1) { |light, idx| idx if light }.compact
+end
+
+p toggle_lights(5)
+p toggle_lights(10)
+p toggle_lights(1000)
 
 
 ```
