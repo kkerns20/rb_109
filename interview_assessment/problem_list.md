@@ -52,7 +52,7 @@
       - [Alphabetized](./practice_problems/alphabetized.rb) - 19
       - [Digital Root](./practice_problems/digital_root.rb) - 4:13
       - [Array Diff](./practice_problems/array_diff.rb) - 5:34
-      - [Where is my parent?](./practice_problems/wheres_parents.rb) - redo
+      - [Where is my parent?](./practice_problems/wheres_parents.rb) - 8 ish
       - [Playing with Digits](./practice_problems/playing_digits.rb) -  10
       - [Equal Sides of an Array](./practice_problems/equal_sides.rb) - 10
       - [Reverse or Rotate?](./practice_problems/reverse_rotate.rb) - 15
