@@ -420,10 +420,24 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
+Create an array of upper alphas chars
+iterate through with transformation and object []
+  if the str includes the current char
+    append that char and that char downcase times the count of that char downcase in the string
+join the array together
 
 =end
 
+def find_child(str)
+  ('A'..'Z').to_a.map.with_object([]) do |char, arr|
+    if str.include?(char)
+      arr << char << char.downcase *
+        str.count(char.downcase)
+    end
+  end.join
+end
+
+p find_child( "aAbaBb") == "AaaBbb"
 
 ```
 ---
