@@ -4,7 +4,7 @@
 2. - [x] [Double Consonants](#double-consonants)
 3. - [x] [Rotate 13](#rotate-13)
 4. - [x] [Longest Palindrome](#longest-palindrome)
-5. - [ ] [Find Chidren](#find-children)
+5. - [x] [Find Chidren](#find-children)
 6. - [ ] [Double Consonants Alternative](#double-consonants-alternative)
 7. - [ ] [Reversed Number](#reversed-number)
 8. - [ ] [Get the Middle Character](#get-the-middle-character)
