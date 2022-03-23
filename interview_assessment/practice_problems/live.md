@@ -3,7 +3,7 @@
 1. - [x] [Repeater](#repeater)
 2. - [x] [Double Consonants](#double-consonants)
 3. - [x] [Rotate 13](#rotate-13)
-4. - [ ] [Longest Palindrome](#longest-palindrome)
+4. - [x] [Longest Palindrome](#longest-palindrome)
 5. - [ ] [Find Chidren](#find-children)
 6. - [ ] [Double Consonants Alternative](#double-consonants-alternative)
 7. - [ ] [Reversed Number](#reversed-number)
@@ -360,11 +360,10 @@ def palindrome?(str)
 end
 
 def longest_palindrome(str)
+  return 0 if str.empty?
   subs = find_subs(str)
   subs.map do |sub_arr|
-    if palindrome?(sub_arr.join)
-      sub_arr.length
-    end
+    palindrome?(sub_arr) ? sub_arr.length : 0
   end.max
 end
 
