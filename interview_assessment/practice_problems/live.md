@@ -864,10 +864,10 @@ p next_bigger_num(123456789) == 123456798
 =begin
 Problem
 ------------------------------------------
+take an integer and return the next biggest with the same digits, if no bigger number found, return -1
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 integer
+Outputs: 1 integer
 
 Rules/Requirements
 - 
@@ -877,15 +877,40 @@ Clarifying Questions
 
 Examples, Test Cases
 ------------------------------------------
-
+9 => 9 is not bigger so return -1
+12 => 21, is bigger so return 21
+513 => 531 is bigger so return 531
+2017 = 2071 is bigger so return 
 
 Data Structure, Algorithm
 ------------------------------------------
-
+set max_num to int digits sorted and reversed joined to integer
+range from num up to max num with maybe
+  - if maybe digits sorted == max_num digits AND maybe greater than int
+    - return maybe
+return -1
 
 =end
 
+def next_bigger_num(int)
+  max_num = int.digits.sort.reverse.join.to_i
+  (int..max_num).each do |maybe|
+    if maybe.digits.sort == int.digits.sort &&
+         maybe > int 
+      return maybe
+    end
+  end
+  -1
+end
 
+p next_bigger_num(9)  == -1 
+p next_bigger_num(12) == 21 
+p next_bigger_num(513) == 531 
+p next_bigger_num(2017) == 2071 
+p next_bigger_num(111) == -1 
+p next_bigger_num(531) == -1 
+p next_bigger_num(123456789) == 123456798
+p next_bigger_num(1112222222233333333444445555677777888999999)
 ```
 
 ---
