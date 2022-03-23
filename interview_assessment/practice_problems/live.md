@@ -659,30 +659,6 @@ rotate_rightmost_digits(735291, 4) == 732915 \
 rotate_rightmost_digits(735291, 5) == 752913 \
 rotate_rightmost_digits(735291, 6) == 352917
 ```ruby
-=begin
-Problem
-------------------------------------------
-
-
-Inputs: 
-Outputs: 
-
-Rules/Requirements
-- 
-
-Clarifying Questions
-- 
-
-Examples, Test Cases
-------------------------------------------
-
-
-Data Structure, Algorithm
-------------------------------------------
-
-
-=end
-
 def rotate_array(arr)
   arr[1..-1].append(arr[0])
 end
@@ -892,13 +868,28 @@ return -1
 
 =end
 
-def next_bigger_num(int)
-  max_num = int.digits.sort.reverse.join.to_i
-  (int..max_num).each do |maybe|
-    if maybe.digits.sort == int.digits.sort &&
-         maybe > int 
-      return maybe
-    end
+# def next_bigger_num(int)
+#   max_num = int.digits.sort.reverse.join.to_i
+#   (int..max_num).each do |maybe|
+#     if maybe.digits.sort == int.digits.sort &&
+#          maybe > int 
+#       return maybe
+#     end
+#   end
+#   -1
+# end
+
+Optimized from codewars
+
+def next_bigger_num(n)
+  chars = n.to_s.chars
+  (0..chars.length-2).reverse_each do |i|
+    (i+1...chars.length).reverse_each do |j|
+      if chars[i] < chars[j]
+        chars[i], chars[j] = chars[j], chars[i]
+        return (chars.first(i+1)+chars.last(chars.length-1-i).sort).join.to_i
+      end
+     end
   end
   -1
 end
@@ -910,7 +901,7 @@ p next_bigger_num(2017) == 2071
 p next_bigger_num(111) == -1 
 p next_bigger_num(531) == -1 
 p next_bigger_num(123456789) == 123456798
-p next_bigger_num(1112222222233333333444445555677777888999999)
+
 ```
 
 ---
