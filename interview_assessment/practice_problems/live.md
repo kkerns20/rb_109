@@ -12,7 +12,7 @@
 10. - [x] [Rotation Pt 2](#rotation-pt-2)
 11. - [x] [Rotation Pt 3](#rotation-pt-3)
 12. - [x] [1000 Lights](#1000-lights)
-13. - [ ] [Next Largest Num](#next-largest-num)
+13. - [x] [Next Largest Num](#next-largest-num)
 14. - [ ] [Count Letters in Strings](#count-letters-in-strings)
 15. - [ ] [Count Pairs in String](#count-pairs-in-string)
 16. - [ ] [Return Substring Instance Count](#return-substring-instance-count)
