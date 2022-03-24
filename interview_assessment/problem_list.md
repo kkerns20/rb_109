@@ -6,8 +6,10 @@
       - [Live Session Part 5: Remove Vowels](./practice_problems/rem_vowels.rb) 
       - [Live Session Part 5: Find Primes](./practice_problems/find_primes.rb)
       - [Live Session Part 5: Balancer](./practice_problems/balancer.rb) 
+      - [RB109 Video 3 Prep: Max Sequence](./practice_problems/max_seq.rb) - 25
       - [RB109 Video 4 Prep: Substring Text](./practice_problems/substr_text.rb) - 15
       - [RB109 Video 4 Prep: Scrambled Text](./practice_problems/scrambled_text.rb) - 20
+      - [RB109 Video 5 Prep: Longest Palindrome](./practice_problems/longest_pal.rb) - 8
 
     - Codewars Problem Solutions
       - [Count letters in string](https://www.codewars.com/kata/5808ff71c7cfa1c6aa00006d/solutions/ruby) - 5:11
@@ -87,6 +89,3 @@
       - [Battle of Chars 1](./practice_problems/battle_chars1.rb) - 10
       - [Battle of Chars 2](./practice_problems/battle_chars2.rb) - 10
       - [Delete nth Occurrence](./practice_problems/delete_nth.rb) - 5
-      
-    - Watch Others Code
-      - [Max Sequence](./practice_problems/max_seq.rb) - 25
