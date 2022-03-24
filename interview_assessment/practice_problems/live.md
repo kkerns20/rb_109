@@ -86,6 +86,8 @@
 84. - [x] [Substring Text](#substring-text)
 85. - [x] [Scrambled Text](#scrambled-text)
 86. - [x] [Longest Palindrome](#longest-palindrome)
+87. - [x] [Find Even Index](#find-even-index)
+88. - [x] [Max Sequence](#max-sequence)
 
 ## Repeater ##
 
