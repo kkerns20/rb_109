@@ -11,6 +11,7 @@
       - [RB109 Video 4 Prep: Scrambled Text](./practice_problems/scrambled_text.rb) - 20
       - [RB109 Video 5 Prep: Longest Palindrome](./practice_problems/longest_pal.rb) - 8
       - [RB109 Video 6 Prep: Find Even Index](.practice_problems/find_even_index.rb) - 5
+      - [RB109 Video 3 Prep: Common Prefix](.practice_problems/common_prefix.rb) - 5
 
     - Codewars Problem Solutions
       - [Count letters in string](https://www.codewars.com/kata/5808ff71c7cfa1c6aa00006d/solutions/ruby) - 5:11
