@@ -4998,3 +4998,8 @@ p longest_palindrome('baablkjl12345432133d') == 9
 p longest_palindrome('I like racecars that go fast') == 7
 
 ```
+
+## Find Even Index ##
+- Difficulty: **medium**
+- [x] Problem Completed?
+- Watch others code 6
