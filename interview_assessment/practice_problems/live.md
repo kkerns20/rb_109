@@ -84,7 +84,7 @@
 82. - [ ] [Two Sum](#two-sum)
 83. - [ ] [Digital Root](#digital-root)
 84. - [x] [Substring Text](#substring-text)
-85. - [x] [Scrambled Text](./scrambled-text)
+85. - [x] [Scrambled Text](#scrambled-text)
 
 ## Repeater ##
 
@@ -4863,7 +4863,7 @@ p substring_text('1234567', '541265') == true
 - [x] Problem completed?
 - [x] - Watch others code
 
-
+```ruby
 =begin
 Problem
 ------------------------------------------
@@ -4918,3 +4918,6 @@ p scramble('cedewaraaossoqqyt', 'codewars') == true
 p scramble('katas', 'steak') == false
 p scramble('scriptjava', 'javascript') == true
 p scramble('scriptingjava', 'javascript') == true
+
+
+```
