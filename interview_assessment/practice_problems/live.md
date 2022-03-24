@@ -5003,3 +5003,119 @@ p longest_palindrome('I like racecars that go fast') == 7
 - Difficulty: **medium**
 - [x] Problem Completed?
 - Watch others code 6
+
+```ruby
+=begin
+Problem
+------------------------------------------
+Given an array of integers, return the index where the array to the left and the right of that index is equal. Return -1 if that never happens
+
+Inputs: 1 array of integers
+Outputs: 1 integer
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+[1, 2, 3, 4, 3, 2, 1]
+at index 0
+sum of 0...0 == 1..-1
+at index 3
+sum of 0...3 == 4..-1
+
+Data Structure, Algorithm
+------------------------------------------
+set ouput to empty arr
+- From 0 upto arr sizeiterate through do i
+  - return i if arrfrom 0...i sum == i+1..-1 sum
+- if ouput is empty
+  - return -1
+-else
+  - output at index 0
+=end
+
+def find_even_index(arr)
+  output = []
+  (0...arr.size).map do |i|
+    output << i if arr[0...i].sum == arr[(i + 1)..-1].sum
+  end
+  output.empty? ? -1 : output[0]
+end
+
+p find_even_index([1,2,3,4,3,2,1]) == 3
+p find_even_index([1, 100, 50 ,-51, 1, 1]) == 1
+p find_even_index([1, 2, 3, 4, 5, 6]) == -1
+p find_even_index([20,10,30,10,10,15,35]) == 3
+p find_even_index([20,10,-80,10,10,15,35]) == 0
+p find_even_index([10,-80,10,10,15,35,20]) == 6
+p find_even_index([-1, -2, -3, -4, -3, -2, -1]) == 3
+
+
+
+```
+
+## Max Sequence ##
+- Difficult **medium**
+- [x] Problem completed?
+- Watch others code 3
+
+```ruby
+=begin
+Problem
+------------------------------------------
+Find the maximum sum of a subarray
+
+Inputs: 1 array 
+Outputs: 1 integer
+
+Rules/Requirements
+- 
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+
+
+Data Structure, Algorithm
+------------------------------------------
+return 0 if all are < 0
+sub_arr = the return of finding all of the subarrs with find_subs
+iterate through sub_arr with transformation and sum then find the max
+
+-- find sub
+set subs = empty arr
+from 1 upto arr size do l
+  arr.each_cons to l do subarr
+    push subarr to subs
+return subs
+=end
+
+def find_subs(arr)
+  subs = []
+  1.upto(arr.size) do |l|
+    arr.each_cons(l) do |sub_arr|
+      subs << sub_arr
+    end
+  end
+  subs
+end
+
+def max_seq(arr)
+  return 0 if arr.all? { |x| x < 0 }
+  find_subs(arr).map(&:sum).max
+end
+
+# p find_subs([1,2,3,4,4,5])
+
+p max_seq([]) == 0
+p max_seq([-2, 1, -3, 4, -1, 2, 1, -5, 4]) == 6
+p max_seq([11]) == 11
+p max_seq([-32]) == 0
+p max_seq([-2, 1, -7, 4, -10, 2, 1, 5, 4]) == 12
+```
