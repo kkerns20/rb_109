@@ -6,6 +6,7 @@
       - [Live Session Part 5: Remove Vowels](./practice_problems/rem_vowels.rb) 
       - [Live Session Part 5: Find Primes](./practice_problems/find_primes.rb)
       - [Live Session Part 5: Balancer](./practice_problems/balancer.rb) 
+      - [RB109 Video 4 Prep: Substring Text](./practice_problems/substr_text.rb) - 15
 
     - Codewars Problem Solutions
       - [Count letters in string](https://www.codewars.com/kata/5808ff71c7cfa1c6aa00006d/solutions/ruby) - 5:11
