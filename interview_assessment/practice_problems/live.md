@@ -13,9 +13,9 @@
 11. - [x] [Rotation Pt 3](#rotation-pt-3)
 12. - [x] [1000 Lights](#1000-lights)
 13. - [x] [Next Largest Num](#next-largest-num)
-14. - [x] [Count Letters in Strings](#count-letters-in-strings)
-15. - [ ] [Count Pairs in String](#count-pairs-in-string)
-16. - [ ] [Return Substring Instance Count](#return-substring-instance-count)
+14. - [x] [Count Letters in String](#count-letters-in-string)
+15. - [x] [Count Pairs in String](#count-pairs-in-string)
+16. - [x] [Return Substring Instance Count](#return-substring-instance-count)
 17. - [ ] [Alphabet Symmetry](#alphabet-symmetry)
 18. - [ ] [Longest Vowel Chain](#longest-vowel-chain)
 19. - [ ] [Non Even Substrings](#non-even-substrings)
@@ -827,7 +827,7 @@ p toggle_lights(1000)
 ## Next Largest Num ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 -----------------------INSTRUCTIONS--------------------------------------
 You have to create a method that takes a positive integer number and returns the next bigger number formed by the same digits:
@@ -979,7 +979,7 @@ p next_bigger_num(123456789) == 123456798
 ## Count Letters in String ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 Count letters in string
 In this kata, you've to count lowercase letters in a given string and return the letter count in a hash with 'letter' as key and count as 'value'. The key must be 'symbol' instead of string in Ruby and 'char' instead of string in Crystal.
@@ -1037,7 +1037,7 @@ p letter_count('arithmetics') == {:a=>1, :c=>1, :e=>1, :h=>1, :i=>2, :m=>1, :r=>
 ## Count Pairs in String ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 You are given array of integers, your task will be to count all pairs in that array and return their count.
 
@@ -1066,10 +1066,10 @@ p pairs([54]) == 0
 =begin
 Problem
 ------------------------------------------
+given an array of integers, count all pairs in that array
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 array
+Outputs: 1 integer
 
 Rules/Requirements
 - 
@@ -1079,14 +1079,36 @@ Clarifying Questions
 
 Examples, Test Cases
 ------------------------------------------
-
+[1, 2, 5, 6, 5, 2]) == 2
+1 count is 1, so don't add
+2 count is 2 / 2 added to output
+5 count is 2 / 2 added ot output
+p pairs([1, 2, 2, 20, 6, 20, 2, 6, 2]) == 4
+1 count is 1
+2 count is 4
+20 count is 2
+6 count is 
 
 Data Structure, Algorithm
 ------------------------------------------
-
+initialize output to 0
+intialize hash to an empty hash value of 0
+iterate through the array
+  hash[ele] += 1
+iterate through hash values
+  - if hash value is > 1
+    - divide that value by 2 and add to output
+return output
 
 =end
 
+def pairs(arr)
+  output = 0
+  hash = Hash.new(0)
+  arr.each {|e| hash[e] += 1}
+  hash.values.each {|v| output += v/2 if v > 1}
+  output
+end
 
  
 p pairs([1, 2, 5, 6, 5, 2]) == 2
@@ -1102,7 +1124,7 @@ p pairs([54]) == 0
 ## Return Substring Instance Count ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 -----------------------INSTRUCTIONS--------------------------------------
 Complete the solution so that it returns the number of times the search_text is found within the full_text.
@@ -1111,10 +1133,10 @@ Complete the solution so that it returns the number of times the search_text is 
 =begin
 Problem
 ------------------------------------------
+return the number of tiems the search text is found in the full text
 
-
-Inputs: 
-Outputs: 
+Inputs: 2 strings
+Outputs: 1 integer
 
 Rules/Requirements
 - 
@@ -1128,15 +1150,37 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
+reutnr count of search text in full text if search text is 1
+otherwise return count of search text in find subs
 
+find subs
+initialize subs to []
+from 1 up to arr size do length
+  arr.each cons length do sub
+    append sub joined to subs
+return subs
 
 =end
 
+def find_subs(arr)
+  subs = []
+  1.upto(arr.size) do |l|
+    arr.each_cons(l) {|s| subs << s.join}
+  end
+  subs
+end
 
+def solution(full, s)
+  return full.count(s) if s.size == 1
+  find_subs(full.chars).count(s)
+end
 
-p solution('abcdeb','b') == 2
-p solution('abcdeb', 'a') == 1
-p solution('abbc', 'bb') == 1
+# p find_subs("abcbbccaababbabaaabccbbc".chars)
+# p find_subs('abbc'.chars)
+
+# p solution('abcdeb','b') == 2
+# p solution('abcdeb', 'a') == 1
+# p solution('abbc', 'bb') == 1
 ```
 
 ---
