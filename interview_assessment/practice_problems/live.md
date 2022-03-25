@@ -5302,7 +5302,7 @@ p common_prefix(['throne', 'dungeon']) == ''
 p common_prefix(['interspecies', 'interstellar', 'interstate']) == 'inters'
 ```
 
-## Common Prefix ##
+## Common Characters ##
 - Difficulty **medium**
 - [x] Problem completed?
 - Watch others code 1
