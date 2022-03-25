@@ -38,7 +38,7 @@
 36. - [ ] [Count and Group Character Occurrences in a String](#count-and-group-character-occurrences-in-a-string)
 37. - [ ] [Sum of Squared Divisors a Square](#sum-of-squared-divisors-a-square)
 38. - [ ] [Find the Mine](#find-the-mine)
-39. - [ ] [Scramblies](#scramblies)
+39. - [x] [Scrambled Text](#scrambled-text)
 40. - [ ] [Longest Alphabetical Substring](#longest-alphabetical-substring)
 41. - [ ] [Hashtag Generator](#hashtag-generator)
 42. - [ ] [Pete the Baker](#pete-the-baker)
@@ -84,11 +84,10 @@
 82. - [ ] [Two Sum](#two-sum)
 83. - [ ] [Digital Root](#digital-root)
 84. - [x] [Substring Text](#substring-text)
-85. - [x] [Scrambled Text](#scrambled-text)
-86. - [x] [Longest Palindrome](#longest-palindrome)
-87. - [x] [Find Even Index](#find-even-index)
-88. - [x] [Max Sequence](#max-sequence)
-89. - [x] [Common Prefix](#common-prefix)
+85. - [x] [Longest Palindrome](#longest-palindrome)
+86. - [x] [Find Even Index](#find-even-index)
+87. - [x] [Max Sequence](#max-sequence)
+88. - [x] [Common Prefix](#common-prefix)
 
 ## Repeater ##
 
@@ -2331,61 +2330,69 @@ p mine_location([ [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 1, 0], [0, 0, 0, 0] ]) == [
 
 ---
 
-## Scramblies ##
+## Scrambled Text ##
 
-- Difficulty: **easy**
-- [ ] Problem Completed?
-
-Complete the function scramble(str1, str2) that returns true if a portion of str1 characters can be rearranged to match str2, otherwise returns false.
-
-Notes:
-
-Only lower case letters will be used (a-z). No punctuation or digits will be included. \
-Performance needs to be considered \
-Input strings s1 and s2 are null terminated.
-
-p scramble('rkqodlw', 'world') == true \
-p scramble('cedewaraaossoqqyt', 'codewars') == true \
-p scramble('katas', 'steak') == false \
-p scramble('rkqodlw','world') == true \
-p scramble('cedewaraaossoqqyt','codewars') == true \
-p scramble('katas','steak') == false \
-p scramble('scriptjava','javascript') == true \
-p scramble('scriptingjava','javascript') == true
+- Difficulty: **medium**
+- [x] Problem completed?
+- [x] - Watch others code
 
 ```ruby
 =begin
 Problem
 ------------------------------------------
+Write function scramble(str1, str2) that returns true if a portion of str1 chars can be rearranged to match str2, otherwise, return false.
 
+For example:
+str1 is 'rkgodlw' and str2 is 'world' the output would be true
 
-Inputs: 
-Outputs: 
+Inputs: 2 strings
+Outputs: boolean
 
 Rules/Requirements
-- 
+- only lowercased letters will be used
+- no puntuation or digits
 
 Clarifying Questions
 - 
 
 Examples, Test Cases
 ------------------------------------------
+'javaass', 'jjss' == false
+'j' in str 2 count is 2 which is greater than str 1
+return false
+
+'rkqodlw', 'world' == true
+'w' count in str 2 is <= count of str 1
+'o' count in str 2 is <= count of str 1
+'r' count in str 2 is <= count of str 1
+'l' count in str 2 is <= count of str 1
+'d' count in str 2 is <= count of str 1
+return true
 
 
 Data Structure, Algorithm
 ------------------------------------------
-
+set arr2 to the chars of str2
+iterate through arr 2
+  return false if str2 count of char is greater than the str1 count of char
+return true
 
 =end
 
+def scramble(str1, str2)
+  arr2 = str2.chars
+  arr2.map {|ch| return false if str2.count(ch) > str1.count(ch) }
+  true
+end
+
+p scramble('javaass', 'jjss') == false
 p scramble('rkqodlw', 'world') == true
 p scramble('cedewaraaossoqqyt', 'codewars') == true
 p scramble('katas', 'steak') == false
-p scramble('rkqodlw','world') == true
-p scramble('cedewaraaossoqqyt','codewars') == true
-p scramble('katas','steak') == false
-p scramble('scriptjava','javascript') == true
-p scramble('scriptingjava','javascript') == true
+p scramble('scriptjava', 'javascript') == true
+p scramble('scriptingjava', 'javascript') == true
+
+
 ```
 
 
@@ -3945,26 +3952,57 @@ p repeated_substring('aaaaa') == true
 =begin
 Problem
 ------------------------------------------
+Given a non-empty string, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: boolean
 
 Rules/Requirements
-- 
+- take a substring and see if multiple copies appended together can make up the input
 
 Clarifying Questions
 - 
 
 Examples, Test Cases
 ------------------------------------------
+Example 1:
 
+Input "abab"
+Output: True
+'a' -> can 'a' size be multipled by length of string / 'a'size and equal str -- no
+            1 * 4 == 'a'
+'ab' -> 'ab' * input size / ab size
+break if out substring is over half the original string
+Explanation: It's the substring 'ab' twice.
+Example 2:
+
+Input: "aba"
+Output: False
 
 Data Structure, Algorithm
 ------------------------------------------
-
+- check_str initialized to an empty string
+- iterate through str chars
+  - add char to check str
+  - if check str * (input str size / check_str size) == str
+    - return true
+  - break if check str size is greater than input string size
+- return false
 
 =end
+
+def repeated_substring(str)
+  check_str = ''
+  str.chars.each do |char|
+    check_str += char
+    if check_str * (str.size / check_str.size) == str
+      return true
+    end
+    break if check_str.size > str.size / 2
+  end
+  false
+end
+
 p repeated_substring('abab') == true
 p repeated_substring('aba') == false
 p repeated_substring('aabaaba') == false
@@ -4923,70 +4961,6 @@ p substring_text('', 'Something') == false
 p substring_text('BANANAS', 'bananas') == true
 p substring_text('', '') == false
 p substring_text('1234567', '541265') == true
-
-
-```
-## Scrambled Text ##
-
-- Difficulty: **medium**
-- [x] Problem completed?
-- [x] - Watch others code
-
-```ruby
-=begin
-Problem
-------------------------------------------
-Write function scramble(str1, str2) that returns true if a portion of str1 chars can be rearranged to match str2, otherwise, return false.
-
-For example:
-str1 is 'rkgodlw' and str2 is 'world' the output would be true
-
-Inputs: 2 strings
-Outputs: boolean
-
-Rules/Requirements
-- only lowercased letters will be used
-- no puntuation or digits
-
-Clarifying Questions
-- 
-
-Examples, Test Cases
-------------------------------------------
-'javaass', 'jjss' == false
-'j' in str 2 count is 2 which is greater than str 1
-return false
-
-'rkqodlw', 'world' == true
-'w' count in str 2 is <= count of str 1
-'o' count in str 2 is <= count of str 1
-'r' count in str 2 is <= count of str 1
-'l' count in str 2 is <= count of str 1
-'d' count in str 2 is <= count of str 1
-return true
-
-
-Data Structure, Algorithm
-------------------------------------------
-set arr2 to the chars of str2
-iterate through arr 2
-  return false if str2 count of char is greater than the str1 count of char
-return true
-
-=end
-
-def scramble(str1, str2)
-  arr2 = str2.chars
-  arr2.map {|ch| return false if str2.count(ch) > str1.count(ch) }
-  true
-end
-
-p scramble('javaass', 'jjss') == false
-p scramble('rkqodlw', 'world') == true
-p scramble('cedewaraaossoqqyt', 'codewars') == true
-p scramble('katas', 'steak') == false
-p scramble('scriptjava', 'javascript') == true
-p scramble('scriptingjava', 'javascript') == true
 
 
 ```
