@@ -21,7 +21,7 @@
 19. - [ ] [Non Even Substrings](#non-even-substrings)
 20. - [ ] [Substring Fun](#substring-fun)
 21. - [ ] [Repeated Substring](#repeated-substring)
-22. - [ ] [Typoglycemia Generator](#typoglycemia-generator)
+22. - [x] [Typoglycemia Generator](#typoglycemia-generator)
 23. - [ ] [Most Frequently Used Words in a Text](#most-frequently-used-words-in-a-text)
 24. - [ ] [Detect Pangram](#detect-pangram)
 25. - [ ] [Kebabize](#kebabize)
@@ -88,6 +88,7 @@
 86. - [x] [Find Even Index](#find-even-index)
 87. - [x] [Max Sequence](#max-sequence)
 88. - [x] [Common Prefix](#common-prefix)
+89. - [x] [Common Characters](#common-characters)
 
 ## Repeater ##
 
@@ -1503,29 +1504,53 @@ p scramble_words("you've gotta dance like there's nobody watching, love like you
 
 ```ruby
 =begin
-Problem
-------------------------------------------
+==> Split original string up, scramble the words, and join back together
 
+--method --> scramble_words(str) --> String
+- split str up and iterate through it to scramble the words, join back together
 
-Inputs: 
-Outputs: 
+Helper Methods
+-- method --> scramble(word) --> str
+- initialize chars and break word into chars
+- initialize letter and only select letters from the word with regex
+- initialize scrambled letters and scramble the letters by sorting and turn into Array
+- iterate through chars 
+  - if the current char is a letter
+    - shift scrambled letters
+    - otherwise, add char
+- join chars
 
-Rules/Requirements
-- 
-
-Clarifying Questions
-- 
-
-Examples, Test Cases
-------------------------------------------
-
-
-Data Structure, Algorithm
-------------------------------------------
-
+-- method --> scramble_letters(word) --> word 
+- return word if word lenght is less than or equal to 2
+- concatenate index 0 plus everything between idx 1 to -1 to an array of characters, sort and join plus index -1
 
 =end
 
+def scramble_words(str)
+  str.split(' ').map { |word| scramble(word) }.join(' ')
+end
+
+def scramble(word)
+  chars = word.chars
+  letters = chars.select do |char|
+    char.match?(/[a-z]/)
+  end
+  scrambled_letters = scramble_letters(letters.join).chars
+  chars.map do |char|
+    if char.match?(/[a-z]/)
+      scrambled_letters.shift
+    else
+      char
+    end
+  end
+    .join
+end
+
+def scramble_letters(word)
+  return word if word.length <= 2
+
+  word[0] + word[1...-1].chars.sort.join + word[-1]
+end
 
 p scramble_words('professionals') == 'paefilnoorsss'
 p scramble_words('i') == 'i'
@@ -5275,4 +5300,54 @@ p common_prefix(['dog','racecar', 'car']) == ''
 p common_prefix(['throne', 'throne']) == 'throne'
 p common_prefix(['throne', 'dungeon']) == ''
 p common_prefix(['interspecies', 'interstellar', 'interstate']) == 'inters'
+```
+
+## Common Prefix ##
+- Difficulty **medium**
+- [x] Problem completed?
+- Watch others code 1
+
+Given an array of strings made only from lowercase letters, return an array of all characters that show up in all strings withing the given array (including duplicates).
+ ```ruby
+=begin
+Problem
+------------------------------------------
+
+
+Inputs: 1 array
+Outputs: 1 array
+
+Rules/Requirements
+- don't mutate the input array
+
+Clarifying Questions
+- 
+
+Examples, Test Cases
+------------------------------------------
+['bella', 'label', 'roller'] == ['e', 'l', 'l']
+
+
+Data Structure, Algorithm
+------------------------------------------
+reassign array to the return of
+  - iterate through array and duplicate each word
+- assign chars to the first word of arrays chars
+- loop with select through chars
+  - check and see if all words contain the char by replacing the char with ''
+
+=end
+
+def common_chars(array)
+  array = array.map(&:dup)
+  array.shift.chars.select do |char|
+    array.all? { |word| word.sub!(char, '') }
+  end
+end
+
+arr = ['bella', 'label', 'roller'] 
+p common_chars(arr) == ['e', 'l', 'l']
+p arr
+
+
 ```
