@@ -13,7 +13,7 @@
 11. - [x] [Rotation Pt 3](#rotation-pt-3)
 12. - [x] [1000 Lights](#1000-lights)
 13. - [x] [Next Largest Num](#next-largest-num)
-14. - [ ] [Count Letters in Strings](#count-letters-in-strings)
+14. - [x] [Count Letters in Strings](#count-letters-in-strings)
 15. - [ ] [Count Pairs in String](#count-pairs-in-string)
 16. - [ ] [Return Substring Instance Count](#return-substring-instance-count)
 17. - [ ] [Alphabet Symmetry](#alphabet-symmetry)
@@ -998,8 +998,8 @@ Problem
 ------------------------------------------
 
 
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: 1 hash
 
 Rules/Requirements
 - 
@@ -1013,11 +1013,19 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
-
+hash initialzied to 0
+iterate through the chars of the string 
+  - hash[char.to_sym] += 1
+- return hash
 =end
 
-
+def letter_count(str)
+  hash = Hash.new(0)
+  str.chars.each do |char|
+    hash[char.to_sym] += 1
+  end
+  hash
+end
 
 p letter_count('codewars') == {:a=>1, :c=>1, :d=>1, :e=>1, :o=>1, :r=>1, :s=>1, :w=>1}
 p letter_count('activity') == {:a=>1, :c=>1, :i=>2, :t=>2, :v=>1, :y=>1}
