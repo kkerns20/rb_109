@@ -47,7 +47,7 @@
 45. - [ ] [Determine Missing Letters](#determine-missing-letters)
 46. - [ ] [Find Primes](#find-primes)
 47. - [ ] [Find Some Substrings](#find-some-substrings)
-48. - [ ] [Next Bigger Number](#next-bigger-number)
+48. - [x] [Next Bigger Number](#next-bigger-number)
 49. - [ ] [Split Strings](#split-strings)
 50. - [ ] [Record Temps](#record-temps)
 51. - [ ] [Anagram Difference](#anagram-difference)
