@@ -1211,10 +1211,10 @@ p solve(["encode","abc","xyzD","ABmD"]) == [1, 3, 1, 3]
 =begin
 Problem
 ------------------------------------------
+given an array of strings, return an integer count of how many alphas are in the same order in teh alphabet
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 array of strings
+Outputs: 1 array of integers
 
 Rules/Requirements
 - 
@@ -1228,10 +1228,28 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
+create an array of the alphbet
+loop through the array with transformation
+  initialize count to 0
+  loop through the words chars with index
+    if char downcased index == index
+      increment count
+  return count
 
 
 =end
 
+ALPHAS = %w(a b c d e f g h i j k l m n o p q r s t u v w x y z)
+
+def solve(arr)
+  arr.map do |word|
+    count = 0
+    word.chars.map.with_index do |char, i|
+      count += 1 if ALPHAS.index(char.downcase) == i
+    end
+    count
+  end
+end
 
 
 p solve(["abode","ABc","xyzD"]) == [4,3,1]
