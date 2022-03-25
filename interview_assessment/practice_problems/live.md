@@ -16,7 +16,7 @@
 14. - [x] [Count Letters in String](#count-letters-in-string)
 15. - [x] [Count Pairs in String](#count-pairs-in-string)
 16. - [x] [Return Substring Instance Count](#return-substring-instance-count)
-17. - [ ] [Alphabet Symmetry](#alphabet-symmetry)
+17. - [x] [Alphabet Symmetry](#alphabet-symmetry)
 18. - [ ] [Longest Vowel Chain](#longest-vowel-chain)
 19. - [ ] [Non Even Substrings](#non-even-substrings)
 20. - [ ] [Substring Fun](#substring-fun)
