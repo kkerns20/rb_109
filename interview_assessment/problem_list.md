@@ -6,6 +6,7 @@
       - [Live Session Part 5: Remove Vowels](./practice_problems/rem_vowels.rb) 
       - [Live Session Part 5: Find Primes](./practice_problems/find_primes.rb)
       - [Live Session Part 5: Balancer](./practice_problems/balancer.rb) 
+      - [RB109 Video 1 Prep: Common Characters](./practice_problems/common_chars.rb) - 10
       - [RB109 Video 2 Prep: Next Bigger Number](./practice_problems/next_big.rb) - 10
       - [RB109 Video 3 Prep: Max Sequence](./practice_problems/max_seq.rb) - 7
       - [RB109 Video 4 Prep: Substring Text](./practice_problems/substr_text.rb) - 15
