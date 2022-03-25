@@ -17,7 +17,7 @@
 15. - [x] [Count Pairs in String](#count-pairs-in-string)
 16. - [x] [Return Substring Instance Count](#return-substring-instance-count)
 17. - [x] [Alphabet Symmetry](#alphabet-symmetry)
-18. - [ ] [Longest Vowel Chain](#longest-vowel-chain)
+18. - [x] [Longest Vowel Chain](#longest-vowel-chain)
 19. - [ ] [Non Even Substrings](#non-even-substrings)
 20. - [ ] [Substring Fun](#substring-fun)
 21. - [ ] [Repeated Substring](#repeated-substring)
@@ -1280,10 +1280,10 @@ p solve("iiihoovaeaaaoougjyaw") == 8
 =begin
 Problem
 ------------------------------------------
+Find the longest vowel chain in a given string
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: 1 integer
 
 Rules/Requirements
 - 
@@ -1293,15 +1293,28 @@ Clarifying Questions
 
 Examples, Test Cases
 ------------------------------------------
-
+codewarriors == 2
+ o e a  io  ==> 1, 1, 1, 2
 
 Data Structure, Algorithm
 ------------------------------------------
-
+reassign str to str.dup
+gsub all chars in the intersect of aeiou with a space
+split str
+iterate through with transformation
+  - find length of each word
+- find max
 
 =end
 
+def solve(str)
+  str = str.dup
+  str.gsub(/[^aeiou]/, ' ').split.map(&:length).max
+end
 
+str = "codewarriors"
+p solve(str)
+p str
 
 p solve("codewarriors") == 2
 p solve("suoidea") == 3
