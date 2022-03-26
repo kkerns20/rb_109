@@ -64,7 +64,7 @@
 62. - [ ] [Highest Scoring Word Again](#highest-scoring-word-again)
 63. - [ ] [Rotate Matrix](#rotate-matrix)
 64. - [ ] [Longest Common Prefix](#longest-common-prefix)
-65. - [ ] [Consecutive Runs](#consecutive-runs)
+65. - [x] [Consecutive Runs](#consecutive-runs)
 66. - [ ] [Search Query](#search-query)
 67. - [ ] [Repeated Substring 2](#repeated-substring-2)
 68. - [ ] [Reverse String](#reverse-string)
@@ -4028,7 +4028,7 @@ p common_prefix(["throne", "throne"]) == "throne"
 ## Consecutive Runs ##
 
 - Difficulty: **medium**
-- [ ] Problem Completed?
+- [x] Problem Completed?
 
 Given a certain string, create a hash with each character in string as key andall possible substrings in string starting at each character as value.
 
@@ -4041,26 +4041,66 @@ p consecutive_runs('abcd') == {"a"=>["a", "ab", "abc", "abcd"], /
 =begin
 Problem
 ------------------------------------------
+given a string, create a hash with each char in str as a key and all possible substrings as a value
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: 1 hash
 
 Rules/Requirements
-- 
+- key will be each char
+- value will be an array of string from that chara and then append every other char until the end
 
 Clarifying Questions
 - 
 
 Examples, Test Cases
 ------------------------------------------
-
+'abc' = {'a' => ['a', 'ab', 'abc'], ['b', 'bc'], ['c']
+idx 0 as key, then index 0..0 as value, 0..1 as value, 0..2 as value
+ind 1 as key, then index 1..1 as value, the 1..2
+ind 2 as key, then index 2..2 as value
 
 Data Structure, Algorithm
 ------------------------------------------
+-- method --> consecutive_runs(string) --> hash
+  -initialize an empty hash (subs)
+  -split given string into array of characters (chars)
+  -intialize subs to get_subs(arr)
+  -iterate through array of characters 
+    -select all chars that begin with current char and push to hash
+  -return hash
 
-
+-- method --> get_subs(array) --> array
+  -initialize subs as empty array
+  -iterate through 1 upto length of arr (length)
+    -iterate through the arr of characters by length
+      -push joined sub arrays to subs
+  -return subs
+  [a ab etc]
+  
 =end
+
+def get_subs(arr)
+  subs = []
+  1.upto(arr.size) do |length|
+    arr.each_cons(length) do |sub_arr|
+      subs << sub_arr.join
+    end
+  end
+  subs
+end
+
+def consecutive_runs(str)
+  sub_hash = {}
+  str = str.chars
+  subs = get_subs(str)
+  
+  str.each do |char|
+    sub_hash[char] = subs.select { |sub| sub[0] == char }
+  end
+  
+  sub_hash
+end
 
 p consecutive_runs('abcd') == {"a"=>["a", "ab", "abc", "abcd"], 
                                "b"=>["b", "bc", "bcd"], 
