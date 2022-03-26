@@ -18,7 +18,7 @@
 16. - [x] [Return Substring Instance Count](#return-substring-instance-count)
 17. - [x] [Alphabet Symmetry](#alphabet-symmetry)
 18. - [x] [Longest Vowel Chain](#longest-vowel-chain)
-19. - [ ] [Non Even Substrings](#non-even-substrings)
+19. - [x] [Non Even Substrings](#non-even-substrings)
 20. - [ ] [Substring Fun](#substring-fun)
 21. - [ ] [Repeated Substring](#repeated-substring)
 22. - [x] [Typoglycemia Generator](#typoglycemia-generator)
@@ -1345,14 +1345,13 @@ p solve("134721") == 13 \
 p solve("1347231") == 20 \
 p solve("13472315") == 28
 
-```ruby
-=begin
+```ruby=begin
 Problem
 ------------------------------------------
+given a string of integers, return the number of odd-numbered substrings that can be formed
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: 1 integers
 
 Rules/Requirements
 - 
@@ -1366,9 +1365,26 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
+find substrings joined to an integer
+iterate through substring with select for odd numbers
+return size of array
 
 =end
+
+def find_subs(arr)
+  subs = []
+  1.upto(arr.size) do |l|
+    arr.each_cons(l) do |sub_arr|
+      subs << sub_arr.join.to_i
+    end
+  end
+  subs
+end
+
+def solve(str)
+  sub = find_subs(str.chars)
+  sub.select { |s| s.odd? }.size
+end
 
 
 p solve("1341") == 7
