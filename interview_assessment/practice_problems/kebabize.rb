@@ -115,10 +115,6 @@ def kebabize(str)
 end
 
 p kebabize('myCamelHas3Humps')# == 'my-camel-has-humps'
-
-
-
-
 p kebabize('myCamelCasedString') #== 'my-camel-cased-string'
 p kebabize('myCamelHas3Humps') #== 'my-camel-has-humps'
 p kebabize('EeQw') #== 'ee-qw'
