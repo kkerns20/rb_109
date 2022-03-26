@@ -20,7 +20,7 @@
 18. - [x] [Longest Vowel Chain](#longest-vowel-chain)
 19. - [x] [Non Even Substrings](#non-even-substrings)
 20. - [x] [Substring Fun](#substring-fun)
-21. - [ ] [Repeated Substring](#repeated-substring)
+21. - [x] [Repeated Substring](#repeated-substring)
 22. - [x] [Typoglycemia Generator](#typoglycemia-generator)
 23. - [ ] [Most Frequently Used Words in a Text](#most-frequently-used-words-in-a-text)
 24. - [ ] [Detect Pangram](#detect-pangram)
@@ -1492,10 +1492,10 @@ p f("abcde") == ["abcde", 1]
 =begin
 Problem
 ------------------------------------------
+find a maximum substring and a maximum number such that the entire string is equal to t repeated k times
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 string
+Outputs: 1 array of a string and an integer
 
 Rules/Requirements
 - 
@@ -1505,15 +1505,40 @@ Clarifying Questions
 
 Examples, Test Cases
 ------------------------------------------
-
+"ababab" == ["ab", 3]
+'a' * str.size != 'ababab'
+index 0..0
+'ab' * (str.size / 'ab' size) == 'ababab'
+index 0..1
+'aba * (str.size / 'ab' size) != 
+index 0..2 <- half str size
+'abab' don't do it if 'abab' is greater than half of the str size
 
 Data Structure, Algorithm
 ------------------------------------------
-
+assign output to [1]
+assign result to []
+range from 0 to half str size for i
+  - initialize multiplier to str.size / sub_str size
+  - if str from 0..i * str.size / str from 0..i size == str
+    - append str from 0..i and multiplier to result
+return result first
 
 =end
 
+def f(str)
+  output = [1]
+  result = []
+  (0..str.size).each do |i|
+    mult = str.size / str[0..i].size
+    if str[0..i] * mult == str
+      result << [str[0..i], mult]
+    end
+  end
+  result.first
+end
 
+p f('aaaa')
 
 p f("ababab") == ["ab", 3]
 p f("abcde") == ["abcde", 1]
@@ -1699,6 +1724,18 @@ Data Structure, Algorithm
 
 =end
 
+def tally_words(arr)
+  arr.each_with_object(Hash.new(0)) do |word, hash|
+    hash[word] += 1
+  end
+end
+
+def top_3_words(str)
+  arr_of_words = str.downcase.gsub(/[^a-zA-Z ']/, '').split
+  filtered_words = arr_of_words.select { |word| word.match?(/[a-z]/) }
+  words_hash = tally_words(filtered_words)
+  words_hash.max_by(3) { |word, count| count }.to_h.keys
+end
 
 p top_3_words("a a a  b  c c  d d d d  e e e e e") == ["e", "d", "a"]
 p top_3_words("e e e e DDD ddd DdD: ddd ddd aa aA Aa, bb cc cC e e e") == ["e", "ddd", "aa"]
@@ -1750,9 +1787,16 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
+create alphabet as array
+iterate through input str with all
+  str.downcase.include?(alpha)
 
 =end
+
+def panagram?(str)
+  alphabet = ('a'..'z').to_a
+  alphabet.all? {|alpha| str.downcase.include?(alpha)}
+end
 
 p panagram?("The quick brown fox jumps over the lazy dog.") == true
 p panagram?("This is not a pangram.") == false
@@ -1798,13 +1842,28 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
-
+output = []
+- gsub anything not an alpha with ''
+- interate through chars of string with transformation
+  - if char == char upcase AND output isn't empty
+    push '-' + char.downcase
+  - else
+    push char.downcase
+- join output
 =end
 
-
-p kebabize('myCamelCasedString') == 'my-camel-cased-string'
-p kebabize('myCamelHas3Humps') == 'my-camel-has-humps'
+def kebabize(str)
+  output = []
+  str = str.gsub(/[^a-zA-Z]/, '')
+  str.chars.each do |x|
+    if x == x.upcase && !output.empty?
+      output << '-' + x.downcase
+    else
+      output << x.downcase
+    end
+  end
+  output.join
+end
 ```
 
 ---
@@ -1859,6 +1918,10 @@ Data Structure, Algorithm
 
 =end
 
+def song_decoder(str)
+  str.gsub('WUB', ' ').split.join(' ')
+end
+
 p song_decoder("AWUBBWUBC") == "A B C"
 p song_decoder("AWUBWUBWUBBWUBWUBWUBC") == "A B C"
 p song_decoder("WUBAWUBBWUBCWUB") == "A B C"
@@ -1902,14 +1965,20 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
-
+==> Check and  see if the array is 10 elements long, has equal 'n' and 's', has equal 'w' and 'e', if so true, if not false.
+-- method -->is_valid_walk(arr)\
+  - if array is 10 elements long AND
+  - if there are equal number 'n' and 's' AND
+  - if there are an equal number 'w' and 'e'
+    - return true
+  - otherwise, return false
 =end
 
-p is_valid_walk(['n','s','n','s','n','s','n','s','n','s']) == true
-p is_valid_walk(['w','e','w','e','w','e','w','e','w','e','w','e']) == false
-p is_valid_walk(['w']) == false
-p is_valid_walk(['n','n','n','s','n','s','n','s','n','s']) == false
+def is_valid_walk(arr)
+  arr.size == 10 &&
+  arr.count('n') == arr.count('s') &&
+  arr.count('e') == arr.count('w')
+end
 ```
 
 ---
@@ -2055,11 +2124,20 @@ Examples, Test Cases
 Data Structure, Algorithm
 ------------------------------------------
 
-
 =end
 
-p expanded_form(12) == '10 + 2'
-p expanded_form(42) == '40 + 2'
+def expanded_form(num)
+  num.to_s
+     .chars
+     .reverse
+     .map.with_index { |d, idx| d.to_i * 10**idx }
+     .reject(&:zero?)
+     .reverse
+     .join (' + ')
+end
+
+p expanded_form(12) == '10 + 2' 
+p expanded_form(42) == '40 + 2' 
 p expanded_form(70304) == '70000 + 300 + 4'
 ```
 
