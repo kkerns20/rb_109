@@ -1424,10 +1424,10 @@ p nth_char(['Chad', 'Morocco', 'India', 'Algeria', 'Botswana', 'Bahamas', 'Ecuad
 =begin
 Problem
 ------------------------------------------
+Take an array of words and iterate through to pull an increasing index of the words
 
-
-Inputs: 
-Outputs: 
+Inputs: 1 array of strings
+Outputs: 1 string
 
 Rules/Requirements
 - 
@@ -1441,12 +1441,26 @@ Examples, Test Cases
 
 Data Structure, Algorithm
 ------------------------------------------
-
-
+set output to ''
+set index to 0
+iterate through the array
+  concat the char of current word at index to output
+  increment index
+return output
 =end
 
+def nth_char(arr)
+  output = ''
+  index = 0
+  arr.each do |word|
+    output.concat(word[index]
+    index += 1
+  end
+  output
+end
 
-p nth_char(['yoda', 'best', 'has']) == 'yes'
+
+p nth_char(['yoda', 'best', 'has']) #== 'yes'
 p nth_char([]) == ''
 p nth_char(['X-ray']) == 'X'
 p nth_char(['No', 'No']) == 'No'
