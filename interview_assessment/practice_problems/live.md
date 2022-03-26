@@ -19,7 +19,7 @@
 17. - [x] [Alphabet Symmetry](#alphabet-symmetry)
 18. - [x] [Longest Vowel Chain](#longest-vowel-chain)
 19. - [x] [Non Even Substrings](#non-even-substrings)
-20. - [ ] [Substring Fun](#substring-fun)
+20. - [x] [Substring Fun](#substring-fun)
 21. - [ ] [Repeated Substring](#repeated-substring)
 22. - [x] [Typoglycemia Generator](#typoglycemia-generator)
 23. - [ ] [Most Frequently Used Words in a Text](#most-frequently-used-words-in-a-text)
