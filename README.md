@@ -17,4 +17,4 @@ Review material and notes to prepare for the RB109 Assessment.
 - [x] Finish all problems in [LS's Small Problems](https://launchschool.com/exercises)
 - [x] Work through [Practice Problems](./interview_assessment/problem_list.md)
 - [x] Loop back through all practice problems in [live.md](./interview_assessment/practice_problems/live.md)
-- [ ] Pass interview exam on the second try
+- [x] Pass interview exam on the second try
